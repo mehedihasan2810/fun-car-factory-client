@@ -1,8 +1,37 @@
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <div className="center-container">
+      <nav>
+        <div className="logo-container">
+          <img src="/assets/logo.png" alt="" />
+          <h4>FunCarFactory</h4>
+        </div>
+        <ul>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/all-toys">All Toys</NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-toys">My Toys</NavLink>
+          </li>
+          <li>
+            <NavLink to="/add-toy">Add A Toy</NavLink>
+          </li>
+          <li>
+            <NavLink to="/blogs">Blogs</NavLink>
+          </li>
+          <li>
+            <NavLink to="/">Profile</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
