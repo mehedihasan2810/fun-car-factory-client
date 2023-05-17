@@ -29,3 +29,7 @@ nav ul {
 nav li {
   color: #000;
 }
+
+nav li:hover a {
+  text-decoration: underline;
+}

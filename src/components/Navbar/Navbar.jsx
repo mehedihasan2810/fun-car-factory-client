@@ -26,7 +26,11 @@ const Navbar = () => {
             <NavLink to="/blogs">Blogs</NavLink>
           </li>
           <li>
-            <NavLink to="/">Profile</NavLink>
+            {false ? (
+              <NavLink to="/">Profile</NavLink>
+            ) : (
+              <button className="btn-primary">Sign In</button>
+            )}
           </li>
         </ul>
       </nav>

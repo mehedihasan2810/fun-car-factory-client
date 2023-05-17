@@ -16,7 +16,27 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.center-container{
-    max-width: 1400px;
-    margin: 0 auto;
+.center-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0.6rem;
+}
+
+button {
+  font: inherit;
+}
+
+.btn-primary {
+  background-color: transparent;
+  font-size: 1.1rem;
+  border: 1px solid #000;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #000;
+  color: #fff;
 }
