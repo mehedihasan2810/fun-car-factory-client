@@ -1,0 +1,27 @@
+.add-toy-container .control {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-toy-container .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.add-toy-container label {
+  font-size: 1.3rem;
+  color: gray;
+  color: #034f84;
+  margin-right: 0.6rem;
+}
+
+.add-toy-container input {
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  border: 1px solid #0071f32e;
+  border-radius: 4px;
+  flex-grow: 1;
+  color: gray;
+}
