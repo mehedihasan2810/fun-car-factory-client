@@ -1,0 +1,32 @@
+.my-toys-container {
+  margin: 100px 0;
+}
+.my-toys-container table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.my-toys-container th,
+td {
+  text-align: left;
+  padding: 16px;
+}
+
+.my-toys-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.my-toys-container .edit-btn {
+  font-size: 1.5rem;
+  color: gray;
+  cursor: pointer;
+}
+.my-toys-container .delete-btn {
+  font-size: 1.5rem;
+  color: rgba(255, 0, 0, 0.553);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
