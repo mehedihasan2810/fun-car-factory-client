@@ -1,0 +1,67 @@
+.category-container {
+  margin-bottom: 100px;
+}
+
+.category-container .card {
+  max-width: 320px;
+  padding: 0.5rem;
+  border: 1px solid #034e849d;
+  border-radius: 4px;
+}
+
+.category-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.category-container .name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.6rem 0;
+}
+
+.category-container .ratings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.category-container h4 {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.category-container p {
+  color: gray;
+  font-size: 14px;
+}
+
+.category-container .btn-primary{
+    border: 1px solid #034e849d;
+    color: #034e849d;
+}
+
+.category-container .btn-primary:hover{
+    background: #034e849d;
+    color: #fff;
+
+}
+
+.category-container .grid{
+   display: flex;
+   gap: 1rem;
+}
+
+.category-container .category-title{
+    font-weight: 500;
+    font-size: 2rem;
+    width: min-content;
+    margin: 0 auto;
+    border-bottom: 2px dotted;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+}

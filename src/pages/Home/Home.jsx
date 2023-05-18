@@ -1,3 +1,4 @@
+import Category from "../../components/Category/Category";
 import Gallery from "../../components/Gallery/Gallery";
 import Hero from "../../components/Hero/Hero";
 
@@ -6,6 +7,7 @@ const Home = () => {
     <div className="center-container">
       <Hero/>
       <Gallery/>
+      <Category/>
     </div>
   );
 };
