@@ -1,0 +1,52 @@
+.blog-container {
+  margin-top: 50px;
+}
+.blog-center {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.blog-container .blogs-title {
+  font-weight: 500;
+  font-size: 2rem;
+  width: min-content;
+  margin: 0 auto;
+  border-bottom: 2px dotted;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.blog-center div {
+  margin-bottom: 2rem;
+}
+
+.blog-center p {
+  font-size: 14px;
+  color: gray;
+}
+
+.blog-center h4 {
+  font-size: 1.2rem;
+}
+
+.pdf-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.pdf-btn .btn-primary {
+  color: blue;
+  border-color: blue;
+}
+
+.pdf-btn .btn-primary:hover {
+  background-color: blue;
+  color: #ffffff;
+}
+
+.blog-container h2,
+h4 {
+  font-weight: 500;
+}
