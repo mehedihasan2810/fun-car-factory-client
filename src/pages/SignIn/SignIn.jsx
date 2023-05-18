@@ -1,15 +1,35 @@
 import GoogleButton from "react-google-button";
 import "./SignIn.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
+import { toast } from "react-toastify";
 const SignIn = () => {
+  const navigate = useNavigate();
   const { googleSignIn } = useAuthContext();
 
   const handleGoogleSignIn = () => {
-    googleSignIn().then((userCredential) => {
-      const loggedUser = userCredential.user;
-      console.log(loggedUser);
-    });
+    googleSignIn()
+      .then((userCredential) => {
+        const loggedUser = userCredential.user;
+        console.log(loggedUser);
+
+        // *show toast
+        toast.success("Succesfully Signed In", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+
+        // *redirect user
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        // *show toast
+        toast.error(error.message, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+      });
   };
   return (
     <section>

@@ -15,6 +15,18 @@ const AuthContext = createContext();
 const gooleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
+
+  const signUp = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const updateUserProfile = (user, name, url) => {
+    return updateProfile(user, {
+      displayName: name,
+      photoURL: url,
+    });
+  };
+
   const googleSignIn = () => {
     return signInWithPopup(auth, gooleProvider);
   };
@@ -23,6 +35,8 @@ const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         googleSignIn,
+        signUp,
+        updateUserProfile
       }}
     >
       {children}
