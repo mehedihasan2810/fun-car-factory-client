@@ -29,7 +29,9 @@ const Navbar = () => {
             {false ? (
               <NavLink to="/">Profile</NavLink>
             ) : (
-              <button className="btn-primary">Sign In</button>
+              <NavLink to="/signin">
+                <button className="btn-primary">Sign In</button>
+              </NavLink>
             )}
           </li>
         </ul>
