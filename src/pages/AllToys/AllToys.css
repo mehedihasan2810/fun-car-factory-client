@@ -1,0 +1,19 @@
+.all-toys-container{
+    margin: 100px 0;
+}
+.all-toys-container table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.all-toys-container th,
+td {
+  text-align: left;
+  padding: 16px;
+}
+
+.all-toys-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
