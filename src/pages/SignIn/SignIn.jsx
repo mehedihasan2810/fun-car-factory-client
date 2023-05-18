@@ -1,7 +1,16 @@
 import GoogleButton from "react-google-button";
 import "./SignIn.css";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../contexts/AuthProvider";
 const SignIn = () => {
+  const { googleSignIn } = useAuthContext();
+
+  const handleGoogleSignIn = () => {
+    googleSignIn().then((userCredential) => {
+      const loggedUser = userCredential.user;
+      console.log(loggedUser);
+    });
+  };
   return (
     <section>
       <div className="signin-container">
@@ -33,7 +42,11 @@ const SignIn = () => {
           <h4>OR</h4>
         </div>
         <div className="google-github">
-          <GoogleButton type="light" className="google-btn" />
+          <GoogleButton
+            onClick={handleGoogleSignIn}
+            type="light"
+            className="google-btn"
+          />
           <button className="github">Sign in with Github</button>
         </div>
       </div>

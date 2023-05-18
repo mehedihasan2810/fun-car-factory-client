@@ -8,22 +8,30 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
+import { auth } from "../configs/firebase";
 
 const AuthContext = createContext();
 
 const gooleProvider = new GoogleAuthProvider();
 
+const AuthProvider = ({ children }) => {
+  const googleSignIn = () => {
+    return signInWithPopup(auth, gooleProvider);
+  };
 
-const AuthProvider = ({children}) => {
-return(
-    <AuthContext.Provider value='fooooo'>
-        {children}
+  return (
+    <AuthContext.Provider
+      value={{
+        googleSignIn,
+      }}
+    >
+      {children}
     </AuthContext.Provider>
-)
-}
+  );
+};
 
 export const useAuthContext = () => {
-    return useContext(AuthContext);
-  };
+  return useContext(AuthContext);
+};
 
 export default AuthProvider;
