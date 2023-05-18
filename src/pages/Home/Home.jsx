@@ -1,9 +1,11 @@
+import Gallery from "../../components/Gallery/Gallery";
 import Hero from "../../components/Hero/Hero";
 
 const Home = () => {
   return (
-    <div>
+    <div className="center-container">
       <Hero/>
+      <Gallery/>
     </div>
   );
 };

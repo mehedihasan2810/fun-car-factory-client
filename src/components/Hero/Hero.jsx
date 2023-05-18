@@ -1,8 +1,7 @@
 import "./Hero.css";
 const Hero = () => {
   return (
-    <div className="center-container">
-      <div className="hero-container">
+      <section className="hero-container">
         <div className="left">
           <h1>
             Get The Best Toys For <br /> Your Kids
@@ -17,8 +16,7 @@ const Hero = () => {
         <div className="right">
           <img src="/assets/banner-photo.png" alt="" />
         </div>
-      </div>
-    </div>
+      </section>
   );
 };
 
