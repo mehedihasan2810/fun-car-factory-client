@@ -15,6 +15,8 @@ const AuthContext = createContext();
 const gooleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
 
   const signUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -27,16 +29,34 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
   const googleSignIn = () => {
     return signInWithPopup(auth, gooleProvider);
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      setIsAuthLoading(false);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   return (
     <AuthContext.Provider
       value={{
         googleSignIn,
         signUp,
-        updateUserProfile
+        updateUserProfile,
+        signIn,
+        currentUser,
+        isAuthLoading,
       }}
     >
       {children}

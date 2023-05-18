@@ -1,11 +1,49 @@
 import GoogleButton from "react-google-button";
 import "./SignIn.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
+import { useState } from "react";
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isSignInLoading, setIsSignInLoading] = useState(false);
+
   const navigate = useNavigate();
-  const { googleSignIn } = useAuthContext();
+  const location = useLocation();
+  const { googleSignIn, signIn } = useAuthContext();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    setIsSignInLoading(true);
+    signIn(email, password)
+      .then((userCredential) => {
+        const loggedUser = userCredential.user;
+        console.log(loggedUser);
+
+        // *show toast
+        toast.success("Succesfully Signed In", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+
+        // * reset state
+        setEmail("");
+        setPassword("");
+        setIsSignInLoading(false);
+
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        // *show toast
+        toast.error(error.message, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+        setIsSignInLoading(false);
+      });
+  };
 
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -34,14 +72,27 @@ const SignIn = () => {
   return (
     <section>
       <div className="signin-container">
-        <form className="signin">
+        <form onSubmit={handleSignIn} className="signin">
           <div className="control">
             <label htmlFor="email">Email: </label>
-            <input type="email" name="email" id="email" placeholder="Email" />
+            <input
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
           </div>
           <div className="control">
             <label htmlFor="password">Password: </label>
             <input
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               type="password"
               name="password"
               id="password"
@@ -49,7 +100,7 @@ const SignIn = () => {
             />
           </div>
           <button className="btn-primary" type="submit">
-            {false ? <div className="loader"></div> : "Sign In"}
+            {isSignInLoading ? <div className="loader"></div> : "Sign In"}
           </button>
         </form>
         <p className="account">

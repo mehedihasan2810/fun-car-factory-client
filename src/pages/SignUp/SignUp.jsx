@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import GoogleButton from "react-google-button";
 import { toast } from "react-toastify";
@@ -12,6 +12,7 @@ const SignUp = () => {
   const [isSignUpLoading, setIsSignUpLoading] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
   const { googleSignIn, signUp, updateUserProfile } = useAuthContext();
 
   const handleSignUp = (e) => {
@@ -147,7 +148,7 @@ const SignUp = () => {
             />
           </div>
           <button className="btn-primary" type="submit">
-            {false ? <div className="loader"></div> : "Sign Up"}
+            {isSignUpLoading ? <div className="loader"></div> : "Sign Up"}
           </button>
         </form>
         <p className="account">
