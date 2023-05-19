@@ -48,3 +48,28 @@ nav .active {
 nav .pending {
   opacity: 0.5;
 }
+
+nav .bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav .bar {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+
+  .open {
+    display: block;
+    background-color: antiquewhite;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 4px;
+  }
+}

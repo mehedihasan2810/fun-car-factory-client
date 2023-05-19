@@ -3,8 +3,10 @@ import { FaUserTie } from "react-icons/fa";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import "./Navbar.css";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isOpenNav, setIsOpenNav] = useState(false);
   const { currentUser, logOut } = useAuthContext();
   const navigate = useNavigate();
 
@@ -37,7 +39,7 @@ const Navbar = () => {
           <img src="/assets/logo.png" alt="" />
           <h4>FunCarFactory</h4>
         </div>
-        <ul>
+        <ul className={isOpenNav ? "open" : ""}>
           <li>
             <NavLink
               to="/"
@@ -118,6 +120,9 @@ const Navbar = () => {
             </li>
           )}
         </ul>
+        <button onClick={() => setIsOpenNav(!isOpenNav)} className="bar">
+          open
+        </button>
       </nav>
     </div>
   );

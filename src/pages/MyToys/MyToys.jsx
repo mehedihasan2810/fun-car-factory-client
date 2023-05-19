@@ -5,44 +5,60 @@ import "./MyToys.css";
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
+  const [sort, setSort] = useState("default");
   const { currentUser } = useAuthContext();
 
   const [isLoading, setIsLoading] = useState(true);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:4000/myToys/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:4000/myToys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
 
-        // *show toast
-        toast.success("Succesfully Deleted!", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
+            const filteredToys = myToys.filter((toy) => toy._id !== id);
+            setMyToys(filteredToys);
 
-        // *show toast
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-      });
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          })
+          .catch((error) => {
+            console.log(error);
+
+            // *show toast
+            toast.error(error.message, {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 2000,
+            });
+          });
+      }
+    });
   };
 
   useEffect(() => {
     const abortController = new AbortController();
     const fetchData = () => {
       setIsLoading(true);
-      fetch(`http://localhost:4000/myToys?email=${currentUser?.email}`, {
-        signal: abortController.signal,
-      })
+      fetch(
+        `http://localhost:4000/myToys?email=${currentUser?.email}&sort=${sort}`,
+        {
+          signal: abortController.signal,
+        }
+      )
         .then((res) => {
           return res.json();
         })
@@ -60,7 +76,7 @@ const MyToys = () => {
     return () => {
       abortController.abort();
     };
-  }, [currentUser]);
+  }, [currentUser, sort]);
 
   if (isLoading) {
     return <div className="loader"></div>;
@@ -73,6 +89,18 @@ const MyToys = () => {
   return (
     <div className="center-container">
       <div className="my-toys-container">
+        <div className="sort-container">
+          <p>Sort:</p>
+          <select
+            defaultValue={sort}
+            onChange={(e) => setSort(e.target.value)}
+            className="sort"
+          >
+            <option value="default"> Default </option>
+            <option value="highest"> Highest Price </option>
+            <option value="lowest"> Lowest Price </option>
+          </select>
+        </div>
         <table>
           <thead>
             <tr>

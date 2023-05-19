@@ -30,7 +30,6 @@ const AddToy = () => {
         });
 
         // e.target.reset();
-
       })
       .catch((error) => {
         console.log(error);

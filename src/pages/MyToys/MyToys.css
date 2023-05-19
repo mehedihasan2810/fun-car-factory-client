@@ -52,3 +52,18 @@ td {
   align-items: center;
   gap: 3px;
 }
+
+.my-toys-container .sort-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.sort-container {
+  font-size: 1.2rem;
+}
+.my-toys-container .sort {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+}
