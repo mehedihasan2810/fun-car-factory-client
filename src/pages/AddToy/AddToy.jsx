@@ -1,6 +1,10 @@
 import { toast } from "react-toastify";
 import "./AddToy.css";
+import { useAuthContext } from "../../contexts/AuthProvider";
 const AddToy = () => {
+  const { currentUser } = useAuthContext();
+  console.log(currentUser.email);
+
   const handleAddToy = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -24,6 +28,9 @@ const AddToy = () => {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 2000,
         });
+
+        // e.target.reset();
+
       })
       .catch((error) => {
         console.log(error);
@@ -76,6 +83,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="email">Seller Email: </label>
               <input
+                defaultValue={currentUser.email}
                 type="email"
                 name="email"
                 id="email"

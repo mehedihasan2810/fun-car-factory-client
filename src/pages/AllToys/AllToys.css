@@ -34,3 +34,30 @@ td {
   align-items: center;
   gap: 3px;
 }
+
+.search-container{
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container input{
+  padding: 0.7rem 1rem;
+  width: 300px;
+  border: 1px solid rgba(0, 0, 255, 0.389);
+  border-right: none;
+}
+
+.search-container input:focus{
+outline: 1px solid blue;
+}
+
+.search-container button{
+  padding: 0.4rem 1rem;
+  border: 1px solid blue;
+  border-left: none;
+  background-color: rgba(0, 0, 255, 0.735);
+  color: white;
+}

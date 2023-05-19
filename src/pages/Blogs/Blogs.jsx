@@ -8,83 +8,116 @@ const Blogs = () => {
         <div className="blog-center">
           <div>
             <h4>
-              Whats the differences between uncontrolled and controlled
-              components?
+              What is an access token and refresh token? How do they work and
+              where should we store them on the client-side?
             </h4>
             <p>
-              Uncontrolled components in React are those where the state of the
-              component is managed by the component itself, without being
-              controlled by Reacts state management system. In an uncontrolled
-              component, the component handles its own state internally using
-              its own state management system, without relying on props or state
-              from the parent component.
+              Access Token: An access token is a credential that is issued by an
+              authentication server upon successful authentication. It
+              represents the authorization granted to access specific resources
+              or perform certain actions on behalf of the user or application.
             </p>
             <p>
-              On the other hand, controlled components in React are those where
-              the state of the component is managed by Reacts state management
-              system, and is passed down to the component via props. In a
-              controlled component, the component receives its state values as
-              props from the parent component, and it updates its state based on
-              these props.
+              Refresh Token: A refresh token is also issued by the
+              authentication server along with the access token. It is a
+              long-lived credential that is used to obtain a new access token
+              when the current one expires.
             </p>
-          </div>
-          <div>
-            <h4>How to validate React props using PropTypes?</h4>
+            <p>heres how they work: </p>
+            <ul>
+              <li>
+                The client-side application e.g., a web or mobile app
+                authenticates the user by sending their credentials to the
+                authentication server.
+              </li>
+              <li>
+                Upon successful authentication, the authentication server issues
+                an access token and a refresh token.
+              </li>
+              <li>
+                The client-side application stores the access token in memory or
+                a secure storage mechanism for immediate use.
+              </li>
+              <li>
+                The refresh token is securely stored by the client-side
+                application, typically in a location that provides protection
+                against unauthorized access.
+              </li>
+            </ul>
             <p>
-              React provides a package called PropTypes that allows you to
-              define the types of the props passed to a component, and to
-              specify if they are required or optional. To use PropTypes, you
-              need to first install it using a package manager such as npm or
-              yarn:
-            </p>
-            <pre>npm install prop-types</pre>
-            <p>
-              Once installed, you can import PropTypes in your React component
-              and define the types of the props as follows:
-            </p>
-            <pre>
-              function MyComponent(props) &#123; &#125;
-              <pre>
-                MyComponent.propTypes = &#123;
-                <pre> name: PropTypes.string.isRequired,</pre>
-                <pre> age: PropTypes.number,</pre>
-                <pre> email: PropTypes.string,</pre>
-                <pre>&#125;</pre>
-              </pre>
-            </pre>
-          </div>
-          <div>
-            <h4>Whats the difference between nodejs and express js?</h4>
-            <p>
-              Node.js is a runtime environment for executing JavaScript code
-              outside of a web browser. It provides a platform for building
-              server-side applications using JavaScript.
-            </p>
-            <p>
-              Express.js, on the other hand, is a popular web application
-              framework built on top of Node.js. It provides a set of tools and
-              libraries for building web applications and APIs in Node.js.
+              Its important to store tokens securely on the client-side to
+              prevent unauthorized access. Best practices include using secure
+              storage mechanisms provided by the platform or framework youre
+              using and encrypting the tokens when necessary. Additionally, you
+              should follow any security guidelines provided by the
+              authentication server or framework youre using to ensure the
+              proper handling and storage of tokens.
             </p>
           </div>
           <div>
-            <h4>
-              What is a custom hook and why will you create a custom hook?
-            </h4>
+            <h4>Differences between SQL and NoSQL databases?</h4>
+            <p>SQL Databases:</p>
+            <ul>
+              <li>Relational data model</li>
+              <li>Use structured query language SQL for data manipulation</li>
+              <li>Fixed schema with predefined tables and columns</li>
+            </ul>
+            <p>NoSQL Databases: </p>
+            <ul>
+              <li>
+                Various data models: key-value, document, columnar, graph, etc.
+              </li>
+              <li>Use non-SQL or schema-less query languages</li>
+              <li>Flexible schema with dynamic or no predefined structure</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What is express js and Nest JS?</h4>
             <p>
-              In React, a custom hook is a reusable function that encapsulates
-              common stateful logic in a way that can be shared across multiple
-              components. Custom hooks allow you to extract component logic into
-              a separate function and reuse it across different components
-              without duplicating code.
+              Express js: Express.js is a minimal and unopinionated web
+              framework for Node.js. It provides a simple and flexible set of
+              features for building web applications and APIs. Express.js
+              focuses on being lightweight and allows developers to have more
+              control over the application structure and middleware
+              configuration.
+            </p>
+
+            <p>
+              Nest js:- Nest.js is a progressive, opinionated framework for
+              building scalable and maintainable server-side applications using
+              TypeScript. It is built on top of Express.js, taking advantage of
+              its robustness and features, and adds an additional layer of
+              abstraction and structure. Nest.js follows the modular design
+              pattern and provides a built-in dependency injection system for
+              managing application components and their dependencies.
+            </p>
+          </div>
+          <div>
+            <h4>What is MongoDB aggregate and how does it work?</h4>
+            <p>
+              In MongoDB, the aggregate function is used to perform advanced
+              data processing and analysis operations on the data stored in a
+              collection. It allows you to execute complex queries, perform
+              aggregations, and transform the data in various ways. The
+              aggregate function takes an array of stages as its argument, where
+              each stage represents a specific operation or transformation to be
+              applied to the data.
             </p>
             <p>
-              You might create a custom hook in React to solve a specific
-              problem that is not easily solved by a built-in hook or to
-              simplify the code of your components. For example, if you have
-              multiple components that need to fetch data from a server and
-              display it, you could create a custom hook that encapsulates the
-              data fetching logic and returns the data and loading/error states
-              to the components that use it.
+              Heres a high-level overview of how the aggregate function works:
+              Data Pipeline: The aggregate function processes data using a
+              concept called the aggregation pipeline. The pipeline consists of
+              a sequence of stages that are executed in order, with the output
+              of one stage serving as the input for the next stage. Stages: Each
+              stage in the pipeline performs a specific operation on the data.
+              Some commonly used stages include: $match: Filters documents based
+              on specified criteria. $group: Groups documents together based on
+              a specific field and performs aggregations on the grouped data.
+              $project: Selects specific fields from the documents and
+              optionally transforms them. $sort: Sorts the documents based on
+              specified criteria. $limit: Limits the number of documents in the
+              result set. $skip: Skips a specified number of documents in the
+              result set.
             </p>
           </div>
         </div>

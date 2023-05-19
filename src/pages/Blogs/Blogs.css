@@ -23,6 +23,7 @@
 .blog-center p {
   font-size: 14px;
   color: gray;
+  margin: 10px 0;
 }
 
 .blog-center h4 {
@@ -49,4 +50,11 @@
 .blog-container h2,
 h4 {
   font-weight: 500;
+}
+
+.blog-container ul {
+  list-style: disc;
+  font-size: 15px;
+  color: gray;
+  margin: 10px 0;
 }
