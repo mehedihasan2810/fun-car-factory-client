@@ -3,6 +3,7 @@
   padding: 1.5rem;
   border-radius: 4px;
   background-color: #9fc3dc11;
+  border: 1px solid #034e846d;
 }
 .add-toy-container .control {
   display: flex;

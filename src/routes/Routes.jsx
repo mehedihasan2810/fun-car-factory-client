@@ -8,6 +8,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import MyToys from "../pages/MyToys/MyToys";
 import AddToy from "../pages/AddToy/AddToy";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import ToyDetails from "../pages/ToyDetails/ToyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-toys",
         element: <AllToys />,
-        loader: () => fetch('http://localhost:4000/allToys')
+        loader: () => fetch("http://localhost:4000/allToys"),
       },
       {
         path: "/my-toys",
@@ -43,6 +44,12 @@ export const router = createBrowserRouter([
       {
         path: "/add-toy",
         element: <AddToy />,
+      },
+      {
+        path: "/toy-details/:id",
+        element: <ToyDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:4000/toy-details/${params.id}`),
       },
     ],
   },

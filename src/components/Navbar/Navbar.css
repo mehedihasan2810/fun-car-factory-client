@@ -32,6 +32,7 @@ nav li {
 
 nav li:hover a {
   text-decoration: underline;
+  color: blue;
 }
 
 nav .profile-img {

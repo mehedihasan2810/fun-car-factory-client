@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import "./Category.css";
 import "react-tabs/style/react-tabs.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const Category = () => {
   const [allToys, setAllToys] = useState(null);
 
@@ -59,7 +60,11 @@ const Category = () => {
                             </p>
                             {toy.rating}/5(100)
                           </div>
-                          <button className="btn-primary">View Details</button>
+                          <Link to={`/toy-details/${toy._id}`}>
+                            <button className="btn-primary">
+                              View Details
+                            </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -89,7 +94,11 @@ const Category = () => {
                             </p>
                             {toy.rating}/5(100)
                           </div>
-                          <button className="btn-primary">View Details</button>
+                          <Link to={`/toy-details/${toy._id}`}>
+                            <button className="btn-primary">
+                              View Details
+                            </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -119,7 +128,11 @@ const Category = () => {
                             </p>
                             {toy.rating}/5(100)
                           </div>
-                          <button className="btn-primary">View Details</button>
+                          <Link to={`/toy-details/${toy._id}`}>
+                            <button className="btn-primary">
+                              View Details
+                            </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
