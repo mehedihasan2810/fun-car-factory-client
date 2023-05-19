@@ -27,4 +27,25 @@
 .hero-container .btn-primary {
   padding: 0.6rem 1.2rem;
   margin-top: 2rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.hero-container .btn-primary:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin: 80px 0;
+  }
+
+  .hero-container h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
 }

@@ -3,7 +3,6 @@
 }
 
 .category-container .card {
-  max-width: 320px;
   padding: 0.5rem;
   border: 1px solid #034e849d;
   border-radius: 4px;
@@ -53,17 +52,16 @@
 
 .category-container .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1rem;
 }
 
 .category-container .category-title {
-  font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: #034f84;
   width: min-content;
   margin: 0 auto;
-  border-bottom: 2px dotted;
-  padding: 0 1rem;
   margin-bottom: 2rem;
 }
 

@@ -1,0 +1,48 @@
+.arival-container {
+  margin: 150px 0;
+}
+
+.arival {
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+}
+
+.arival .small-container {
+  width: 300px;
+}
+.arival .big-container {
+  /* width: 800px; */
+}
+
+.arival .img-small {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: translate(20px);
+}
+
+.arival .img-big {
+  max-width: 100%;
+  height: auto;
+
+  object-fit: cover;
+}
+
+.arival-container .arival-title {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #034f84;
+}
+
+@media (max-width: 768px) {
+  .arival-container {
+    margin: 80px 0;
+  }
+  .arival {
+    height: auto;
+  }
+}

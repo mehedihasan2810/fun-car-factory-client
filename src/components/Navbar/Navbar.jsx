@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaUserTie } from "react-icons/fa";
+import { FaUserTie, FaBars } from "react-icons/fa";
+import { HiOutlineX } from "react-icons/hi";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import "./Navbar.css";
@@ -121,7 +122,7 @@ const Navbar = () => {
           )}
         </ul>
         <button onClick={() => setIsOpenNav(!isOpenNav)} className="bar">
-          open
+         {isOpenNav ? <HiOutlineX/> : <FaBars/>}
         </button>
       </nav>
     </div>

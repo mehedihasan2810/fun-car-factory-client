@@ -56,14 +56,22 @@ nav .bar {
 @media (max-width: 768px) {
   nav .bar {
     display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 1.7rem;
+    cursor: pointer;
   }
   nav ul {
     display: none;
   }
 
+  nav li {
+    color: #fff;
+  }
+
   .open {
     display: block;
-    background-color: antiquewhite;
+    background-color: #034e84c6;
     position: absolute;
     top: 70px;
     right: 10px;
