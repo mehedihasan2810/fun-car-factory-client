@@ -1,60 +1,60 @@
-.add-toy-container {
+.update-toy-container {
   margin: 100px 0;
   padding: 1.5rem;
   border-radius: 4px;
   background-color: #9fc3dc11;
   border: 1px solid #034e846d;
 }
-.add-toy-container .control {
+.update-toy-container .control {
   display: flex;
   flex-direction: column;
 }
 
-.add-toy-container .row {
+.update-toy-container .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.add-toy-container label {
+.update-toy-container label {
   font-size: 1.3rem;
   color: gray;
   color: #034f84;
   margin-right: 0.6rem;
 }
 
-.add-toy-container input {
+.update-toy-container input {
   padding: 0.7rem 1rem;
   font-size: 1.1rem;
   border: 1px solid #0071f32e;
   border-radius: 4px;
   flex-grow: 1;
-  color: gray;
+  color: rgb(61, 57, 57);
 }
 
-.add-toy-container input:focus {
+.update-toy-container input:focus {
   outline: 1px solid #034f84;
 }
 
-.add-toy-container input::placeholder {
+.update-toy-container input::placeholder {
   color: rgba(128, 128, 128, 0.552);
 }
 
-.add-toy-container textarea {
+.update-toy-container textarea {
   width: 100%;
   padding: 0.6rem;
   font-size: 1rem;
-  color: gray;
+  color: rgb(61, 57, 57);
   border: 1px solid #0071f32e;
   border-radius: 4px;
 }
 
-.add-toy-container textarea:focus {
+.update-toy-container textarea:focus {
   outline: 1px solid #034f84;
 }
 
-.add-toy-container .btn-primary {
+.update-toy-container .btn-primary {
   width: 100%;
   padding: 1.2rem 0;
   background: #034f84;
@@ -63,17 +63,19 @@
   font-size: 1.2rem;
 }
 
-.add-toy-container .btn-primary:hover {
+.update-toy-container .btn-primary:hover {
   box-shadow: 0 0 5px #034f84;
   background-color: #034e84e8;
 }
 
-.add-toy-container .add-title {
-  width: fit-content;
-  padding: 0.1rem 1rem;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  color: #034f84;
-  font-size: 2.5rem;
-  border-bottom: 2px dotted #034f84;
+.update-toy-container .update-title{
+    width: fit-content;
+    padding: 0.1rem 1rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    color: #034f84;
+    font-size: 2.5rem;
+    border-bottom: 2px dotted #034f84;
 }
+
+

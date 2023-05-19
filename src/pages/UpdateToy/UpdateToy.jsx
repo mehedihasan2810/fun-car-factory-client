@@ -1,19 +1,26 @@
 import { toast } from "react-toastify";
-import "./AddToy.css";
+import "./UpdateToy.css";
 import { useAuthContext } from "../../contexts/AuthProvider";
-const AddToy = () => {
+import { useLoaderData, useParams } from "react-router-dom";
+const UpdateToy = () => {
   const { currentUser } = useAuthContext();
   console.log(currentUser.email);
 
-  const handleAddToy = (e) => {
+  const params = useParams();
+  console.log(params);
+
+  const toy = useLoaderData();
+  console.log(toy);
+
+  const handleUpdate = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const toyInfo = Object.fromEntries(formData);
 
     console.log(toyInfo);
 
-    fetch("http://localhost:4000/addToy", {
-      method: "POST",
+    fetch(`http://localhost:4000/update/${params.id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -24,13 +31,12 @@ const AddToy = () => {
         console.log(data);
 
         // *show toast
-        toast.success("Succesfully Added", {
+        toast.success("Succesfully Updated!", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 2000,
         });
 
         // e.target.reset();
-
       })
       .catch((error) => {
         console.log(error);
@@ -45,13 +51,15 @@ const AddToy = () => {
 
   return (
     <div className="center-container">
-      <div className="add-toy-container ">
-        <h2 className="add-title">Add Toy</h2>
-        <form onSubmit={handleAddToy}>
+         
+      <div className="update-toy-container ">
+      <h2 className="update-title">Update Toy</h2>
+        <form onSubmit={handleUpdate}>
           <div className="row">
             <div className="control">
               <label htmlFor="name">Toy Name: </label>
               <input
+                defaultValue={toy.name}
                 type="text"
                 name="name"
                 id="name"
@@ -62,6 +70,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="url">Photo URL: </label>
               <input
+                defaultValue={toy.url}
                 type="text"
                 name="url"
                 id="url"
@@ -74,6 +83,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="sellerName">Seller Name: </label>
               <input
+                defaultValue={toy.sellerName}
                 type="text"
                 name="sellerName"
                 id="sellerName"
@@ -84,7 +94,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="email">Seller Email: </label>
               <input
-                defaultValue={currentUser.email}
+                defaultValue={toy.email}
                 type="email"
                 name="email"
                 id="email"
@@ -97,6 +107,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="category">Sub Category: </label>
               <input
+                defaultValue={toy.category}
                 type="text"
                 name="category"
                 id="category"
@@ -107,6 +118,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="price">Price: </label>
               <input
+                defaultValue={toy.price}
                 type="number"
                 name="price"
                 id="price"
@@ -119,6 +131,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="rating">Rating: </label>
               <input
+                defaultValue={toy.rating}
                 type="number"
                 name="rating"
                 id="rating"
@@ -131,6 +144,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="price">Available Quantity: </label>
               <input
+                defaultValue={toy.quantity}
                 type="number"
                 name="quantity"
                 id="quantity"
@@ -146,6 +160,7 @@ const AddToy = () => {
                 {" "}
                 Description:
                 <textarea
+                  defaultValue={toy.description}
                   name="description"
                   id="description"
                   rows="10"
@@ -155,7 +170,7 @@ const AddToy = () => {
             </div>
           </div>
           <button className="btn-primary" type="submit">
-            Add The Toy
+            Confirm
           </button>
         </form>
       </div>
@@ -163,4 +178,4 @@ const AddToy = () => {
   );
 };
 
-export default AddToy;
+export default UpdateToy;

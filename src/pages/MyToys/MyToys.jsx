@@ -103,13 +103,14 @@ const MyToys = () => {
                       <button className="btn-primary">View Details</button>
                     </Link>
                   </td>
-                  <td className="edit-btn">
-                    <Link to="/update-toys">
+                  <td title="Update" className="edit-btn">
+                    <Link to={`/my-toys/${toy._id}`}>
                       <FaEdit />
                     </Link>
                   </td>
                   <td>
                     <button
+                      title="Delete"
                       onClick={() => handleDelete(toy._id)}
                       className="delete-btn"
                     >

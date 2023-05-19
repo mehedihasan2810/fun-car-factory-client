@@ -23,7 +23,7 @@ nav .logo-container {
 nav ul {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 nav li {

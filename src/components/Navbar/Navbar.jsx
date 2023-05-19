@@ -75,7 +75,7 @@ const Navbar = () => {
                 isPending ? "pending" : isActive ? "active" : ""
               }
             >
-              Add A Toy
+              Add Toy
             </NavLink>
           </li>
           <li>
