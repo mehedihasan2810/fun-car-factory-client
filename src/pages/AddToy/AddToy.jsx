@@ -1,9 +1,45 @@
+import { toast } from "react-toastify";
 import "./AddToy.css";
 const AddToy = () => {
+  const handleAddToy = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const toyInfo = Object.fromEntries(formData);
+
+    console.log(toyInfo);
+
+    fetch("http://localhost:4000/addToy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(toyInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        // *show toast
+        toast.success("Succesfully Added", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+
+        // *show toast
+        toast.error(error.message, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+      });
+  };
+
   return (
     <div className="center-container">
       <div className="add-toy-container ">
-        <form>
+        <form onSubmit={handleAddToy}>
           <div className="row">
             <div className="control">
               <label htmlFor="name">Toy Name: </label>
@@ -109,7 +145,9 @@ const AddToy = () => {
               </label>
             </div>
           </div>
-          <button className="btn-primary" type="submit">Add The Toy</button>
+          <button className="btn-primary" type="submit">
+            Add The Toy
+          </button>
         </form>
       </div>
     </div>

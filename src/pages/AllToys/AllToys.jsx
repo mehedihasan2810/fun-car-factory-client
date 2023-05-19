@@ -1,5 +1,9 @@
+import { useLoaderData } from "react-router-dom";
 import "./AllToys.css";
 const AllToys = () => {
+  const allToys = useLoaderData();
+  console.log(allToys);
+
   return (
     <div className="center-container">
       <div className="all-toys-container">
@@ -15,36 +19,21 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Jill</td>
-              <td>Tesla Super Truck</td>
-              <td>truck</td>
-              <td>20$</td>
-              <td>5</td>
-              <td>
-                <button className="btn-primary">View Details</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Jill</td>
-              <td>Tesla Super Truck</td>
-              <td>truck</td>
-              <td>20$</td>
-              <td>5</td>
-              <td>
-                <button className="btn-primary">View Details</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Jill</td>
-              <td>Tesla Super Truck</td>
-              <td>truck</td>
-              <td>20$</td>
-              <td>5</td>
-              <td>
-                <button className="btn-primary">View Details</button>
-              </td>
-            </tr>
+            {allToys.map((toy) => (
+              <tr key={toy._id}>
+                <td>{toy.sellerName}</td>
+                <td className="name-td">
+                  <img src={toy.url} alt="" />
+                  {toy.name}
+                </td>
+                <td>{toy.category}</td>
+                <td>{toy.price}$</td>
+                <td>{toy.quantity}</td>
+                <td>
+                  <button className="btn-primary">View Details</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

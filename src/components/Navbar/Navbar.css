@@ -33,3 +33,17 @@ nav li {
 nav li:hover a {
   text-decoration: underline;
 }
+
+nav .profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+nav .active {
+  color: blue;
+}
+nav .pending {
+  opacity: 0.5;
+}

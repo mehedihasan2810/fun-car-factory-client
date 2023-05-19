@@ -8,6 +8,10 @@
   border: 1px solid #ddd;
 }
 
+.all-toys-container th {
+  background: rgba(0, 0, 255, 0.112);
+}
+
 .all-toys-container th,
 td {
   text-align: left;
@@ -16,4 +20,17 @@ td {
 
 .all-toys-container tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.all-toys-container img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+
+.all-toys-container .name-td {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }

@@ -11,9 +11,10 @@
 
 .category-container img {
   width: 100%;
-  height: auto;
+  height: 200px;
   display: block;
   border-radius: 4px;
+  object-fit: cover;
 }
 
 .category-container .name-price {
@@ -40,34 +41,33 @@
   font-size: 14px;
 }
 
-.category-container .btn-primary{
-    border: 1px solid #034e849d;
-    color: #034e849d;
+.category-container .btn-primary {
+  border: 1px solid #034e849d;
+  color: #034e849d;
 }
 
-.category-container .btn-primary:hover{
-    background: #034e849d;
-    color: #fff;
-
+.category-container .btn-primary:hover {
+  background: #034e849d;
+  color: #fff;
 }
 
-.category-container .grid{
-   display: flex;
-   gap: 1rem;
+.category-container .grid {
+  display: flex;
+  gap: 1rem;
 }
 
-.category-container .category-title{
-    font-weight: 500;
-    font-size: 2rem;
-    width: min-content;
-    margin: 0 auto;
-    border-bottom: 2px dotted;
-    padding: 0 1rem;
-    margin-bottom: 2rem;
+.category-container .category-title {
+  font-weight: 500;
+  font-size: 2rem;
+  width: min-content;
+  margin: 0 auto;
+  border-bottom: 2px dotted;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
-.category-container .star{
-    display: inline;
-    margin-right: 2px;
-    color: rgb(233, 142, 22);
+.category-container .star {
+  display: inline;
+  margin-right: 2px;
+  color: rgb(233, 142, 22);
 }

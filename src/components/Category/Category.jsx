@@ -2,7 +2,32 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { FaStar } from "react-icons/fa";
 import "./Category.css";
 import "react-tabs/style/react-tabs.css";
+import { useEffect, useState } from "react";
 const Category = () => {
+  const [allToys, setAllToys] = useState(null);
+
+  useEffect(() => {
+    const abortController = new AbortController();
+    const fetchData = () => {
+      fetch("http://localhost:4000/allToys", {
+        signal: abortController.signal,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setAllToys(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchData();
+
+    return () => {
+      abortController.abort();
+    };
+  }, []);
+
   return (
     <section className="category-container">
       <h2 className="category-title">Category</h2>
@@ -10,152 +35,97 @@ const Category = () => {
         <TabList>
           <Tab>Truck</Tab>
           <Tab>Ferrari</Tab>
-          <Tab>BMW</Tab>
+          <Tab>Bus</Tab>
         </TabList>
 
         <TabPanel>
           <div className="grid">
-            <div className="card">
-              <img
-                src="https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="card-body">
-                <div className="name-price">
-                  <h4>Tesla Super Truck</h4>
-                  <p>20$</p>
-                </div>
-                <div className="ratings">
-                  <div>
-                    <p className="star">
-                      {" "}
-                      <FaStar />
-                    </p>
-                    4/5(100)
-                  </div>
-                  <button className="btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src="https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="card-body">
-                <div className="name-price">
-                  <h4>Tesla Super Truck</h4>
-                  <p>20$</p>
-                </div>
-                <div className="ratings">
-                  <div>
-                    <p className="star">
-                      {" "}
-                      <FaStar />
-                    </p>
-                    4/5(100)
-                  </div>
-                  <button className="btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
+            {allToys &&
+              allToys.map((toy) => {
+                if (toy.category.toLowerCase() === "truck") {
+                  return (
+                    <div key={toy._id} className="card">
+                      <img src={toy.url} alt="" />
+                      <div className="card-body">
+                        <div className="name-price">
+                          <h4>{toy.name}</h4>
+                          <p>{toy.price}$</p>
+                        </div>
+                        <div className="ratings">
+                          <div>
+                            <p className="star">
+                              {" "}
+                              <FaStar />
+                            </p>
+                            {toy.rating}/5(100)
+                          </div>
+                          <button className="btn-primary">View Details</button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid">
-            <div className="card">
-              <img
-                src="https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="card-body">
-                <div className="name-price">
-                  <h4>Tesla Super Truck</h4>
-                  <p>20$</p>
-                </div>
-                <div className="ratings">
-                  <div>
-                    <p className="star">
-                      {" "}
-                      <FaStar />
-                    </p>
-                    4/5(100)
-                  </div>
-                  <button className="btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src="https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="card-body">
-                <div className="name-price">
-                  <h4>Tesla Super Truck</h4>
-                  <p>20$</p>
-                </div>
-                <div className="ratings">
-                  <div>
-                    <p className="star">
-                      {" "}
-                      <FaStar />
-                    </p>
-                    4/5(100)
-                  </div>
-                  <button className="btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
+            {allToys &&
+              allToys.map((toy) => {
+                if (toy.category.toLowerCase() === "ferrari") {
+                  return (
+                    <div key={toy._id} className="card">
+                      <img src={toy.url} alt="" />
+                      <div className="card-body">
+                        <div className="name-price">
+                          <h4>{toy.name}</h4>
+                          <p>{toy.price}$</p>
+                        </div>
+                        <div className="ratings">
+                          <div>
+                            <p className="star">
+                              {" "}
+                              <FaStar />
+                            </p>
+                            {toy.rating}/5(100)
+                          </div>
+                          <button className="btn-primary">View Details</button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid">
-            <div className="card">
-              <img
-                src="https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="card-body">
-                <div className="name-price">
-                  <h4>Tesla Super Truck</h4>
-                  <p>20$</p>
-                </div>
-                <div className="ratings">
-                  <div>
-                    <p className="star">
-                      {" "}
-                      <FaStar />
-                    </p>
-                    4/5(100)
-                  </div>
-                  <button className="btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src="https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="card-body">
-                <div className="name-price">
-                  <h4>Tesla Super Truck</h4>
-                  <p>20$</p>
-                </div>
-                <div className="ratings">
-                  <div>
-                    {" "}
-                    <p className="star">
-                      {" "}
-                      <FaStar />
-                    </p>
-                    4/5(100)
-                  </div>
-                  <button className="btn-primary">View Details</button>
-                </div>
-              </div>
-            </div>
+            {allToys &&
+              allToys.map((toy) => {
+                if (toy.category.toLowerCase() === "bus") {
+                  return (
+                    <div key={toy._id} className="card">
+                      <img src={toy.url} alt="" />
+                      <div className="card-body">
+                        <div className="name-price">
+                          <h4>{toy.name}</h4>
+                          <p>{toy.price}$</p>
+                        </div>
+                        <div className="ratings">
+                          <div>
+                            <p className="star">
+                              {" "}
+                              <FaStar />
+                            </p>
+                            {toy.rating}/5(100)
+                          </div>
+                          <button className="btn-primary">View Details</button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
           </div>
         </TabPanel>
       </Tabs>

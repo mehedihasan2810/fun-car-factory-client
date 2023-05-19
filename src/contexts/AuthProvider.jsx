@@ -37,6 +37,10 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, gooleProvider);
   };
 
+  const logOut = () => {
+    return signOut(auth);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
@@ -55,6 +59,7 @@ const AuthProvider = ({ children }) => {
         signUp,
         updateUserProfile,
         signIn,
+        logOut,
         currentUser,
         isAuthLoading,
       }}
