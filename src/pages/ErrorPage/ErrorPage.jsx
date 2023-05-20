@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./ErrorPage.css";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const ErrorPage = () => {
+  useTitlePerPage("Error Page");
   return (
     <div className="error-page-container">
       <div>

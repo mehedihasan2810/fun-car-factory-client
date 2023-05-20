@@ -1,14 +1,16 @@
 import { Link, useLoaderData } from "react-router-dom";
 import "./AllToys.css";
 import { useState } from "react";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const AllToys = () => {
+  useTitlePerPage('All Toys')
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const allToys = useLoaderData();
   console.log(allToys);
 
   const handleSearch = () => {
-    fetch(`http://localhost:4000/search?term=${searchTerm}`)
+    fetch(`https://fun-car-factory-server.vercel.app/search?term=${searchTerm}`)
       .then((res) => {
         return res.json();
       })

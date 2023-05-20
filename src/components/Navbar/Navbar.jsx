@@ -34,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="center-container">
+    <div data-aos="fade-up" className="center-container">
       <nav>
         <div className="logo-container">
           <img src="/assets/logo.png" alt="" />

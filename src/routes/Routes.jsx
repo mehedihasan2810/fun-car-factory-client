@@ -37,7 +37,8 @@ export const router = createBrowserRouter([
       {
         path: "/all-toys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:4000/allToys"),
+        loader: () =>
+          fetch("https://fun-car-factory-server.vercel.app/allToys"),
       },
       {
         path: "/my-toys",
@@ -63,13 +64,17 @@ export const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/toy-details/${params.id}`),
+          fetch(
+            `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
+          ),
       },
       {
         path: "/my-toys/:id",
         element: <UpdateToy />,
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/toy-details/${params.id}`),
+          fetch(
+            `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
+          ),
       },
     ],
   },

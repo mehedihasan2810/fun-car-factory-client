@@ -1,7 +1,7 @@
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="center-container">
+    <div data-aos="fade-up" className="center-container">
       <div className="footer">
         <div className="top">
           <div className="item">

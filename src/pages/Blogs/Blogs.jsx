@@ -1,5 +1,7 @@
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import "./Blogs.css";
 const Blogs = () => {
+  useTitlePerPage('Blogs')
   return (
     <div className="blog-container">
       <h2 className="blogs-title">Blogs</h2>

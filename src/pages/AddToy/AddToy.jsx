@@ -1,7 +1,9 @@
 import { toast } from "react-toastify";
 import "./AddToy.css";
 import { useAuthContext } from "../../contexts/AuthProvider";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const AddToy = () => {
+  useTitlePerPage('Add Toy')
   const { currentUser } = useAuthContext();
   console.log(currentUser.email);
 
@@ -12,7 +14,7 @@ const AddToy = () => {
 
     console.log(toyInfo);
 
-    fetch("http://localhost:4000/addToy", {
+    fetch("https://fun-car-factory-server.vercel.app/addToy", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

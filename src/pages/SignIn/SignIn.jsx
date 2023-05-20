@@ -4,7 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const SignIn = () => {
+  useTitlePerPage('Sign In')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignInLoading, setIsSignInLoading] = useState(false);

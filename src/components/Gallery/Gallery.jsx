@@ -1,7 +1,11 @@
+
 import "./Gallery.css";
+
+
+
 const Gallery = () => {
   return (
-    <section className="gallery-container">
+    <section data-aos="fade-up" className="gallery-container">
       <h2>Gallery</h2>
 
       <div className="gallery">

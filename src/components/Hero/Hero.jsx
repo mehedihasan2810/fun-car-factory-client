@@ -1,7 +1,7 @@
 import "./Hero.css";
 const Hero = () => {
   return (
-      <section className="hero-container">
+      <section data-aos="fade-up" className="hero-container">
         <div className="left">
           <h1>
             Get The Best Toys <br/> For Your Kids

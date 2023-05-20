@@ -1,7 +1,7 @@
 import "./NewArival.css";
 const NewArival = () => {
   return (
-    <div className="arival-container">
+    <div data-aos="fade-up" className="arival-container">
       <h2 className="arival-title">New Arrival</h2>
       <div className="arival">
         <div className="small-container">

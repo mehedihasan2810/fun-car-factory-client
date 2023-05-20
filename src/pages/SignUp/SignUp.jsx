@@ -4,7 +4,9 @@ import GoogleButton from "react-google-button";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { useState } from "react";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const SignUp = () => {
+  useTitlePerPage('Sign Up')
   const [name, setName] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
   const [email, setEmail] = useState("");

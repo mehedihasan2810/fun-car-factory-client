@@ -1,7 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import "./ToyDetails.css";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const ToyDetails = () => {
+  useTitlePerPage('Toy Details')
   const toy = useLoaderData();
   console.log(toy);
   return (

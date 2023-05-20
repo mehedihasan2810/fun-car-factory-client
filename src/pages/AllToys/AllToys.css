@@ -59,4 +59,10 @@ td {
   border-left: none;
   background-color: rgba(0, 0, 255, 0.735);
   color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-container button:hover {
+  background-color: blue;
 }

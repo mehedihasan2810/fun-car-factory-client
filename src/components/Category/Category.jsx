@@ -10,7 +10,7 @@ const Category = () => {
   useEffect(() => {
     const abortController = new AbortController();
     const fetchData = () => {
-      fetch("http://localhost:4000/allToys", {
+      fetch("https://fun-car-factory-server.vercel.app/allToys", {
         signal: abortController.signal,
       })
         .then((res) => res.json())
@@ -30,7 +30,7 @@ const Category = () => {
   }, []);
 
   return (
-    <section className="category-container">
+    <section data-aos="fade-up" className="category-container">
       <h2 className="category-title">Category</h2>
       <Tabs>
         <TabList>

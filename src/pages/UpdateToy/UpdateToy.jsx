@@ -1,10 +1,9 @@
 import { toast } from "react-toastify";
 import "./UpdateToy.css";
-import { useAuthContext } from "../../contexts/AuthProvider";
 import { useLoaderData, useParams } from "react-router-dom";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const UpdateToy = () => {
-  const { currentUser } = useAuthContext();
-  console.log(currentUser.email);
+  useTitlePerPage("Update Toy");
 
   const params = useParams();
   console.log(params);
@@ -19,7 +18,7 @@ const UpdateToy = () => {
 
     console.log(toyInfo);
 
-    fetch(`http://localhost:4000/update/${params.id}`, {
+    fetch(`https://fun-car-factory-server.vercel.app/update/${params.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -51,9 +50,8 @@ const UpdateToy = () => {
 
   return (
     <div className="center-container">
-         
       <div className="update-toy-container ">
-      <h2 className="update-title">Update Toy</h2>
+        <h2 className="update-title">Update Toy</h2>
         <form onSubmit={handleUpdate}>
           <div className="row">
             <div className="control">

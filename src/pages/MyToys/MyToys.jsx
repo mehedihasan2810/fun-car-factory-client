@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const MyToys = () => {
+  useTitlePerPage('My Toys')
   const [myToys, setMyToys] = useState([]);
   const [sort, setSort] = useState("default");
   const { currentUser } = useAuthContext();
@@ -24,7 +26,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/myToys/${id}`, {
+        fetch(`https://fun-car-factory-server.vercel.app/myToys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -54,7 +56,7 @@ const MyToys = () => {
     const fetchData = () => {
       setIsLoading(true);
       fetch(
-        `http://localhost:4000/myToys?email=${currentUser?.email}&sort=${sort}`,
+        `https://fun-car-factory-server.vercel.app/myToys?email=${currentUser?.email}&sort=${sort}`,
         {
           signal: abortController.signal,
         }
