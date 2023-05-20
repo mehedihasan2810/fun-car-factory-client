@@ -1,3 +1,4 @@
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import "./Footer.css";
 const Footer = () => {
   return (
@@ -31,16 +32,25 @@ const Footer = () => {
           </div>
           <div className="item">
             <h1>Contact</h1>
-            <span>
+            <p>Phone: O172*******</p>
+            <p>12 Avenue, Dhaka, Bangladesh</p>
+            <div className="social">
+              <FaFacebook/>
+              <FaInstagram/>
+              <FaLinkedin/>
+              <FaTwitter/>
+            </div>
+            {/* <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
               minus dolore tempora beatae modi sequi eligendi delectus, ea sed
               voluptate itaque similique quos doloremque quam aut numquam
               maxime. Officiis, atque.
-            </span>
+            </span> */}
           </div>
         </div>
         <div className="bottom">
           <div className="left">
+          <img src="/assets/logo.png" alt="" />
             <span className="logo">FunCarFactory</span>
             <span className="copyright">
               Copyright 2023. All Rights Reserved

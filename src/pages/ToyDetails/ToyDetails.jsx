@@ -5,7 +5,6 @@ import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const ToyDetails = () => {
   useTitlePerPage('Toy Details')
   const toy = useLoaderData();
-  console.log(toy);
   return (
     <div className="center-container">
       <div className="details-container">

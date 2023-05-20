@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const MyToys = () => {
-  useTitlePerPage('My Toys')
+  useTitlePerPage("My Toys");
   const [myToys, setMyToys] = useState([]);
   const [sort, setSort] = useState("default");
   const { currentUser } = useAuthContext();
@@ -26,13 +26,11 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://fun-car-factory-server.vercel.app/myToys/${id}`, {
+        fetch(`https://fun-car-factory-server.vercel.app/my-toys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
-
             const filteredToys = myToys.filter((toy) => toy._id !== id);
             setMyToys(filteredToys);
 
@@ -56,7 +54,7 @@ const MyToys = () => {
     const fetchData = () => {
       setIsLoading(true);
       fetch(
-        `https://fun-car-factory-server.vercel.app/myToys?email=${currentUser?.email}&sort=${sort}`,
+        `https://fun-car-factory-server.vercel.app/my-toys?email=${currentUser?.email}&sort=${sort}`,
         {
           signal: abortController.signal,
         }

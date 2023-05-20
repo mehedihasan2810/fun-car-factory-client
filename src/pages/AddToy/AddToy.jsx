@@ -3,18 +3,15 @@ import "./AddToy.css";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const AddToy = () => {
-  useTitlePerPage('Add Toy')
+  useTitlePerPage("Add Toy");
   const { currentUser } = useAuthContext();
-  console.log(currentUser.email);
 
   const handleAddToy = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const toyInfo = Object.fromEntries(formData);
 
-    console.log(toyInfo);
-
-    fetch("https://fun-car-factory-server.vercel.app/addToy", {
+    fetch("https://fun-car-factory-server.vercel.app/add-toy", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,8 +20,6 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         // *show toast
         toast.success("Succesfully Added", {
           position: toast.POSITION.TOP_CENTER,

@@ -4,18 +4,20 @@ import "./Category.css";
 import "react-tabs/style/react-tabs.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useAuthContext } from "../../contexts/AuthProvider";
 const Category = () => {
   const [allToys, setAllToys] = useState(null);
+  const { currentUser } = useAuthContext();
 
   useEffect(() => {
     const abortController = new AbortController();
     const fetchData = () => {
-      fetch("https://fun-car-factory-server.vercel.app/allToys", {
+      fetch("https://fun-car-factory-server.vercel.app/all-toys", {
         signal: abortController.signal,
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setAllToys(data);
         })
         .catch((error) => {
@@ -61,7 +63,20 @@ const Category = () => {
                             {toy.rating}/5(100)
                           </div>
                           <Link to={`/toy-details/${toy._id}`}>
-                            <button className="btn-primary">
+                            <button
+                              onClick={() => {
+                                if (currentUser) return;
+                                // *show toast
+                                toast.warn(
+                                  "You have to log in first to view details!",
+                                  {
+                                    position: toast.POSITION.TOP_CENTER,
+                                    autoClose: 2000,
+                                  }
+                                );
+                              }}
+                              className="btn-primary"
+                            >
                               View Details
                             </button>
                           </Link>
@@ -95,7 +110,20 @@ const Category = () => {
                             {toy.rating}/5(100)
                           </div>
                           <Link to={`/toy-details/${toy._id}`}>
-                            <button className="btn-primary">
+                            <button
+                              onClick={() => {
+                                if (currentUser) return;
+                                // *show toast
+                                toast.warn(
+                                  "You have to log in first to view details!",
+                                  {
+                                    position: toast.POSITION.TOP_CENTER,
+                                    autoClose: 2000,
+                                  }
+                                );
+                              }}
+                              className="btn-primary"
+                            >
                               View Details
                             </button>
                           </Link>
@@ -129,7 +157,20 @@ const Category = () => {
                             {toy.rating}/5(100)
                           </div>
                           <Link to={`/toy-details/${toy._id}`}>
-                            <button className="btn-primary">
+                            <button
+                              onClick={() => {
+                                if (currentUser) return;
+                                // *show toast
+                                toast.warn(
+                                  "You have to log in first to view details!",
+                                  {
+                                    position: toast.POSITION.TOP_CENTER,
+                                    autoClose: 2000,
+                                  }
+                                );
+                              }}
+                              className="btn-primary"
+                            >
                               View Details
                             </button>
                           </Link>

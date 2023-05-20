@@ -5,25 +5,24 @@
   place-items: center;
 }
 
-.error-page-container h1 {
-  color: red;
+.error-page-container h2 {
+  color: rgba(243, 9, 9, 0.75);
   text-align: center;
   margin-bottom: 20px;
+  font-weight: 500;
 }
 
-.error-page-container p {
-  margin-bottom: 20px;
-  color: red;
-}
+
 
 .error-page-container .link {
   display: block;
   margin-top: 20px;
   text-align: center;
-  color: #0070f3;
+  color: rgb(123, 123, 49);
   text-decoration: underline;
 }
 
 .error-page-container img {
-  width: 400px;
+  width: 600px;
+  border-radius: 8px;
 }

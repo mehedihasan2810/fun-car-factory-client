@@ -2,12 +2,14 @@ import { Link, useLoaderData } from "react-router-dom";
 import "./AllToys.css";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
+import { toast } from "react-toastify";
+import { useAuthContext } from "../../contexts/AuthProvider";
 const AllToys = () => {
-  useTitlePerPage('All Toys')
+  const { currentUser } = useAuthContext();
+  useTitlePerPage("All Toys");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const allToys = useLoaderData();
-  console.log(allToys);
 
   const handleSearch = () => {
     fetch(`https://fun-car-factory-server.vercel.app/search?term=${searchTerm}`)
@@ -16,7 +18,6 @@ const AllToys = () => {
       })
       .then((data) => {
         setSearchResults(data);
-        console.log(data);
       })
       .catch((error) => {
         console.error("Error performing search:", error);
@@ -59,7 +60,22 @@ const AllToys = () => {
                   <td>{toy.quantity}</td>
                   <td>
                     <Link to={`/toy-details/${toy._id}`}>
-                      <button className="btn-primary">View Details</button>
+                      <button
+                        onClick={() => {
+                          if (currentUser) return;
+                          // *show toast
+                          toast.warn(
+                            "You have to log in first to view details!",
+                            {
+                              position: toast.POSITION.TOP_CENTER,
+                              autoClose: 2000,
+                            }
+                          );
+                        }}
+                        className="btn-primary"
+                      >
+                        View Details
+                      </button>
                     </Link>
                   </td>
                 </tr>

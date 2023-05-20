@@ -6,17 +6,14 @@ const UpdateToy = () => {
   useTitlePerPage("Update Toy");
 
   const params = useParams();
-  console.log(params);
 
   const toy = useLoaderData();
-  console.log(toy);
 
   const handleUpdate = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const toyInfo = Object.fromEntries(formData);
 
-    console.log(toyInfo);
 
     fetch(`https://fun-car-factory-server.vercel.app/update/${params.id}`, {
       method: "PUT",
@@ -27,7 +24,6 @@ const UpdateToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
 
         // *show toast
         toast.success("Succesfully Updated!", {

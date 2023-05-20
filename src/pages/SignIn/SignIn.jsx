@@ -21,7 +21,6 @@ const SignIn = () => {
     signIn(email, password)
       .then((userCredential) => {
         const loggedUser = userCredential.user;
-        console.log(loggedUser);
 
         // *show toast
         toast.success("Succesfully Signed In", {
@@ -51,7 +50,6 @@ const SignIn = () => {
     googleSignIn()
       .then((userCredential) => {
         const loggedUser = userCredential.user;
-        console.log(loggedUser);
 
         // *show toast
         toast.success("Succesfully Signed In", {
@@ -120,7 +118,6 @@ const SignIn = () => {
             type="light"
             className="google-btn"
           />
-          <button className="github">Sign in with Github</button>
         </div>
       </div>
     </section>
