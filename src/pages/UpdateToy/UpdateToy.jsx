@@ -1,10 +1,10 @@
 import { toast } from "react-toastify";
 import "./UpdateToy.css";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const UpdateToy = () => {
   useTitlePerPage("Update Toy");
-
+  const navigate = useNavigate();
   const params = useParams();
 
   const toy = useLoaderData();
@@ -13,7 +13,6 @@ const UpdateToy = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const toyInfo = Object.fromEntries(formData);
-
 
     fetch(`https://fun-car-factory-server.vercel.app/update/${params.id}`, {
       method: "PUT",
@@ -24,12 +23,13 @@ const UpdateToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-
         // *show toast
         toast.success("Succesfully Updated!", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 2000,
         });
+
+        navigate("/my-toys");
 
         // e.target.reset();
       })

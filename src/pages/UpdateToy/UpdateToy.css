@@ -2,8 +2,8 @@
   margin: 100px 0;
   padding: 1.5rem;
   border-radius: 4px;
-  background-color: #9fc3dc11;
-  border: 1px solid #034e846d;
+  background-color: rgba(56, 56, 174, 0.047);
+  border: 1px solid rgba(0, 0, 255, 0.371);
 }
 .update-toy-container .control {
   display: flex;
@@ -20,21 +20,21 @@
 .update-toy-container label {
   font-size: 1.3rem;
   color: gray;
-  color: #034f84;
+  color: rgba(0, 0, 255, 0.758);
   margin-right: 0.6rem;
 }
 
 .update-toy-container input {
   padding: 0.7rem 1rem;
   font-size: 1.1rem;
-  border: 1px solid #0071f32e;
+  border: 1px solid rgba(0, 0, 255, 0.24);
   border-radius: 4px;
   flex-grow: 1;
   color: rgb(61, 57, 57);
 }
 
 .update-toy-container input:focus {
-  outline: 1px solid #034f84;
+  outline: 1px solid rgba(0, 0, 255, 0.758);
 }
 
 .update-toy-container input::placeholder {
@@ -46,36 +46,34 @@
   padding: 0.6rem;
   font-size: 1rem;
   color: rgb(61, 57, 57);
-  border: 1px solid #0071f32e;
+  border: 1px solid rgba(0, 0, 255, 0.24);
   border-radius: 4px;
 }
 
 .update-toy-container textarea:focus {
-  outline: 1px solid #034f84;
+  outline: 1px solid rgba(0, 0, 255, 0.758);
 }
 
 .update-toy-container .btn-primary {
   width: 100%;
   padding: 1.2rem 0;
-  background: #034f84;
+  background: rgba(0, 0, 255, 0.758);
   color: #fff;
   border: none;
   font-size: 1.2rem;
 }
 
 .update-toy-container .btn-primary:hover {
-  box-shadow: 0 0 5px #034f84;
-  background-color: #034e84e8;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.758);
+  background-color: rgba(0, 0, 255, 0.87);
 }
 
-.update-toy-container .update-title{
-    width: fit-content;
-    padding: 0.1rem 1rem;
-    margin: 0 auto;
-    margin-bottom: 3rem;
-    color: #034f84;
-    font-size: 2.5rem;
-    border-bottom: 2px dotted #034f84;
+.update-toy-container .update-title {
+  width: fit-content;
+  padding: 0.1rem 1rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  color: rgba(0, 0, 255, 0.758);
+  font-size: 2.5rem;
+  border-bottom: 2px dotted rgba(0, 0, 255, 0.638);
 }
-
-
