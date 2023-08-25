@@ -7,7 +7,7 @@ import './Root.css'
 const Root = () => {
   return (
     <main>
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
       <Footer />
       <ToastContainer />

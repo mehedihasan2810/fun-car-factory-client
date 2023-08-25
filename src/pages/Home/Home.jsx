@@ -11,13 +11,15 @@ AOS.init();
 const Home = () => {
   useTitlePerPage("Home");
   return (
-    <div className="center-container">
+    // <div className="center-container">
+    <>
       <Hero />
       <Gallery />
       <Category />
       <Slider />
       <NewArival />
-    </div>
+      </>
+    // </div>
   );
 };
 
