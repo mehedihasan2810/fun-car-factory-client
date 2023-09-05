@@ -22,13 +22,13 @@
   pointer-events: none;
 }
 
-.texture {
+/* .texture {
   background-image: url("../../public/assets/texture-bg2.avif");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
-.dark-texture-layer {
+/* .dark-texture-layer {
   background-color: rgba(0, 0, 0, 0.6);
-}
+} */
