@@ -1,48 +1,66 @@
-.arival-container {
-  margin: 150px 0;
+@font-face {
+  font-family: "Brice Bold";
+  src: url("../../../public/fonts/Brice/Brice-Bold.otf");
+  font-weight: bold;
 }
 
-.arival {
-  /* position: relative; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
+.new-arrival-container {
+  width: 100vw;
+  height: 100vh;
+  margin-block-start: clamp(5rem, 10.5vw, 12.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.new-arrival-container video {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius:2rem;
 }
 
-.arival .small-container {
-  width: 300px;
-}
-.arival .big-container {
-  /* width: 800px; */
-}
-
-.arival .img-small {
+.new-arrival-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  transform: translate(20px);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.arival .img-big {
-  max-width: 100%;
-  height: auto;
+.new-arrival-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  object-fit: cover;
 }
 
-.arival-container .arival-title {
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  color: #034f84;
+.new-arrival-text-container h2{
+    color: #fff;
+    font-size: clamp(2.5rem, 8.3vw, 10rem);
+    font-family: "Brice Bold";
+    width: max-content;
+    text-align: center;
 }
 
-@media (max-width: 768px) {
-  .arival-container {
-    margin: 80px 0;
+@supports (-webkit-text-stroke: 1px #fff) {
+    .new-arrival-text-container h2 {
+      -webkit-text-stroke: 1px #fff;
+      -webkit-text-fill-color: transparent;
+    }
   }
-  .arival {
+
+@media (min-aspect-ratio: 16/9) {
+  video {
+    width: 100%;
     height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  video {
+    width: auto;
+    height: 100%;
+    object-position: 80% 0;
   }
 }

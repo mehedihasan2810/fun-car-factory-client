@@ -57,9 +57,9 @@
   /* font-family: 'Work Sans', sans-serif; */
 }
 
-.hero-info a{
+.hero-info a {
   display: inline-block;
- margin-block-start: 1rem;
+  margin-block-start: 1rem;
 }
 
 .hero-info button {
