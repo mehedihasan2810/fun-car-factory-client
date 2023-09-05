@@ -1,18 +1,58 @@
+import { useLayoutEffect, useRef } from "react";
 import "./NewArival.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const NewArival = () => {
+  const newArrivalConRef = useRef();
+  const videoRef = useRef();
+
+  useLayoutEffect(() => {
+    const matchMedia = gsap.matchMedia();
+    matchMedia.add(
+      {
+        isDesktop: "(min-width: 800px)",
+        isMobile: "(max-width: 799px)",
+        reduceMotion: "(prefers-reduced-motion: reduce)",
+      },
+      () => {
+        ScrollTrigger.create({
+          trigger: videoRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          onToggle: (s) => {
+            if (!s.isActive) {
+              videoRef.current.pause();
+            } else {
+              videoRef.current.play();
+            }
+          },
+        });
+      },
+      newArrivalConRef.current
+    );
+  }, []);
+
   return (
-   <section className="new-arrival-container">
-    <video src="../../../public/videos/kids-playing.mp4" autoPlay loop muted className="new-arrival-video">
+    <section ref={newArrivalConRef} className="new-arrival-container">
+      <video
+        ref={videoRef}
+        src="../../../public/videos/kids-playing.mp4"
+        autoPlay
+        loop
+        muted
+        className="new-arrival-video"
+      ></video>
 
-    </video>
+      <div className="new-arrival-overlay"></div>
 
-    <div className="new-arrival-overlay"></div>
-
-    <div className="new-arrival-text-container">
-      <h2>Putting A Smile <br /> On Kid&#39;s Faces</h2>
-    </div>
-
-   </section>
+      <div className="new-arrival-text-container">
+        <h2>
+          Putting A Smile <br /> On Kid&#39;s Faces
+        </h2>
+      </div>
+    </section>
   );
 };
 
