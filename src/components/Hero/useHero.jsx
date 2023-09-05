@@ -1,5 +1,8 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const useHero = () => {
   const heroConRef = useRef();
@@ -26,7 +29,7 @@ const useHero = () => {
           x: (i) => i * boxWidth,
         });
 
-        gsap.timeline().to(sliederItems, {
+        const tl1 = gsap.timeline().to(sliederItems, {
           x: dirFromLeft,
           modifiers: {
             x: (x) => mod(parseFloat(x)) + "px",
@@ -44,7 +47,7 @@ const useHero = () => {
         gsap.set(sliederItems2, {
           x: (i) => -1 * i * boxWidth,
         });
-        gsap.timeline().to(sliederItems2, {
+        const tl2 = gsap.timeline().to(sliederItems2, {
           x: dirFromRight,
           modifiers: {
             x: (x) => mod2(parseFloat(x)) + "px",
@@ -54,14 +57,30 @@ const useHero = () => {
           repeat: -1,
         });
         // slider left to right ends
+
+        //  paused hero infinite slider when not in viewport start
+        ScrollTrigger.create({
+          trigger: heroConRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          onToggle: (s) => {
+            if (!s.isActive) {
+              tl1.pause();
+              tl2.pause();
+            } else {
+              tl1.play();
+              tl2.play();
+            }
+          },
+        });
+        //  paused hero infinite slider when not in viewport end
       },
       heroConRef.current
     );
 
-
     return () => {
-        matchMedia.revert();
-    }
+      matchMedia.revert();
+    };
   }, []);
 
   return {
