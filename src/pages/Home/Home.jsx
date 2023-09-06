@@ -6,6 +6,7 @@ import NewArival from "../../components/NewArival/NewArival";
 // import Slider from "../../components/Slider/Slider";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import "aos/dist/aos.css";
+import NewCollention from "../../components/NewCollention/NewCollention";
 AOS.init();
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
     <>
       <Hero />
       {/* <Gallery /> */}
+      <NewCollention/>
       <NewArival />
       {/* <Category />
       <Slider /> */}

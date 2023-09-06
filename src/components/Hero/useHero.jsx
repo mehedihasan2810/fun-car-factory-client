@@ -19,7 +19,7 @@ const useHero = () => {
       () => {
         const boxWidth = window.innerHeight + 100,
           totalWidth = boxWidth * 6, // * n of boxes + diff textBox
-          time = 50;
+          time = 70;
 
         // slider right to left starts
         const sliederItems = document.querySelectorAll(".hero-slider > div"),
@@ -74,6 +74,23 @@ const useHero = () => {
           },
         });
         //  paused hero infinite slider when not in viewport end
+
+
+        // gsap.fromTo(
+        //   ['.hero-slider', '.hero-slider-2'], 
+        //   {yPercent: -50}, 
+        //   {
+        //   yPercent: -40,
+        //   scrollTrigger: {
+        //    trigger: heroConRef.current,
+        //    start: 'top -1px',
+        //    end: 'center top',
+        //    scrub: true,
+        //    markers: true
+        //   }
+        // })
+
+
       },
       heroConRef.current
     );

@@ -11,8 +11,8 @@ const Hero = () => {
           <h1>
             Get The Best Toys <br /> For Your Kids
           </h1>
-          <Link to="#">
-            <button>Get Now</button>
+          <Link to="#" className="btn-primary"> 
+            Get Now
           </Link>
         </div>
       </div>

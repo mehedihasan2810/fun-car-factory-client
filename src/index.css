@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Brice regular";
+  src: url("/fonts/Brice/Brice-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Brice Bold";
+  src: url("/fonts/Brice/Brice-Bold.otf");
+  font-weight: bold;
+}
+
 /* reset */
 *,
 *::after,
@@ -8,9 +20,10 @@
 }
 
 body {
-  line-height: 1.5;
+  /* line-height: 1.5; */
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  font-family: "Brice regular";
 }
 img,
 picture,
@@ -43,11 +56,11 @@ h6 {
 ul {
   list-style: none;
 }
-body {
+/* body {
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-}
+} */
 a {
   text-decoration: none;
   color: inherit;
@@ -77,13 +90,13 @@ html.lenis {
 
 /* lenis recommended styles end */
 
-.center-container {
+/* .center-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 0.6rem;
-}
+} */
 
-.btn-primary {
+/* .btn-primary {
   background-color: transparent;
   font-size: 1.1rem;
   border: 1px solid #000;
@@ -91,11 +104,29 @@ html.lenis {
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s;
+} */
+
+/* .btn-primary:hover {
+  background-color: #000;
+  color: #fff;
+} */
+
+.btn-primary {
+  display: inline-block;
+  color: #fff;
+  font-size: clamp(1.1rem, 1.2vw, 1.5rem);
+  padding-block: clamp(0.5rem, 0.7vw, 0.7rem);
+  padding-inline: 1.5rem;
+  background-color: transparent;
+  border: 1px solid #fff;
+  box-shadow: -4px 4px 0px #fff;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: box-shadow 300ms linear;
 }
 
 .btn-primary:hover {
-  background-color: #000;
-  color: #fff;
+  box-shadow: -0px 0px 0px #fff;
 }
 
 .loader {
