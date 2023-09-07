@@ -1,8 +1,8 @@
-* {
+/* * {
   color: #fff;
-}
+} */
 
-.fixed-background {
+/* .fixed-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
+} */
 
 /* .texture {
   background-image: url("../../public/assets/texture-bg2.avif");
