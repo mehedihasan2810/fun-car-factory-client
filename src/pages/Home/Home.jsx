@@ -1,5 +1,5 @@
 import AOS from "aos";
-// import Category from "../../components/Category/Category";
+import Category from "../../components/Category/Category";
 // import Gallery from "../../components/Gallery/Gallery";
 import Hero from "../../components/Hero/Hero";
 import NewArival from "../../components/NewArival/NewArival";
@@ -7,6 +7,7 @@ import NewArival from "../../components/NewArival/NewArival";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import "aos/dist/aos.css";
 import NewCollention from "../../components/NewCollention/NewCollention";
+// import Carousel from "../../components/Carousel/Carousel";
 AOS.init();
 
 const Home = () => {
@@ -15,11 +16,12 @@ const Home = () => {
     // <div className="center-container">
     <>
       <Hero />
-      {/* <Gallery /> */}
       <NewCollention/>
       <NewArival />
-      {/* <Category />
-      <Slider /> */}
+      <Category />
+      {/* <Gallery /> */}
+      {/* <Carousel/> */}
+      {/* <Slider /> */}
     </>
     // </div>
   );

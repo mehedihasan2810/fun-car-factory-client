@@ -38,7 +38,7 @@ const NewArival = () => {
     <section ref={newArrivalConRef} className="new-arrival-container">
       <video
         ref={videoRef}
-        src="../../../public/videos/kids-playing.mp4"
+        src="/videos/kids-playing.mp4"
         autoPlay
         loop
         muted
