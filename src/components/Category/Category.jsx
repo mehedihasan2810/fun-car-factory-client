@@ -2,7 +2,8 @@ import { useLayoutEffect, useRef } from "react";
 import "./Category.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { Draggable } from "gsap/Draggable";
+gsap.registerPlugin(ScrollTrigger, Draggable);
 
 const carouselData = [
   {
@@ -93,21 +94,75 @@ const Category = () => {
 
     gsap.set(".carousel", {
       translateZ: -tz,
-      rotateX: 10,
-      rotateY: 180,
+      rotateY: 0,
     });
 
     gsap.to(".carousel", {
-      rotateY: 0,
-      rotateX: 0,
+      rotateY: 160,
       scrollTrigger: {
-        trigger: ".category-container",
+        trigger: ".scene",
         start: "top bottom",
-        end: "top top",
+        end: "bottom bottom",
         scrub: true,
       },
     });
   }, []);
+
+  useLayoutEffect(() => {
+    let isDown = false;
+    let startX;
+    let rotateY = 0;
+    const carousel = document.querySelector(".scene");
+
+    const end = () => {
+      isDown = false;
+    };
+
+    const start = (e) => {
+      isDown = true;
+      rotateY = gsap.getProperty(".carousel", "rotateY");
+      startX = e.pageX || e.touches[0].pageX;
+      gsap.set(".carousel", {
+        rotateY: rotateY,
+      });
+    };
+
+    const move = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+
+      const x = e.pageX || e.touches[0].pageX;
+      const dist = Math.round((x - startX) / 10) + rotateY;
+
+      gsap.to(".carousel", {
+        rotateY: dist,
+        ease: "power1.out",
+      });
+    };
+
+    carousel.addEventListener("mousedown", start);
+    carousel.addEventListener("touchstart", start);
+
+    carousel.addEventListener("mousemove", move);
+    carousel.addEventListener("touchmove", move);
+
+    carousel.addEventListener("mouseleave", end);
+    carousel.addEventListener("mouseup", end);
+    carousel.addEventListener("touchend", end);
+
+    return () => {
+      carousel.removeEventListener("mousedown", start);
+      carousel.removeEventListener("touchstart", start);
+
+      carousel.removeEventListener("mousemove", move);
+      carousel.removeEventListener("touchmove", move);
+
+      carousel.removeEventListener("mouseleave", end);
+      carousel.removeEventListener("mouseup", end);
+      carousel.removeEventListener("touchend", end);
+    };
+  }, []);
+
   return (
     <div className="category-container">
       <div className="category-top">
