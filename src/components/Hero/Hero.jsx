@@ -7,6 +7,7 @@ const Hero = () => {
   return (
     <section ref={heroConRef} className="hero-container">
       <div className="hero-layer-contaner">
+        <img className="mobile-hero-img" src="/assets/banner-photo.png"></img>
         <div className="hero-info">
           <h1>
             Get The Best Toys <br /> For Your Kids

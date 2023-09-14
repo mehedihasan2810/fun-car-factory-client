@@ -163,21 +163,24 @@ const Category = () => {
     };
   }, []);
 
+  const handleRotateCarousel = (rotateY) => {
+    gsap.to(".carousel", {
+      rotateY,
+      duration: 1.5,
+      ease: "power1.out",
+    });
+  };
+
   return (
-    <div className="category-container">
+    <section className="category-container">
       <div className="category-top">
         <div className="category-title">Categories</div>
         <div className="category-tab-btns">
           {tabBtns.map((item) => (
             <button
               key={item.id}
-              onPointerEnter={() => {
-                gsap.to(".carousel", {
-                  rotateY: item.rotateY,
-                  duration: 1.5,
-                  ease: "power1.out",
-                });
-              }}
+              onTouchStart={() => handleRotateCarousel(item.rotateY)}
+              onPointerEnter={() => handleRotateCarousel(item.rotateY)}
             >
               {item.content}
             </button>
@@ -195,7 +198,7 @@ const Category = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
