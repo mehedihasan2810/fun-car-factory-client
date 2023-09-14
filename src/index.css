@@ -58,11 +58,7 @@ h6 {
 ul {
   list-style: none;
 }
-/* body {
-  font-family: "Poppins", sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-} */
+
 a {
   text-decoration: none;
   color: inherit;
@@ -92,27 +88,6 @@ html.lenis {
 
 /* lenis recommended styles end */
 
-/* .center-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 0.6rem;
-} */
-
-/* .btn-primary {
-  background-color: transparent;
-  font-size: 1.1rem;
-  border: 1px solid #000;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s;
-} */
-
-/* .btn-primary:hover {
-  background-color: #000;
-  color: #fff;
-} */
-
 .btn-primary {
   display: inline-block;
   color: #fff;
@@ -121,10 +96,10 @@ html.lenis {
   padding-inline: 1.5rem;
   background-color: transparent;
   border: 1px solid #fff;
-  box-shadow: -4px 4px 0px #fff;
+  box-shadow: -3px 3px 0px #fff;
   border-radius: 9999px;
   cursor: pointer;
-  transition: box-shadow 300ms linear;
+  transition: box-shadow 100ms linear;
 }
 
 .btn-primary:hover {

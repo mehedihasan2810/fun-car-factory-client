@@ -179,7 +179,7 @@ const Category = () => {
           {tabBtns.map((item) => (
             <button
               key={item.id}
-              onTouchStart={() => handleRotateCarousel(item.rotateY)}
+              onClick={() => handleRotateCarousel(item.rotateY)}
               onPointerEnter={() => handleRotateCarousel(item.rotateY)}
             >
               {item.content}

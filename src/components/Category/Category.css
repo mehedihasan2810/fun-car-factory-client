@@ -1,5 +1,5 @@
 .category-container {
-  margin-block: clamp(20px, 10.5vw, 200px);
+  margin-block: clamp(80px, 10.5vw, 200px);
   display: flex;
   flex-direction: column;
   justify-content: center;

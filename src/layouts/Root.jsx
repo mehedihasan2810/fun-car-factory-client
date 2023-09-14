@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-// import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import './Root.css'
@@ -7,7 +7,7 @@ import './Root.css'
 const Root = () => {
   return (
     <main>
-      {/* <Navbar /> */}
+      <Navbar />
       <Outlet />
       <Footer />
       <ToastContainer />

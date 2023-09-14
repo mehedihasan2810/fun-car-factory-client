@@ -11,16 +11,16 @@ const NewCollention = () => {
 
   useLayoutEffect(() => {
     if (ScrollTrigger.isTouch !== 1) {
-      // gsap.fromTo(
-      //   newCollentionRef.current,
-      //   { yPercent: -25 },
-      //   {
-      //     yPercent: 25,
-      //     scrollTrigger: {
-      //       scrub: 0.5,
-      //     },
-      //   }
-      // );
+      gsap.fromTo(
+        newCollentionRef.current,
+        { yPercent: -25 },
+        {
+          yPercent: 25,
+          scrollTrigger: {
+            scrub: 0.5,
+          },
+        }
+      );
     }
   }, []);
 

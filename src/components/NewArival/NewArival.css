@@ -1,7 +1,7 @@
 .new-arrival-container {
   width: 100vw;
   height: 100vh;
-  margin-block-start: clamp(50px, 10.5vw, 200px);
+  margin-block-start: clamp(80px, 10.5vw, 200px);
   position: relative;
   overflow: hidden;
   padding-inline: 2rem;
