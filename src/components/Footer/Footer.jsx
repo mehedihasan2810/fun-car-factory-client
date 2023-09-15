@@ -2,8 +2,8 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div data-aos="fade-up" className="center-container">
-      <div className="footer">
+    <div className="footer-container">
+      <footer className="footer">
         <div className="top">
           <div className="item">
             <h1>Categories</h1>
@@ -60,7 +60,7 @@ const Footer = () => {
         <img src="./images/payment-gateway.png" alt="payment gateway" />
       </div> */}
         </div>
-      </div>
+      </footer>
     </div>
   );
 };

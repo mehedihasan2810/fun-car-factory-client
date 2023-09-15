@@ -10,18 +10,27 @@ const NewCollention = () => {
   const newCollentionRef = useRef();
 
   useLayoutEffect(() => {
-    if (ScrollTrigger.isTouch !== 1) {
-      gsap.fromTo(
-        newCollentionRef.current,
-        { yPercent: -25 },
-        {
-          yPercent: 25,
-          scrollTrigger: {
-            scrub: 0.5,
-          },
-        }
-      );
-    }
+    const matchMedia = gsap.matchMedia();
+    matchMedia.add(
+      "(min-width: 800px)",
+      () => {
+        gsap.fromTo(
+          newCollentionRef.current,
+          { yPercent: -25 },
+          {
+            yPercent: 25,
+            scrollTrigger: {
+              scrub: 0.5,
+            },
+          }
+        );
+      },
+      newCollentionRef.current
+    );
+
+    return () => {
+      matchMedia.revert();
+    };
   }, []);
 
   return (
