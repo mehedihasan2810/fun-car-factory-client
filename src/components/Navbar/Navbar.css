@@ -10,11 +10,11 @@
   transition: transform 300ms ease-in;
 }
 
-@supports (backdrop-filter: blur(20px)) {
+@supports (backdrop-filter: blur(10px)) {
   .nav-container {
     background-color: unset;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 }
 
@@ -22,7 +22,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0.8rem;
+  padding: 0.8rem 0.8rem;
   width: min(100vw, 1600px);
   margin-inline: auto;
 }

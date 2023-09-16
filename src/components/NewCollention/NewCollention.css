@@ -4,7 +4,7 @@
   padding: clamp(1.5rem, 4.2vw, 5rem);
   border-radius: 2rem;
   margin-inline: auto;
-  margin-block-start: 50px;
+  margin-block-start: 100px;
   background-color: #c4dfdf;
   position: relative;
   isolation: isolate;

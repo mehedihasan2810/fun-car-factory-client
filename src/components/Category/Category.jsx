@@ -174,7 +174,7 @@ const Category = () => {
   return (
     <section className="category-container">
       <div className="category-top">
-        <div className="category-title">Categories</div>
+        <div className="category-title"  data-depth="100">Categories</div>
         <div className="category-tab-btns">
           {tabBtns.map((item) => (
             <button
