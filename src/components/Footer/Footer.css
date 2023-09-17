@@ -2,8 +2,7 @@
   width: min(100vw, 1400px);
   background-color: #030712;
   border: 1px solid #1f2937;
-  padding-inline: 60px;
-  padding-block: 60px;
+  padding: 60px;
   margin-block: 0px 50px;
   margin-inline: auto;
   border-radius: 2rem;
@@ -13,6 +12,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 50px; */
 }
 .footer .item {
   flex: 1;
@@ -64,13 +66,21 @@ span {
   color: #9ca3af;
 }
 
+.footer-about-info {
+  line-height: 1.4;
+}
+
 @media (max-width: 768px) {
+  .footer {
+    margin-block: 0px 0px;
+  }
   .footer .top {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 576px) {
-  .footer .top {
-    grid-template-columns: 1fr;
+  .footer {
+    padding: 20px 10px;
+    border-radius: 1rem;
   }
 }

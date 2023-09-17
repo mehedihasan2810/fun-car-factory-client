@@ -9,7 +9,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Slider = () => {
   return (
-    <div data-aos="fade-up" className="feature-container">
+    <div className="feature-container">
       <h2 className="feature-title">Featured Toys</h2>
       <Swiper
         spaceBetween={30}

@@ -4,7 +4,6 @@ import Hero from "../../components/Hero/Hero";
 import NewArival from "../../components/NewArival/NewArival";
 // import Slider from "../../components/Slider/Slider";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
-import "aos/dist/aos.css";
 import NewCollention from "../../components/NewCollention/NewCollention";
 import { useLayoutEffect } from "react";
 import gsap from "gsap";

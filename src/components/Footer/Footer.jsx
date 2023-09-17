@@ -22,11 +22,11 @@ const Footer = () => {
         </div>
         <div className="item">
           <h6>About</h6>
-          <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde enim
-            eos vitae blanditiis neque molestias itaque sequi, voluptatem
-            voluptatum, error placeat magni? Rerum mollitia dignissimos quo
-            magnam culpa quasi maiores.
+          <span className="footer-about-info">
+            Welcome to Fun Car Factory, your hub for premium toy cars that spark
+            creativity and joy. Our diverse selection ensures endless adventure.
+            With a focus on safety and quality, we create memorable moments for
+            your family. Explore and play with us today!
           </span>
         </div>
         <div className="item">
