@@ -1,3 +1,32 @@
+.new-collection-wrapper{
+  width: 100vw;
+  /* height: 100vh; */
+  position: relative;
+  isolation: isolate;
+}
+
+.new-collection-left-gradient,
+.new-collection-right-gradient{
+position: absolute;
+width: 400px;
+height: 400px;
+border-radius: 50%;
+background-color: var(--primary-sky-400);
+filter: blur(200px);
+opacity: 0.8;
+}
+
+.new-collection-left-gradient{
+  bottom: 0;
+  left: 0;
+  transform: translate(-70%, 50%);
+}
+.new-collection-right-gradient{
+  top: 0;
+  right: 0;
+  transform: translateX(70%);
+}
+
 .new-collection-container {
   width: min(95vw, 1500px);
   max-block-size: 600px;
@@ -14,6 +43,7 @@
   gap: clamp(2rem, 6.7vw, 8rem);
   overflow: hidden;
   box-shadow: 0.8rem 0.8rem 0 #18c1c1;
+
   
 }
 

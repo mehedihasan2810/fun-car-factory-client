@@ -8,10 +8,16 @@ import NewCollention from "../../components/NewCollention/NewCollention";
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./Home.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
+// const bgColorRef = useRef();
+
+
+
+
   useTitlePerPage("Home");
 
   useLayoutEffect(() => {
@@ -24,29 +30,17 @@ const Home = () => {
       });
 
       gsap.utils.toArray(".parallax").forEach((layer) => {
-        const depth = layer.dataset.depth;
+        const speed = layer.dataset.speed;
         tl.fromTo(
           layer,
-          { yPercent: -depth, ease: "none" },
+          { yPercent: -speed, ease: "none" },
           {
-            yPercent: depth,
+            yPercent: speed,
             ease: "none",
           },
           0
         );
       });
-
-      // gsap.fromTo(
-      //   ".parallax",
-      //   { yPercent: -50, ease: "none" },
-      //   {
-      //     yPercent: 50,
-      //     ease: "none",
-      //     scrollTrigger: {
-      //       scrub: true,
-      //     },
-      //   }
-      // );
     });
 
     return () => {
@@ -54,9 +48,26 @@ const Home = () => {
     };
   }, []);
 
+  useLayoutEffect(() => {
+    // ScrollTrigger.create({
+    //   start: 0,
+    //   end: "max",
+    //   onUpdate: updateValues,
+    // });
+
+    // function updateValues() {
+    //   if (ScrollTrigger.isInViewport(".category-container")) {
+    //     bgColorRef.current.style.opacity = "1";
+    //   } else {
+    //     bgColorRef.current.style.opacity = "0";
+    //   }
+    // }
+    // updateValues();
+  }, []);
+
   return (
-    // <div className="center-container">
     <>
+      {/* <div ref={bgColorRef} className="bg-color"></div> */}
       <Hero />
       <NewCollention />
       <NewArival />
@@ -65,7 +76,6 @@ const Home = () => {
       {/* <Carousel/> */}
       {/* <Slider /> */}
     </>
-    // </div>
   );
 };
 

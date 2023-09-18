@@ -32,11 +32,11 @@ nav img {
   border-radius: 9999px;
   object-fit: contain;
 }
-nav h4 {
+/* nav h4 {
   font-weight: 500;
   font-size: 1.5rem;
   color: #fff;
-}
+} */
 nav .logo-container {
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@ nav li {
 }
 
 nav li:hover a {
-  color: #c4dfdf;
+  color: var(--primary-sky-400);
   text-decoration: underline;
 }
 
@@ -70,7 +70,7 @@ nav .profile-img {
 }
 
 nav .active {
-  color: #c4dfdf;
+  color: var(--primary-sky-400);
   text-decoration: underline;
 }
 nav .pending {

@@ -10,6 +10,34 @@
   font-weight: bold;
 }
 
+:root {
+  --base-gray-50: #f9fafb;
+  --base-gray-100: #f3f4f6;
+  --base-gray-200: #e5e7eb;
+  --base-gray-300: #d1d5db;
+  --base-gray-400: #9ca3af;
+  --base-gray-500: #6b7280;
+  --base-gray-600: #4b5563;
+  --base-gray-700: #374151;
+  --base-gray-800: #1f2937;
+  --base-gray-900: #111827;
+  --base-gray-950: #030712;
+
+  --primary-sky-50: #f0f9ff;
+  --primary-sky-100: #e0f2fe;
+  --primary-sky-200: #bae6fd;
+  --primary-sky-300: #7dd3fc;
+  --primary-sky-400: #38bdf8;
+  --primary-sky-500: #0ea5e9;
+  --primary-sky-600: #0284c7;
+  --primary-sky-700: #0369a1;
+  --primary-sky-800: #075985;
+  --primary-sky-900: #0c4a6e;
+  --primary-sky-950: #082f49;
+}
+
+
+
 /* reset */
 *,
 *::after,
@@ -20,12 +48,12 @@
 }
 
 body {
-  /* line-height: 1.5; */
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   font-family: "Brice regular";
-  background-color: #111827;
-  color: #fff;
+  color:var(--primary-sky-50);
+  background-color: var(--primary-sky-950);
+  transition: background-color 500ms;
 }
 img,
 picture,
@@ -53,6 +81,7 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+  overflow: hidden;
 }
 
 ul {

@@ -173,8 +173,12 @@ const Category = () => {
 
   return (
     <section className="category-container">
+      {/* <div className="category-left-gradient">
+        <div></div>
+        <div></div>    
+      </div> */}
       <div className="category-top">
-        <div className="category-title" data-depth="100">
+        <div className="category-title" data-speed="100">
           Categories
         </div>
         <div className="category-tab-btns">
