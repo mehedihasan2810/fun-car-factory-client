@@ -50,11 +50,11 @@ nav ul {
 
 nav .btn-primary {
   font-size: 1.1rem;
-  box-shadow: -2px 2px 0px #fff;
+  box-shadow: -2px 2px 0px  var(--deep-white-100);
 }
 
 nav li {
-  color: #fff;
+  color:  var(--deep-white-100);
 }
 
 nav li:hover a {

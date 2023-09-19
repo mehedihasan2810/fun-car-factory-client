@@ -134,6 +134,11 @@ const useHero = () => {
     };
   }, []);
 
+
+  useLayoutEffect(() => {
+  
+  }, [])
+
   return {
     heroConRef,
   };

@@ -11,6 +11,8 @@
 }
 
 :root {
+  --deep-white-100: #c4dfdf;
+
   --base-gray-50: #f9fafb;
   --base-gray-100: #f3f4f6;
   --base-gray-200: #e5e7eb;
@@ -36,8 +38,6 @@
   --primary-sky-950: #082f49;
 }
 
-
-
 /* reset */
 *,
 *::after,
@@ -51,7 +51,8 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   font-family: "Brice regular";
-  color:var(--primary-sky-50);
+  /* color: var(--base-gray-50); */
+  color: var(--deep-white-100);
   background-color: var(--primary-sky-950);
   transition: background-color 500ms;
 }
@@ -119,20 +120,20 @@ html.lenis {
 
 .btn-primary {
   display: inline-block;
-  color: #fff;
+  color:  var(--deep-white-100);
   font-size: clamp(1.1rem, 1.2vw, 1.5rem);
   padding-block: clamp(0.5rem, 0.7vw, 0.7rem);
   padding-inline: 1.5rem;
   background-color: transparent;
-  border: 1px solid #fff;
-  box-shadow: -3px 3px 0px #fff;
+  border: 1px solid  var(--deep-white-100);
+  box-shadow: -3px 3px 0px  var(--deep-white-100);
   border-radius: 9999px;
   cursor: pointer;
   transition: box-shadow 100ms linear;
 }
 
 .btn-primary:hover {
-  box-shadow: -0px 0px 0px #fff;
+  box-shadow: -0px 0px 0px  var(--deep-white-100);
 }
 
 .loader {

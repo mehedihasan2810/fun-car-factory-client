@@ -47,6 +47,37 @@
   font-weight: 900;
   line-height: 1.3;
   font-family: "Brice Bold";
+  color: var(--deep-white-100);
+  /* color: black; */
+  /* background: linear-gradient(to right, #818cf8, #fb7185);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.hero-highlight-title {
+  display: inline-block;
+  background: linear-gradient(to right, #818cf8, #fb7185);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  isolation: isolate;
+  /* z-index: 100; */
+}
+
+.hero-highlight-title svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -100;
+  transform: translateY(-200%);
+}
+
+.hero-path{
+  stroke-dasharray: 1528;
+  stroke-dashoffset: 1528;
 }
 
 .hero-info a {
@@ -110,7 +141,8 @@
   height: 100%;
   object-fit: cover;
   border-radius: 1rem;
-  filter: brightness(0.8);
+  /* filter: brightness(0.6); */
+  opacity: 0.5;
 }
 /* -----------------------------
  hero image slider styles ends

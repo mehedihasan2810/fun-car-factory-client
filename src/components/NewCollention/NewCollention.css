@@ -102,7 +102,7 @@ opacity: 0.8;
   gap: 1.5rem;
 }
 .new-collection-info-container > * {
-  color: #fff;
+  color:  var(--deep-white-100);
 }
 .new-collection-info-container > p {
   font-size: clamp(1.2rem, 1.3vw, 1.5rem);
@@ -115,11 +115,11 @@ opacity: 0.8;
 
 .new-collection-info-container .btn-primary {
   width: fit-content;
-  border: 1px solid #fff;
-  box-shadow: -4px 4px 0px #fff;
+  border: 1px solid  var(--deep-white-100);
+  box-shadow: -4px 4px 0px  var(--deep-white-100);
 }
 .new-collection-info-container .btn-primary:hover {
-  box-shadow: 0px 0px 0px #fff;
+  box-shadow: 0px 0px 0px  var(--deep-white-100);
 }
 
 @media (max-width: 768px) {

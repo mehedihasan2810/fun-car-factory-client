@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Hero.css";
 import useHero from "./useHero";
+import gsap from "gsap";
 const Hero = () => {
   const { heroConRef } = useHero();
 
@@ -9,15 +10,42 @@ const Hero = () => {
       <div className="hero-layer-contaner">
         <img className="mobile-hero-img" src="/assets/banner-photo.png"></img>
         <div className="hero-info">
-          <h1>
-            Get The Best Toys <br /> For Your Kids
+          <h1
+            onClick={() => {
+              const path = document.querySelector(".hero-path");
+
+              gsap.to(path, {
+                strokeDashoffset: 0,
+                duration: 1.5,
+                ease: "power1",
+              });
+            }}
+          >
+            Get The{" "}
+            <div className="hero-highlight-title">
+              Best Toys
+              <svg
+                // width="543"
+                // height="11"
+                viewBox="0 0 543 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="hero-path"
+                  d="M0.5 1.5H250L0.5 9.5H250H542.5L299.5 1.5H542.5"
+                  stroke="#c4dfdf"
+                  strokeWidth="5"
+                />
+              </svg>
+            </div>{" "}
+            <br /> For Your Kids
           </h1>
-          <Link to="#" className="btn-primary"> 
+          <Link to="#" className="btn-primary">
             Get Now
           </Link>
         </div>
       </div>
-      {/* <div className="right"> */}
       <div className="hero-scene">
         <div className="hero-slider">
           <div>
@@ -61,7 +89,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-slider-2">
-        <div>
+          <div>
             <img
               src="https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
               alt=""
@@ -102,7 +130,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </section>
   );
 };

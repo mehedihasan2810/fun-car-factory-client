@@ -1,0 +1,41 @@
+
+<svg 
+	 xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="-1.4453 57.4941" i:rulerOrigin="0 0" i:pageBounds="0 150 650 0"
+	 xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="652.891" height="5.988" viewBox="0 0 652.891 5.988" overflow="visible" enable-background="new 0 0 652.891 5.988"
+	 xml:space="preserve">
+	<metadata>
+		<variableSets  xmlns="&ns_vars;">
+			<variableSet  varSetName="binding1" locked="none">
+				<variables></variables>
+				<v:sampleDataSets  xmlns="&ns_custom;" xmlns:v="&ns_vars;"></v:sampleDataSets>
+			</variableSet>
+		</variableSets>
+		<sfw  xmlns="&ns_sfw;">
+			<slices></slices>
+			<sliceSourceBounds  y="51.506" x="-1.445" width="652.891" height="5.988" bottomLeftOrigin="true"></sliceSourceBounds>
+		</sfw>
+	</metadata>
+	<switch>
+		<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+			<i:pgfRef  xlink:href="#adobe_illustrator_pgf">
+			</i:pgfRef>
+		</foreignObject>
+		<g i:extraneous="self">
+			<g id="Layer_1" i:layer="yes" i:dimmedPercent="50" i:rgbTrio="#4F008000FFFF">
+				<g i:knockout="Off">
+					<path i:knockout="Off" fill="#FFFFFF" d="M1.445,1.494l650,3"/>
+					<g>
+						<path i:knockout="Off" fill="none" d="M1.445,1.494l650,3"/>
+						<path i:knockout="Off" d="M1.304,2.988C24.87,3.097,48.435,3.205,72.001,3.314c55.782,0.257,111.564,0.515,167.346,0.772
+							c65.626,0.303,131.252,0.605,196.878,0.908c53.098,0.245,106.194,0.49,159.292,0.735c18.596,0.086,37.191,0.172,55.787,0.258
+							c1.922,0.009,2.216-2.979,0.283-2.988c-23.565-0.108-47.132-0.217-70.697-0.326c-55.782-0.257-111.563-0.515-167.346-0.772
+							c-65.626-0.303-131.252-0.605-196.878-0.908c-53.097-0.245-106.194-0.49-159.292-0.735C38.778,0.172,20.183,0.086,1.587,0
+							C-0.335-0.009-0.629,2.979,1.304,2.988z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</switch>
+	
+</svg>
