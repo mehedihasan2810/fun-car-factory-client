@@ -34,7 +34,7 @@ const Hero = () => {
                 <path
                   className="hero-path"
                   d="M0.5 1.5H250L0.5 9.5H250H542.5L299.5 1.5H542.5"
-                  stroke="#c4dfdf"
+                  stroke="#eab308"
                   strokeWidth="5"
                 />
               </svg>

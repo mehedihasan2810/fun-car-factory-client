@@ -45,8 +45,6 @@ const NewArival = () => {
         className="new-arrival-video"
       ></video>
 
-      {/* <div className="new-arrival-overlay"></div> */}
-
       <div className="new-arrival-text-container">
         <h2 className="parallax" data-speed="50">
           Putting A Smile <br /> On Kid&#39;s Faces
