@@ -1,5 +1,6 @@
 import "./ProductCard.css";
-const ProductCard = () => {
+const ProductCard = ({data}) => {
+  console.log(data)
   return (
     <div className="product-card">
       {/* <div className="product-card-img"> */}

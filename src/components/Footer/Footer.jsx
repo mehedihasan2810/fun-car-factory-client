@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
           <div className="item">
             <h6>Contact</h6>
-            <span>spanhone: O172*******</span>
+            <span>Phone: O172*******</span>
             <span>12 Avenue, Dhaka, Bangladesh</span>
             <div className="social">
               <FaFacebook />

@@ -1,23 +1,22 @@
 .toys-container {
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  justify-content: center;
+  width: 100vw;
   gap: 1rem;
-
   margin-block: 8rem 2rem;
-  margin-inline: 2rem;
+  padding-inline: 0.8rem;
 }
-@media (max-width: 1440px){
+/* @media (max-width: 1440px) {
   .toys-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .toys-container {
     grid-template-columns: repeat(1, 1fr);
   }
-}
-
+} */
 
 /* .all-toys-container {
   margin: 100px 0;

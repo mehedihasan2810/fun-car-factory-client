@@ -27,8 +27,8 @@ const AllToys = () => {
 
   return (
     <div className="toys-container">
-      {Array.from({ length: 10 }).map((_, index) => (
-        <ProductCard key={index} />
+      {allToys.map((toy) => (
+        <ProductCard key={toy._id} data={toy} />
       ))}
       {/* <div className="all-toys-container">
         <div className="search-container">

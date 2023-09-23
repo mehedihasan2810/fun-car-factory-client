@@ -39,7 +39,6 @@ const Navbar = () => {
 
   useLayoutEffect(() => {
     const links = document.querySelectorAll("nav li");
-    console.log(links);
 
     links.forEach((link) => {
       link.addEventListener("click", () => {
