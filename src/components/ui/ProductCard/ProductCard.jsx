@@ -6,21 +6,22 @@ const ProductCard = ({data}) => {
       {/* <div className="product-card-img"> */}
         <img 
         className="product-card-img"
-          src="https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+          src={data.url}
+          // height={250}
           alt=""
         />
       {/* </div> */}
       <div className="product-card-content">
         <img
           className="product-card-bg-img"
-          src="https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+          src={data.url}
           alt=""
         />
         <div className="product-card-content-layer">
           <div className="product-card-info">
             <div className="product-card-info-top">
-              <h2 className="product-card-title">amazing car</h2>
-              <div className="product-card-price">$100</div>
+              <h2 className="product-card-title">{data.name}</h2>
+              <div className="product-card-price">${data.price}</div>
             </div>
 
             <div className="product-card-info-bottom">
