@@ -1,4 +1,25 @@
-.all-toys-container {
+.toys-container {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  margin-block: 8rem 2rem;
+  margin-inline: 2rem;
+}
+@media (max-width: 1440px){
+  .toys-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px){
+  .toys-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+/* .all-toys-container {
   margin: 100px 0;
 }
 .all-toys-container table {
@@ -65,4 +86,4 @@ td {
 
 .search-container button:hover {
   background-color: blue;
-}
+} */

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../../contexts/AuthProvider";
+import ProductCard from "../../components/ui/ProductCard/ProductCard";
 const AllToys = () => {
   const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
@@ -25,8 +26,11 @@ const AllToys = () => {
   };
 
   return (
-    <div className="center-container">
-      <div className="all-toys-container">
+    <div className="toys-container">
+      {Array.from({ length: 10 }).map((_, index) => (
+        <ProductCard key={index} />
+      ))}
+      {/* <div className="all-toys-container">
         <div className="search-container">
           <input
             type="text"
@@ -63,7 +67,6 @@ const AllToys = () => {
                       <button
                         onClick={() => {
                           if (currentUser) return;
-                          // *show toast
                           toast.warn(
                             "You have to log in first to view details!",
                             {
@@ -83,7 +86,7 @@ const AllToys = () => {
             )}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 };

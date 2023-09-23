@@ -1,16 +1,16 @@
 .signup-container {
   width: 500px;
-  box-shadow: 0 0 1px 1px #0071f32e;
   margin: 80px auto;
   padding: 1.5rem;
   border-radius: 4px;
   background-color: #9fc3dc11;
+  box-shadow: 0 0 1px 1px #0071f32e;
 }
 
 .signup-container h2 {
-  text-align: center;
   margin-bottom: 2rem;
   font-size: 3rem;
+  text-align: center;
 }
 
 .signup > * + * {
@@ -23,18 +23,18 @@
 }
 
 .signup label {
+  margin-right: 0.6rem;
   font-size: 1.3rem;
   color: gray;
   color: #034f84;
-  margin-right: 0.6rem;
 }
 
 .signup input {
+  flex-grow: 1;
   padding: 0.7rem 1rem;
-  font-size: 1.1rem;
   border: 1px solid #0071f32e;
   border-radius: 4px;
-  flex-grow: 1;
+  font-size: 1.1rem;
   color: gray;
 }
 
@@ -48,8 +48,8 @@
 
 .signup button {
   width: 100%;
-  font-size: 1.2rem;
   padding: 0.6rem 0;
+  font-size: 1.2rem;
 }
 
 .google-btn {
@@ -63,13 +63,13 @@
 }
 
 .github {
-  font-size: 1.2rem;
-  padding: 1rem;
   width: 100%;
-  background: #25292e;
-  color: #ffffff;
   margin-top: 1rem;
+  padding: 1rem;
   border: none;
+  background: #25292e;
+  font-size: 1.2rem;
+  color: #ffffff;
   transition: all 0.2s;
   cursor: pointer;
 }
@@ -80,6 +80,6 @@
 .signup-container .loader {
   width: 29px;
   height: 29px;
-  border-width: 4px;
   margin: 0 auto;
+  border-width: 4px;
 }
