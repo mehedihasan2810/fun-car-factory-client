@@ -1,11 +1,104 @@
 .toys-container {
+  margin-block: 10rem;
+  padding-inline: 0.8rem;
+  width: 100vw;
+  color: var(--base-gray-50);
+}
+
+.toys-top-header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: clamp(0.8rem, 6.7vw, 8rem);
+  margin-block-end: 1.5rem;
+}
+
+.toys-total-count {
+  font-size: 2rem;
+}
+
+.toys-total-count span {
+  font-size: 0.9rem;
+  color: var(--base-gray-300);
+}
+
+.toys-filter-sortby-wrapper {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+.toys-filter-sortby-wrapper span {
+  color: var(--base-gray-300);
+}
+
+.toys-filter-sortby-wrapper svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.toys-filter-sortby-wrapper button {
+  background-color: transparent;
+  border: 0;
+}
+
+.toys-filter-wrapper,
+.toys-sortby-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.toys-sortby-options {
+  background-color: var(--base-gray-50);
+}
+
+.toys-sortby-options,
+.toys-filter-options {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 999;
+  width: max-content;
+  border-radius: 0.5rem;
+  background-color: var(--base-gray-50);
+  color: var(--base-gray-900);
+  transform: translateY(-10px);
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+:is(.toys-filter-wrapper, .toys-sortby-wrapper) button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  /* border: 1px solid #fff ; */
+}
+
+:is(.toys-filter-wrapper, .toys-sortby-wrapper):hover
+  :is(.toys-filter-options, .toys-sortby-options) {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+:is(.toys-filter-options, .toys-sortby-options) button {
+  padding-block: 0.6rem;
+  padding-inline: 1.5rem;
+  width: 100%;
+}
+:is(.toys-filter-options, .toys-sortby-options) button:hover {
+  background-color: var(--base-gray-200);
+}
+
+.toys-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
   justify-content: center;
-  width: 100vw;
+  /* width: 100%; */
   gap: 1rem;
-  margin-block: 8rem 2rem;
-  padding-inline: 0.8rem;
 }
 /* @media (max-width: 1440px) {
   .toys-container {

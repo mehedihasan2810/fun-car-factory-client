@@ -35,7 +35,7 @@ const ProductCard = ({data}) => {
           <div className="product-card-btns">
             <button className="btn-primary">Buy Now</button>
             <button className="btn-primary">Add To Bag</button>
-            <button className="product-card-favorite">
+            <button className="product-card-favorite" title="Add To Favorite">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
