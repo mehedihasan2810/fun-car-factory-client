@@ -10,26 +10,16 @@ const AllToys = () => {
   const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
   // const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  // const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearhTerm] = useState("");
   const allToys = useLoaderData();
 
-  const handleSearch = async (searchTerm) => {
-    const searchResultRes = await fetch(
-      `https://fun-car-factory-server.vercel.app/search?term=${searchTerm}`
-    );
-    const searchResultData = await searchResultRes.json();
-    setSearchResults(searchResultData)
-    // console.log(searchResultData);
-    // fetch(`https://fun-car-factory-server.vercel.app/search?term=${searchTerm}`)
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     setSearchResults(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error performing search:", error);
-    //   });
+  const handleSearch = async (searchValue) => {
+    // const searchResultRes = await fetch(
+    //   `https://fun-car-factory-server.vercel.app/search?term=${searchValue}`
+    // );
+    // const searchResultData = await searchResultRes.json();
+    setSearhTerm(searchValue);
   };
 
   return (
@@ -110,7 +100,14 @@ const AllToys = () => {
         </div>
       </div>
       <div className="toys-grid">
-        {(searchResults.length ? searchResults : allToys).map((toy) => (
+        {(searchTerm
+          ? allToys.filter((toy) =>
+              toy.name
+                .toLocaleLowerCase()
+                .includes(searchTerm.toLocaleLowerCase())
+            )
+          : allToys
+        ).map((toy) => (
           <ProductCard key={toy._id} data={toy} />
         ))}
         {/* <div className="all-toys-container">
