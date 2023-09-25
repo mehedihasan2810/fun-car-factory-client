@@ -5,6 +5,7 @@ import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import ProductCard from "../../components/ui/ProductCard/ProductCard";
+import Search from "../../components/ui/Search/Search";
 const AllToys = () => {
   const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
@@ -31,8 +32,9 @@ const AllToys = () => {
         <div className="toys-total-count">
           Toys <span>({allToys.length})</span>
         </div>
+        <Search/>
         {/* <form> */}
-          <div className="search-form-control">
+          {/* <div className="search-form-control">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -55,7 +57,7 @@ const AllToys = () => {
               placeholder="Search Your Favorite Toys..."
             />
             <button>Search</button>
-          </div>
+          </div> */}
         {/* </form> */}
         <div className="toys-filter-sortby-wrapper">
           <div className="toys-filter-wrapper">
