@@ -9,21 +9,27 @@ import Search from "../../components/ui/Search/Search";
 const AllToys = () => {
   const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const allToys = useLoaderData();
 
-  const handleSearch = () => {
-    fetch(`https://fun-car-factory-server.vercel.app/search?term=${searchTerm}`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setSearchResults(data);
-      })
-      .catch((error) => {
-        console.error("Error performing search:", error);
-      });
+  const handleSearch = async (searchTerm) => {
+    const searchResultRes = await fetch(
+      `https://fun-car-factory-server.vercel.app/search?term=${searchTerm}`
+    );
+    const searchResultData = await searchResultRes.json();
+    setSearchResults(searchResultData)
+    // console.log(searchResultData);
+    // fetch(`https://fun-car-factory-server.vercel.app/search?term=${searchTerm}`)
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     setSearchResults(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error performing search:", error);
+    //   });
   };
 
   return (
@@ -32,33 +38,7 @@ const AllToys = () => {
         <div className="toys-total-count">
           Toys <span>({allToys.length})</span>
         </div>
-        <Search/>
-        {/* <form> */}
-          {/* <div className="search-form-control">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-              />
-            </svg>
-
-            <input
-              type="text"
-              id="search"
-              name="search"
-              placeholder="Search Your Favorite Toys..."
-            />
-            <button>Search</button>
-          </div> */}
-        {/* </form> */}
+        <Search onHandleSearch={handleSearch} />
         <div className="toys-filter-sortby-wrapper">
           <div className="toys-filter-wrapper">
             <button>
@@ -84,7 +64,6 @@ const AllToys = () => {
               <button>Bus</button>
               <button>truck</button>
               <button>ferrari</button>
-              {/* <div>Bus</div> */}
             </div>
           </div>
           <div className="toys-sortby-wrapper">
@@ -131,7 +110,7 @@ const AllToys = () => {
         </div>
       </div>
       <div className="toys-grid">
-        {allToys.map((toy) => (
+        {(searchResults.length ? searchResults : allToys).map((toy) => (
           <ProductCard key={toy._id} data={toy} />
         ))}
         {/* <div className="all-toys-container">
