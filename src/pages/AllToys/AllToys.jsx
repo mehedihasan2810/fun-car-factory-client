@@ -1,26 +1,50 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import "./AllToys.css";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
-import { toast } from "react-toastify";
-import { useAuthContext } from "../../contexts/AuthProvider";
+// import { toast } from "react-toastify";
+// import { useAuthContext } from "../../contexts/AuthProvider";
 import ProductCard from "../../components/ui/ProductCard/ProductCard";
 import Search from "../../components/ui/Search/Search";
+
+const filterValues = ["All", "Ferrari", "Bus", "Truck"];
+const sortValues = [
+  ["Default", "default"],
+  ["Price: Low To High", "ascending"],
+  ["Price: High To Low", "descending"],
+];
+
 const AllToys = () => {
-  const { currentUser } = useAuthContext();
+  // const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
-  // const [searchTerm, setSearchTerm] = useState("");
-  // const [searchResults, setSearchResults] = useState([]);
+
   const [searchTerm, setSearhTerm] = useState("");
+  const [sortTerm, setSortTerm] = useState("");
   const allToys = useLoaderData();
 
   const handleSearch = async (searchValue) => {
-    // const searchResultRes = await fetch(
-    //   `https://fun-car-factory-server.vercel.app/search?term=${searchValue}`
-    // );
-    // const searchResultData = await searchResultRes.json();
     setSearhTerm(searchValue);
   };
+
+  const filteredToys = searchTerm
+    ? allToys.filter((toy) =>
+        toy.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+      )
+    : allToys;
+
+  const sortedToys = sortTerm
+    ? filteredToys.slice().sort((toy1, toy2) => {
+        const price1 = +toy1.price;
+        const price2 = +toy2.price;
+
+        if (sortTerm === "ascending") {
+          return price1 > price2 ? 1 : price1 < price2 ? -1 : 0;
+        }
+        if (sortTerm === "descending") {
+          return price1 < price2 ? 1 : price1 > price2 ? -1 : 0;
+        }
+      })
+    : filteredToys;
 
   return (
     <div className="toys-container">
@@ -51,9 +75,18 @@ const AllToys = () => {
               </span>
             </button>
             <div className="toys-filter-options">
-              <button>Bus</button>
-              <button>truck</button>
-              <button>ferrari</button>
+              {filterValues.map((value, index) => (
+                <button
+                  onClick={() =>
+                    setSearhTerm(
+                      value.toLocaleLowerCase() === "all" ? "" : value
+                    )
+                  }
+                  key={index}
+                >
+                  {value}
+                </button>
+              ))}
             </div>
           </div>
           <div className="toys-sortby-wrapper">
@@ -93,80 +126,21 @@ const AllToys = () => {
               </span>
             </button>
             <div className="toys-sortby-options">
-              <button>Price: High To Low</button>
-              <button>Price: Low To High</button>
+              {sortValues.map((value, index) => (
+                <button onClick={() => setSortTerm(value[1])} key={index}>
+                  {value[0]}
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </div>
       <div className="toys-grid">
-        {(searchTerm
-          ? allToys.filter((toy) =>
-              toy.name
-                .toLocaleLowerCase()
-                .includes(searchTerm.toLocaleLowerCase())
-            )
-          : allToys
-        ).map((toy) => (
-          <ProductCard key={toy._id} data={toy} />
-        ))}
-        {/* <div className="all-toys-container">
-        <div className="search-container">
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button onClick={handleSearch}>Search</button>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Seller Name</th>
-              <th>Toy Name</th>
-              <th>Sub Category</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>View Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            {(searchResults.length === 0 ? allToys : searchResults)?.map(
-              (toy) => (
-                <tr key={toy._id}>
-                  <td>{toy.sellerName}</td>
-                  <td className="name-td">
-                    <img src={toy.url} alt="" />
-                    {toy.name}
-                  </td>
-                  <td>{toy.category}</td>
-                  <td>{toy.price}$</td>
-                  <td>{toy.quantity}</td>
-                  <td>
-                    <Link to={`/toy-details/${toy._id}`}>
-                      <button
-                        onClick={() => {
-                          if (currentUser) return;
-                          toast.warn(
-                            "You have to log in first to view details!",
-                            {
-                              position: toast.POSITION.TOP_CENTER,
-                              autoClose: 2000,
-                            }
-                          );
-                        }}
-                        className="btn-primary"
-                      >
-                        View Details
-                      </button>
-                    </Link>
-                  </td>
-                </tr>
-              )
-            )}
-          </tbody>
-        </table>
-      </div> */}
+        {sortedToys.length ? (
+          sortedToys.map((toy) => <ProductCard key={toy._id} data={toy} />)
+        ) : (
+          <div className="toys-not-found-title">No toys found!</div>
+        )}
       </div>
     </div>
   );
