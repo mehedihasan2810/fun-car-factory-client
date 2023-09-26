@@ -9,12 +9,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding-inline: clamp(0.8rem, 6.7vw, 8rem);
   margin-block-end: 2rem;
 }
 
+@media (max-width: 768px) {
+  .toys-top-header {
+    position: relative;
+    padding-inline: 0.8rem;
+  }
+}
+
 .toys-total-count {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1.7vw, 2rem);
 }
 
 .toys-total-count span {
@@ -24,8 +32,16 @@
 
 .toys-filter-sortby-wrapper {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.5rem;
   font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .toys-filter-sortby-wrapper {
+    gap: 1rem;
+    font-size: 1rem;
+  }
 }
 
 .toys-filter-sortby-wrapper svg {

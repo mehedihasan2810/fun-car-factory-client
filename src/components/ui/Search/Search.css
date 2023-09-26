@@ -6,6 +6,18 @@
     background-color: var(--primary-sky-800);
     padding-inline-start: 1rem;
   }
+
+  @media (max-width: 768px){
+    .search-form-control{
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-115%);
+      width: 100%;
+    }
+
+   
+  }
   
   .search-form-control svg {
     display: inline-block;
@@ -35,6 +47,22 @@
     inline-size: 400px;
     color: var(--base-gray-50);
   }
+
+  @media (max-width: 1024px){
+    .search-form-control input {
+      inline-size: 300px;
+    }
+  }
+  @media (max-width: 768px){
+    .search-form-control input {
+      inline-size: auto;
+      flex-grow: 1;
+    }
+  }
+
+  
+ 
+
   .search-form-control button {
     cursor: pointer;
     background-color: var(--base-gray-200);
