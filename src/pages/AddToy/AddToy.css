@@ -7,12 +7,18 @@
   max-inline-size: 700px;
 }
 
+@media (max-width: 768px) {
+  .add-toy-container {
+    padding: 2rem 0.8rem;
+  }
+}
+
 .add-toy-container .add-title {
   width: fit-content;
   margin: 0 auto;
   margin-bottom: 2rem;
   padding: 0.1rem 1rem;
-  border-bottom: 2px dotted  var(--primary-sky-100);
+  border-bottom: 2px dotted var(--primary-sky-100);
   font-size: 2rem;
   font-weight: 400;
   color: var(--primary-sky-100);
@@ -29,7 +35,11 @@
   margin-block-end: 1.5rem;
 }
 
-
+@media (max-width: 768px) {
+  .add-toy-container .row {
+    grid-template-columns: 1fr;
+  }
+}
 
 .add-toy-container label {
   font-size: 1.1rem;
@@ -90,5 +100,3 @@
 .add-toy-container button:hover {
   background-color: var(--primary-sky-500);
 }
-
-
