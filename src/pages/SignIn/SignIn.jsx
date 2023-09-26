@@ -126,7 +126,7 @@ const SignIn = () => {
         <div className="google-github">
           <GoogleButton
             onClick={handleGoogleSignIn}
-            type="light"
+            // type="light"
             className="google-btn"
           />
         </div>

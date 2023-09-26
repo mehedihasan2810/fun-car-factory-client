@@ -1,6 +1,6 @@
 .signin-container {
   max-inline-size: 400px;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   border-radius: 4px;
   background-color: var(--primary-sky-900);
   color: var(--primary-sky-50);
@@ -86,8 +86,12 @@
 .google-btn {
   width: 100% !important;
   font-size: 1.2rem !important;
-  border-radius: 100vw !important;
-  overflow: hidden;
+  /* border-radius: 100vw !important;
+  overflow: hidden; */
+}
+
+.google-btn:hover{
+
 }
 
 .signin-container .section-title {
