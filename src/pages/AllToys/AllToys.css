@@ -109,7 +109,7 @@
 
 .toys-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 380px));
   justify-content: center;
   gap: 1rem;
 }
