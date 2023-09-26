@@ -22,21 +22,19 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0.8rem;
+  padding-inline: 1rem;
+  padding-block: 0.8rem;
   width: min(100vw, 1600px);
   margin-inline: auto;
 }
+
 nav img {
   width: 55px;
   height: 55px;
-  border-radius: 9999px;
   object-fit: contain;
+  filter: brightness(2);
 }
-/* nav h4 {
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: #fff;
-} */
+
 nav .logo-container {
   display: flex;
   align-items: center;
@@ -50,11 +48,11 @@ nav ul {
 
 nav .btn-primary {
   font-size: 1.1rem;
-  box-shadow: -2px 2px 0px  var(--deep-white-100);
+  box-shadow: -2px 2px 0px var(--deep-white-100);
 }
 
 nav li {
-  color:  var(--deep-white-100);
+  color: var(--deep-white-100);
 }
 
 nav li:hover a {
@@ -80,15 +78,29 @@ nav .pending {
 nav .bar {
   color: #fff;
   display: none;
+  width: 28px;
+  height: 28px;
+}
+
+nav .bar > * {
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
+  nav {
+    padding-block: 0.5rem;
+  }
   nav .bar {
     display: block;
     background-color: transparent;
     border: none;
     font-size: 1.7rem;
     cursor: pointer;
+  }
+  nav img {
+    width: 50px;
+    height: 50px;
   }
   nav ul {
     display: none;
