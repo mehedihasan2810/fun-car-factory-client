@@ -1,6 +1,5 @@
 .signin-container {
   max-inline-size: 400px;
-  margin: 80px auto;
   padding: 1.5rem;
   border-radius: 4px;
   background-color: var(--primary-sky-900);
@@ -11,7 +10,7 @@
 }
 
 .signin > * + * {
-  margin-top: 2rem;
+  margin-block-start: 2rem;
 }
 
 .signin .control {
@@ -46,6 +45,17 @@
   font-size: 1rem;
 }
 
+.signin .signin_show_password {
+  margin-block-start: 1rem;
+  font-size: 0.9rem;
+}
+
+.signin .signin_show_password input {
+  width: 1rem;
+  height: 1rem;
+  margin-inline-end: 4px;
+}
+
 .signin .auth-btn {
   width: 100%;
   padding: 0.8rem 0;
@@ -55,6 +65,7 @@
   font-size: 1.2rem;
   color: var(--primary-sky-50);
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 .signin .auth-btn:hover {

@@ -6,9 +6,10 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const SignIn = () => {
-  useTitlePerPage('Sign In')
+  useTitlePerPage("Sign In");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isShowPassword, setIsShowPassword] = useState(false);
   const [isSignInLoading, setIsSignInLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -93,11 +94,21 @@ const SignIn = () => {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-              type="password"
+              type={`${isShowPassword ? 'text' : 'password'}`}
               name="password"
               id="password"
               placeholder="Your Password..."
             />
+            <label className="signin_show_password" htmlFor="show_password">
+              {" "}
+              <input 
+              onChange={() => setIsShowPassword(!isShowPassword)}
+                type="checkbox"
+                name="show_password"
+                id="show_password"
+              />{" "}
+              Show Password
+            </label>
           </div>
           <button className="auth-btn" type="submit">
             {isSignInLoading ? <div className="loader"></div> : "Sign In"}
