@@ -1,10 +1,13 @@
 .signin-container {
-  width: 500px;
-  box-shadow: 0 0 1px 1px #0071f32e;
+  max-inline-size: 400px;
   margin: 80px auto;
   padding: 1.5rem;
   border-radius: 4px;
-  background-color: #9fc3dc11;
+  background-color: var(--primary-sky-900);
+  color: var(--primary-sky-50);
+  box-shadow: 0 0 1px 1px var(--primary-sky-700);
+  margin-inline: auto;
+  margin-block: 200px 150px;
 }
 
 .signin > * + * {
@@ -18,50 +21,63 @@
 }
 
 .signin label {
-  font-size: 1.3rem;
-  color: gray;
-  color: #034f84;
-  margin-right: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--primary-sky-100);
+  margin-block: 0 14px;
 }
 
 .signin input {
-  padding: 0.7rem 1rem;
-  font-size: 1.1rem;
-  border: 1px solid #0071f32e;
-  border-radius: 4px;
   flex-grow: 1;
-  color: gray;
+  padding: 0.9rem 1.5rem;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--primary-sky-100);
+  font-size: 1.1rem;
+  color: var(--base-gray-700);
+  border-radius: 100vw;
 }
 
 .signin input:focus {
-  outline: 1px solid #034f84;
+  outline: 2px solid var(--primary-sky-500);
 }
 
 .signin input::placeholder {
-  color: rgba(128, 128, 128, 0.552);
+  color: var(--base-gray-400);
+  font-size: 1rem;
 }
 
-.signin button {
+.signin .auth-btn {
   width: 100%;
+  padding: 0.8rem 0;
+  border: 0;
+  border-radius: 100vw;
+  background-color: var(--primary-sky-600);
   font-size: 1.2rem;
-  padding: 0.6rem 0;
+  color: var(--primary-sky-50);
+  cursor: pointer;
+}
+
+.signin .auth-btn:hover {
+  background-color: var(--primary-sky-500);
 }
 
 .account {
-  color: gray;
+  color: var(--base-gray-300);
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 20px;
   font-size: 15px;
 }
 
 .account .acc {
-  color: #034f84;
+  color: var(--primary-sky-400);
   text-decoration: underline;
 }
 
 .google-btn {
   width: 100% !important;
   font-size: 1.2rem !important;
+  border-radius: 100vw !important;
+  overflow: hidden;
 }
 
 .signin-container .section-title {
@@ -69,7 +85,7 @@
   text-align: center;
 }
 
-.github {
+/* .github {
   font-size: 1.2rem;
   padding: 1rem;
   width: 100%;
@@ -81,7 +97,7 @@
 }
 .github:hover {
   box-shadow: 0 0 5px #25292e;
-}
+} */
 
 .signin-container .loader {
   width: 29px;

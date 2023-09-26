@@ -83,7 +83,7 @@ const SignIn = () => {
               type="email"
               name="email"
               id="email"
-              placeholder="Email"
+              placeholder="Your Email..."
             />
           </div>
           <div className="control">
@@ -96,10 +96,10 @@ const SignIn = () => {
               type="password"
               name="password"
               id="password"
-              placeholder="Password"
+              placeholder="Your Password..."
             />
           </div>
-          <button className="btn-primary" type="submit">
+          <button className="auth-btn" type="submit">
             {isSignInLoading ? <div className="loader"></div> : "Sign In"}
           </button>
         </form>
