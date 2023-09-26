@@ -106,16 +106,6 @@ const Navbar = () => {
               Add Toy
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/blogs"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }
-            >
-              Blogs
-            </NavLink>
-          </li>
           {currentUser ? (
             <>
               <li>
