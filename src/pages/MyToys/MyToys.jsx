@@ -30,7 +30,7 @@ const MyToys = () => {
           method: "DELETE",
         })
           .then((res) => res.json())
-          .then((data) => {
+          .then(() => {
             const filteredToys = myToys.filter((toy) => toy._id !== id);
             setMyToys(filteredToys);
 
@@ -87,7 +87,6 @@ const MyToys = () => {
   }
 
   return (
-    <div className="center-container">
       <div className="my-toys-container">
         <div className="sort-container">
           <p>Sort:</p>
@@ -128,7 +127,7 @@ const MyToys = () => {
                   <td>{toy.quantity}</td>
                   <td>
                     <Link to={`/toy-details/${toy._id}`}>
-                      <button className="btn-primary">View Details</button>
+                      <button className="toy-details-btn">View Details</button>
                     </Link>
                   </td>
                   <td title="Update" className="edit-btn">
@@ -150,7 +149,6 @@ const MyToys = () => {
           </tbody>
         </table>
       </div>
-    </div>
   );
 };
 

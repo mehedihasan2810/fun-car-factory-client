@@ -1,38 +1,74 @@
 .my-toys-container {
-  margin: 100px 0;
+  margin-block: 120px;
+  margin-inline: auto;
+  max-inline-size: 1600px;
+  color: var(--primary-sky-50);
 }
 .my-toys-container table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-sky-900);
 }
 
-.my-toys-container th,
-td {
+.my-toys-container th {
   text-align: left;
-  padding: 16px;
+  padding-inline: 16px;
+  padding-block: 24px;
+}
+
+.my-toys-container td {
+  text-align: left;
+  padding-inline: 16px;
+  padding-block: 8px;
 }
 
 .my-toys-container tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: var(--primary-sky-900);
+}
+
+.my-toys-container tr:nth-child(odd) {
+  background-color: var(--primary-sky-800);
+}
+
+.my-toys-container .toy-details-btn {
+  border: 0;
+  border-radius: 100vw;
+  background-color: transparent;
+  font-size: 0.95rem;
+  color: var(--primary-sky-50);
+  box-shadow: -3px 3px 0px var(--primary-sky-50);
+  padding-inline: 1rem;
+  padding-block: 0.6rem;
+  cursor: pointer;
+}
+
+.my-toys-container .toy-details-btn:hover {
+  color: var(--primary-sky-200);
 }
 
 .my-toys-container .edit-btn {
   font-size: 1.5rem;
-  color: gray;
   cursor: pointer;
+}
+.my-toys-container .edit-btn:hover {
+  color: var(--primary-sky-50);
 }
 .my-toys-container .delete-btn {
   font-size: 1.5rem;
-  color: rgba(255, 0, 0, 0.553);
+  color: #f43f5e;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
+.my-toys-container .delete-btn:hover {
+  color: #e11d48;
+}
+
 .my-toys-container th {
-  background: rgba(0, 0, 255, 0.112);
+  color: var(--primary-sky-50);
+  background-color: var(--primary-sky-900);
 }
 
 .no-data {
@@ -42,10 +78,11 @@ td {
 }
 
 .my-toys-container img {
-  width: 35px;
-  height: 35px;
+  width: 80px;
+  height: 50px;
   object-fit: cover;
-  border-radius: 9999px;
+  margin-inline-end: 10px;
+  border-radius: 4px;
 }
 .my-toys-container .name-td {
   display: flex;
@@ -58,7 +95,7 @@ td {
   justify-content: end;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-block-end: 15px;
 }
 .sort-container {
   font-size: 1.2rem;
