@@ -9,6 +9,12 @@
   margin-block: 150px;
 }
 
+@media (max-width: 768px) {
+  .signup-container {
+    margin-block: 100px 80px;
+  }
+}
+
 .signup-container h2 {
   margin-bottom: 2rem;
   font-size: 3rem;

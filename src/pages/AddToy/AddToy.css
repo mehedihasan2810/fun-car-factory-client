@@ -1,5 +1,5 @@
 .add-toy-container {
-  margin: 100px auto;
+  margin: 120px auto;
   padding: 2rem 1.5rem;
   border: 1px solid var(--primary-sky-700);
   border-radius: 4px;
@@ -9,6 +9,7 @@
 
 @media (max-width: 768px) {
   .add-toy-container {
+    margin: 80px auto;
     padding: 2rem 0.8rem;
   }
 }

@@ -9,6 +9,12 @@
   margin-block: 200px 150px;
 }
 
+@media (max-width: 768px) {
+  .signin-container {
+    margin-block: 100px 80px;
+  }
+}
+
 .signin > * + * {
   margin-block-start: 2rem;
 }
