@@ -19,7 +19,7 @@ const AddToy = () => {
       body: JSON.stringify(toyInfo),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         // *show toast
         toast.success("Succesfully Added", {
           position: toast.POSITION.TOP_CENTER,
@@ -150,7 +150,7 @@ const AddToy = () => {
               </label>
             </div>
           </div>
-          <button className="btn-primary" type="submit">
+          <button type="submit">
             Add The Toy
           </button>
         </form>
