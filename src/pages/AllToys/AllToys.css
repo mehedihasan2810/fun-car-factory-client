@@ -28,10 +28,6 @@
   font-size: 1.1rem;
 }
 
-.toys-filter-sortby-wrapper span {
-  color: var(--base-gray-300);
-}
-
 .toys-filter-sortby-wrapper svg {
   display: inline-block;
   width: 20px;
@@ -49,10 +45,6 @@
   cursor: pointer;
 }
 
-.toys-sortby-options {
-  background-color: var(--base-gray-50);
-}
-
 .toys-sortby-options,
 .toys-filter-options {
   position: absolute;
@@ -60,11 +52,13 @@
   top: 100%;
   z-index: 999;
   width: max-content;
+  border: 1px solid var(--base-gray-300);
   border-radius: 0.5rem;
-  background-color: var(--base-gray-50);
+  background-color: var(--base-gray-200);
   color: var(--base-gray-900);
   transform: translateY(-10px);
-  transition: transform 300ms ease-out, opacity 300ms ease-out;
+  transition: transform 200ms ease-out, opacity 200ms ease-out,
+    visibility 200ms ease-out;
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
@@ -76,21 +70,21 @@
   gap: 0.5rem;
   cursor: pointer;
 }
+:is(.toys-filter-wrapper, .toys-sortby-wrapper) span {
+  color: var(--base-gray-300);
+}
 
-:is(.toys-filter-wrapper, .toys-sortby-wrapper):hover
-  :is(.toys-filter-options, .toys-sortby-options) {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
+:is(.toys-filter-wrapper, .toys-sortby-wrapper) span:hover {
+  color: var(--base-gray-50);
 }
 
 :is(.toys-filter-options, .toys-sortby-options) button {
   padding-block: 0.6rem;
-  padding-inline: 1.5rem;
+  padding-inline: 2rem;
   width: 100%;
 }
 :is(.toys-filter-options, .toys-sortby-options) button:hover {
-  background-color: var(--base-gray-200);
+  background-color: var(--base-gray-50);
 }
 
 .toys-grid {

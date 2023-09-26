@@ -56,7 +56,7 @@
   /* color: var(--base-gray-50); */
   color: var(--deep-white-100);
 }
-span {
+.footer span {
   /* color: var(--base-gray-300); */
   color: rgba(196, 223, 223, 0.8);
 }

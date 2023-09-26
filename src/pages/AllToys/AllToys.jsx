@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import "./AllToys.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 // import { toast } from "react-toastify";
 // import { useAuthContext } from "../../contexts/AuthProvider";
@@ -17,6 +17,9 @@ const sortValues = [
 const AllToys = () => {
   // const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
+
+  const toysFilterOptionsRef = useRef();
+  const toysSortOptionsRef = useRef();
 
   const [searchTerm, setSearhTerm] = useState("");
   const [sortTerm, setSortTerm] = useState("");
@@ -55,7 +58,15 @@ const AllToys = () => {
         <Search onHandleSearch={handleSearch} />
         <div className="toys-filter-sortby-wrapper">
           <div className="toys-filter-wrapper">
-            <button>
+            <button
+              onClick={() => {
+                if (toysFilterOptionsRef.current.style.cssText) {
+                  toysFilterOptionsRef.current.style.cssText = "";
+                } else {
+                  toysFilterOptionsRef.current.style.cssText = `transform: translateY(0); opacity: 1;  visibility: visible;`;
+                }
+              }}
+            >
               <span>Filter</span>
               <span>
                 <svg
@@ -74,7 +85,7 @@ const AllToys = () => {
                 </svg>
               </span>
             </button>
-            <div className="toys-filter-options">
+            <div ref={toysFilterOptionsRef} className="toys-filter-options">
               {filterValues.map((value, index) => (
                 <button
                   onClick={() =>
@@ -90,7 +101,15 @@ const AllToys = () => {
             </div>
           </div>
           <div className="toys-sortby-wrapper">
-            <button>
+            <button
+              onClick={() => {
+                if (toysSortOptionsRef.current.style.cssText) {
+                  toysSortOptionsRef.current.style.cssText = "";
+                } else {
+                  toysSortOptionsRef.current.style.cssText = `transform: translateY(0); opacity: 1;  visibility: visible;`;
+                }
+              }}
+            >
               <span>Sort By</span>
 
               <span>
@@ -125,7 +144,7 @@ const AllToys = () => {
                 </svg> */}
               </span>
             </button>
-            <div className="toys-sortby-options">
+            <div ref={toysSortOptionsRef} className="toys-sortby-options">
               {sortValues.map((value, index) => (
                 <button onClick={() => setSortTerm(value[1])} key={index}>
                   {value[0]}
