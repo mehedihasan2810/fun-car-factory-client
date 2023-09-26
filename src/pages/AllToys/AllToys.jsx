@@ -20,6 +20,8 @@ const AllToys = () => {
 
   const toysFilterOptionsRef = useRef();
   const toysSortOptionsRef = useRef();
+  const toysSortUpperChevronRef = useRef();
+  const toysSortLowerChevronRef = useRef();
 
   const [searchTerm, setSearhTerm] = useState("");
   const [sortTerm, setSortTerm] = useState("");
@@ -105,8 +107,14 @@ const AllToys = () => {
               onClick={() => {
                 if (toysSortOptionsRef.current.style.cssText) {
                   toysSortOptionsRef.current.style.cssText = "";
+                  toysSortUpperChevronRef.current.style.display = "none";
+                  toysSortLowerChevronRef.current.style.display =
+                    "inline-block";
                 } else {
                   toysSortOptionsRef.current.style.cssText = `transform: translateY(0); opacity: 1;  visibility: visible;`;
+                  toysSortUpperChevronRef.current.style.display =
+                    "inline-block";
+                  toysSortLowerChevronRef.current.style.display = "none";
                 }
               }}
             >
@@ -114,6 +122,7 @@ const AllToys = () => {
 
               <span>
                 <svg
+                  ref={toysSortLowerChevronRef}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -128,20 +137,21 @@ const AllToys = () => {
                   />
                 </svg>
 
-                {/* <svg
+                <svg
+                  ref={toysSortUpperChevronRef}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="toys-sort-upper-chevron"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M4.5 15.75l7.5-7.5 7.5 7.5"
                   />
-                </svg> */}
+                </svg>
               </span>
             </button>
             <div ref={toysSortOptionsRef} className="toys-sortby-options">

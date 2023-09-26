@@ -34,6 +34,10 @@
   height: 20px;
 }
 
+.toys-sortby-wrapper .toys-sort-upper-chevron {
+  display: none;
+}
+
 .toys-filter-sortby-wrapper button {
   background-color: transparent;
   border: 0;
