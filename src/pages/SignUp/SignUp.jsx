@@ -6,11 +6,12 @@ import { useAuthContext } from "../../contexts/AuthProvider";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const SignUp = () => {
-  useTitlePerPage('Sign Up')
+  useTitlePerPage("Sign Up");
   const [name, setName] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isShowPassword, setIsShowPassword] = useState(false);
   const [isSignUpLoading, setIsSignUpLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -65,8 +66,8 @@ const SignUp = () => {
 
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((userCredential) => {
-        const loggedUser = userCredential.user;
+      .then(() => {
+        // const loggedUser = userCredential.user;
 
         // *show toast
         toast.success("Succesfully Signed In", {
@@ -140,14 +141,24 @@ const SignUp = () => {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-              type="password"
+              type={`${isShowPassword ? "text" : "password"}`}
               name="password"
               id="password"
               placeholder="Password"
               required
             />
+            <label className="signup_show_password" htmlFor="show_password">
+              {" "}
+              <input
+                onChange={() => setIsShowPassword(!isShowPassword)}
+                type="checkbox"
+                name="show_password"
+                id="show_password"
+              />{" "}
+              Show Password
+            </label>
           </div>
-          <button className="btn-primary" type="submit">
+          <button type="submit">
             {isSignUpLoading ? <div className="loader"></div> : "Sign Up"}
           </button>
         </form>

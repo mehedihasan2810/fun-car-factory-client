@@ -20,8 +20,8 @@ const SignIn = () => {
     e.preventDefault();
     setIsSignInLoading(true);
     signIn(email, password)
-      .then((userCredential) => {
-        const loggedUser = userCredential.user;
+      .then(() => {
+        // const loggedUser = userCredential.user;
 
         // *show toast
         toast.success("Succesfully Signed In", {
@@ -49,8 +49,8 @@ const SignIn = () => {
 
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((userCredential) => {
-        const loggedUser = userCredential.user;
+      .then(() => {
+        // const loggedUser = userCredential.user;
 
         // *show toast
         toast.success("Succesfully Signed In", {
@@ -94,15 +94,15 @@ const SignIn = () => {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-              type={`${isShowPassword ? 'text' : 'password'}`}
+              type={`${isShowPassword ? "text" : "password"}`}
               name="password"
               id="password"
               placeholder="Your Password..."
             />
             <label className="signin_show_password" htmlFor="show_password">
               {" "}
-              <input 
-              onChange={() => setIsShowPassword(!isShowPassword)}
+              <input
+                onChange={() => setIsShowPassword(!isShowPassword)}
                 type="checkbox"
                 name="show_password"
                 id="show_password"

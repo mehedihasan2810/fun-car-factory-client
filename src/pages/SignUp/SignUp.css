@@ -1,10 +1,12 @@
 .signup-container {
-  width: 500px;
-  margin: 80px auto;
   padding: 1.5rem;
   border-radius: 4px;
-  background-color: #9fc3dc11;
-  box-shadow: 0 0 1px 1px #0071f32e;
+  background-color: var(--primary-sky-900);
+  color: var(--primary-sky-50);
+  max-inline-size: 420px;
+  box-shadow: 0 0 1px 1px var(--primary-sky-700);
+  margin-inline: auto;
+  margin-block: 150px;
 }
 
 .signup-container h2 {
@@ -23,58 +25,61 @@
 }
 
 .signup label {
-  margin-right: 0.6rem;
-  font-size: 1.3rem;
-  color: gray;
-  color: #034f84;
+  font-size: 1.1rem;
+  color: var(--primary-sky-100);
+  margin-block: 0 10px;
 }
 
 .signup input {
   flex-grow: 1;
-  padding: 0.7rem 1rem;
-  border: 1px solid #0071f32e;
+  padding: 0.9rem 1.5rem;
+  border: 0;
   border-radius: 4px;
+  background-color: var(--primary-sky-100);
   font-size: 1.1rem;
-  color: gray;
+  color: var(--base-gray-700);
+  border-radius: 100vw;
 }
 
 .signup input::placeholder {
-  color: rgba(128, 128, 128, 0.552);
+  color: var(--base-gray-400);
+  font-size: 0.95rem;
 }
 
 .signup input:focus {
-  outline: 1px solid #034f84;
+  outline: 2px solid var(--primary-sky-500);
+}
+
+.signup .signup_show_password {
+  margin-block-start: 1rem;
+  font-size: 0.9rem;
+}
+
+.signup .signup_show_password input {
+  width: 1rem;
+  height: 1rem;
+  margin-inline-end: 4px;
 }
 
 .signup button {
   width: 100%;
-  padding: 0.6rem 0;
+  padding: 0.8rem 0;
+  border: 0;
+  border-radius: 100vw;
+  background-color: var(--primary-sky-600);
   font-size: 1.2rem;
+  color: var(--primary-sky-50);
+  cursor: pointer;
+  margin-block-start: 1rem;
 }
 
-.google-btn {
-  width: 100% !important;
-  font-size: 1.2rem !important;
+.signup button:hover {
+  background-color: var(--primary-sky-500);
 }
 
 .signup-container .section-title {
   margin: 1rem 0;
   text-align: center;
-}
-
-.github {
-  width: 100%;
-  margin-top: 1rem;
-  padding: 1rem;
-  border: none;
-  background: #25292e;
-  font-size: 1.2rem;
-  color: #ffffff;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-.github:hover {
-  box-shadow: 0 0 5px #25292e;
 }
 
 .signup-container .loader {
