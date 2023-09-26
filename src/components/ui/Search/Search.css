@@ -29,6 +29,12 @@
   .search-form-control svg,
   .search-form-control input::placeholder {
     color: var(--base-gray-300);
+  
+  }
+
+  .search-form-control input::placeholder{
+    font-size: 0.9rem;
+    padding-inline-start: 0.5rem;
   }
   
   .search-form-control:focus-within {
