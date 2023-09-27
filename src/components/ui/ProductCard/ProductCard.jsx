@@ -1,21 +1,18 @@
+import { Link } from "react-router-dom";
 import "./ProductCard.css";
-const ProductCard = ({data}) => {
+const ProductCard = ({ data }) => {
   return (
     <div className="product-card">
       {/* <div className="product-card-img"> */}
-        <img 
+      <img
         className="product-card-img"
-          src={data.url}
-          // height={250}
-          alt=""
-        />
+        src={data.url}
+        // height={250}
+        alt=""
+      />
       {/* </div> */}
       <div className="product-card-content">
-        <img
-          className="product-card-bg-img"
-          src={data.url}
-          alt=""
-        />
+        <img className="product-card-bg-img" src={data.url} alt="" />
         <div className="product-card-content-layer">
           <div className="product-card-info">
             <div className="product-card-info-top">
@@ -32,8 +29,13 @@ const ProductCard = ({data}) => {
           <hr />
 
           <div className="product-card-btns">
-            <button>Buy Now</button>
-            <button>Add To Bag</button>
+            <button>
+              {" "}
+              <Link to="#">Buy Now</Link>{" "}
+            </button>
+            <button>
+              <Link to={`/toy-details/${data._id}`}>Toy Details</Link>
+            </button>
             <button className="product-card-favorite" title="Add To Favorite">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
