@@ -1,10 +1,29 @@
 .update-toy-container {
-  margin: 100px 0;
-  padding: 1.5rem;
+  margin: 120px auto;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--primary-sky-700);
   border-radius: 4px;
-  background-color: rgba(56, 56, 174, 0.047);
-  border: 1px solid rgba(0, 0, 255, 0.371);
+  background-color: var(--primary-sky-900);
+  max-inline-size: 700px;
 }
+@media (max-width: 768px) {
+  .update-toy-container {
+    margin: 80px auto;
+    padding: 2rem 0.8rem;
+  }
+}
+
+.update-toy-container .update-title {
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 0.1rem 1rem;
+  border-bottom: 2px dotted var(--primary-sky-100);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--primary-sky-100);
+}
+
 .update-toy-container .control {
   display: flex;
   flex-direction: column;
@@ -14,66 +33,70 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-block-end: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .update-toy-container .row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .update-toy-container label {
-  font-size: 1.3rem;
-  color: gray;
-  color: rgba(0, 0, 255, 0.758);
-  margin-right: 0.6rem;
+  font-size: 1.1rem;
+  color: var(--primary-sky-100);
+  margin-block-end: 10px;
 }
 
 .update-toy-container input {
-  padding: 0.7rem 1rem;
-  font-size: 1.1rem;
-  border: 1px solid rgba(0, 0, 255, 0.24);
+  padding: 0.9rem 1.5rem;
+  border: 0;
   border-radius: 4px;
-  flex-grow: 1;
-  color: rgb(61, 57, 57);
+  background-color: var(--primary-sky-100);
+  font-size: 1.1rem;
+  color: var(--base-gray-700);
+  border-radius: 100vw;
 }
 
 .update-toy-container input:focus {
-  outline: 1px solid rgba(0, 0, 255, 0.758);
+  outline: 2px solid var(--primary-sky-500);
 }
 
 .update-toy-container input::placeholder {
-  color: rgba(128, 128, 128, 0.552);
+  color: var(--base-gray-400);
+  font-size: 0.95rem;
 }
 
 .update-toy-container textarea {
   width: 100%;
   padding: 0.6rem;
   font-size: 1rem;
-  color: rgb(61, 57, 57);
-  border: 1px solid rgba(0, 0, 255, 0.24);
+  color: gray;
+  border: 0;
   border-radius: 4px;
+  background-color: var(--primary-sky-100);
 }
 
 .update-toy-container textarea:focus {
-  outline: 1px solid rgba(0, 0, 255, 0.758);
+  outline: 2px solid var(--primary-sky-500);
 }
 
-.update-toy-container .btn-primary {
+.update-toy-container textarea::placeholder {
+  color: var(--base-gray-400);
+  font-size: 0.95rem;
+}
+
+.update-toy-container button {
   width: 100%;
-  padding: 1.2rem 0;
-  background: rgba(0, 0, 255, 0.758);
-  color: #fff;
-  border: none;
+  padding: 1.1rem 0;
+  border: 0;
+  border-radius: 100vw;
+  background-color: var(--primary-sky-600);
   font-size: 1.2rem;
+  color: var(--primary-sky-50);
+  cursor: pointer;
 }
 
-.update-toy-container .btn-primary:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 255, 0.758);
-  background-color: rgba(0, 0, 255, 0.87);
-}
-
-.update-toy-container .update-title {
-  width: fit-content;
-  padding: 0.1rem 1rem;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  color: rgba(0, 0, 255, 0.758);
-  font-size: 2.5rem;
-  border-bottom: 2px dotted rgba(0, 0, 255, 0.638);
+.update-toy-container button:hover {
+  background-color: var(--primary-sky-500);
 }

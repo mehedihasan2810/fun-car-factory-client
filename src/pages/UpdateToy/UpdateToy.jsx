@@ -163,9 +163,7 @@ const UpdateToy = () => {
               </label>
             </div>
           </div>
-          <button className="btn-primary" type="submit">
-            Confirm
-          </button>
+          <button type="submit">Confirm</button>
         </form>
       </div>
     </div>
