@@ -1,12 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaUserTie, FaBars } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
-import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import "./Navbar.css";
 import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useAuthContext } from "../../contexts/useAuthContext";
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {

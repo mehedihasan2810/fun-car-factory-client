@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../configs/firebase";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 const gooleProvider = new GoogleAuthProvider();
 
@@ -69,8 +69,8 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuthContext = () => {
-  return useContext(AuthContext);
-};
+// export const useAuthContext = () => {
+//   return useContext(AuthContext);
+// };
 
 export default AuthProvider;

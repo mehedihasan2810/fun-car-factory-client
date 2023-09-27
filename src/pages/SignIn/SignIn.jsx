@@ -1,10 +1,10 @@
 import GoogleButton from "react-google-button";
 import "./SignIn.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
+import { useAuthContext } from "../../contexts/useAuthContext";
 const SignIn = () => {
   useTitlePerPage("Sign In");
   const [email, setEmail] = useState("");

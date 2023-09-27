@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import "./AddToy.css";
-import { useAuthContext } from "../../contexts/AuthProvider";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
+import { useAuthContext } from "../../contexts/useAuthContext";
 const AddToy = () => {
   useTitlePerPage("Add Toy");
   const { currentUser } = useAuthContext();

@@ -3,9 +3,9 @@ import "./AllToys.css";
 import { useRef, useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 // import { toast } from "react-toastify";
-// import { useAuthContext } from "../../contexts/AuthProvider";
 import ProductCard from "../../components/ui/ProductCard/ProductCard";
 import Search from "../../components/ui/Search/Search";
+import { useAuthContext } from "../../contexts/useAuthContext";
 
 const filterValues = ["All", "Ferrari", "Bus", "Truck"];
 const sortValues = [

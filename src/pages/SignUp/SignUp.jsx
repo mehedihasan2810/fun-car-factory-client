@@ -2,9 +2,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import GoogleButton from "react-google-button";
 import { toast } from "react-toastify";
-import { useAuthContext } from "../../contexts/AuthProvider";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
+import { useAuthContext } from "../../contexts/useAuthContext";
+
 const SignUp = () => {
   useTitlePerPage("Sign Up");
   const [name, setName] = useState("");

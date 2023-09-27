@@ -6,6 +6,7 @@ import AuthProvider from "./contexts/AuthProvider";
 import 'react-toastify/dist/ReactToastify.css';
 import SmoothScrollProvider from "./contexts/SmoothScrollProvider";
 import React from "react";
+import 'react-loading-skeleton/dist/skeleton.css';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

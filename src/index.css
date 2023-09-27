@@ -142,7 +142,7 @@ html.lenis {
   border-top: 12px solid blue;
   width: 100px;
   height: 100px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
+  -webkit-animation: spin 2s linear infinite; 
   animation: spin 2s linear infinite;
   margin: 120px auto;
 }

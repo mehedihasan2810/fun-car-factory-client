@@ -22,7 +22,7 @@ const UpdateToy = () => {
       body: JSON.stringify(toyInfo),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         // *show toast
         toast.success("Succesfully Updated!", {
           position: toast.POSITION.TOP_CENTER,

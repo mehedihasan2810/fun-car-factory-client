@@ -3,10 +3,12 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 
 import "./MyToys.css";
 import { useEffect, useState } from "react";
-import { useAuthContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import Skeleton from "react-loading-skeleton";
+
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
+import { useAuthContext } from "../../contexts/useAuthContext";
 const MyToys = () => {
   useTitlePerPage("My Toys");
   const [myToys, setMyToys] = useState([]);
@@ -78,77 +80,76 @@ const MyToys = () => {
     };
   }, [currentUser, sort]);
 
-  if (isLoading) {
-    return <div className="loader"></div>;
-  }
+  // if (isLoading) {
+  //   return <div className="loader"></div>;
+  // }
 
-  if (myToys.length === 0) {
-    return <p className="no-data">You have not added any toys!</p>;
-  }
+  // if (myToys.length === 0) {
+  //   return <p className="no-data">You have not added any toys!</p>;
+  // }
 
   return (
-      <div className="my-toys-container">
-        <div className="sort-container">
-          <p>Sort:</p>
-          <select
-            defaultValue={sort}
-            onChange={(e) => setSort(e.target.value)}
-            className="sort"
-          >
-            <option value="default"> Default </option>
-            <option value="highest"> Highest Price </option>
-            <option value="lowest"> Lowest Price </option>
-          </select>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Seller Name</th>
-              <th>Toy Name</th>
-              <th>Sub Category</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>View Details</th>
-              <th>Update</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {myToys.length !== 0 &&
-              myToys?.map((toy) => (
-                <tr key={toy._id}>
-                  <td>{toy.sellerName}</td>
-                  <td className="name-td">
-                    <img src={toy.url} alt="" />
-                    {toy.name}
-                  </td>
-                  <td>{toy.category}</td>
-                  <td>{toy.price}$</td>
-                  <td>{toy.quantity}</td>
-                  <td>
-                    <Link to={`/toy-details/${toy._id}`}>
-                      <button className="toy-details-btn">View Details</button>
-                    </Link>
-                  </td>
-                  <td title="Update" className="edit-btn">
-                    <Link to={`/my-toys/${toy._id}`}>
-                      <FaEdit />
-                    </Link>
-                  </td>
-                  <td>
-                    <button
-                      title="Delete"
-                      onClick={() => handleDelete(toy._id)}
-                      className="delete-btn"
-                    >
-                      <FaTrash />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+    <div className="my-toys-container">
+      <div className="sort-container">
+        <p>Sort:</p>
+        <select
+          defaultValue={sort}
+          onChange={(e) => setSort(e.target.value)}
+          className="sort"
+        >
+          <option value="default"> Default </option>
+          <option value="highest"> Highest Price </option>
+          <option value="lowest"> Lowest Price </option>
+        </select>
       </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Seller Name</th>
+            <th>Toy Name</th>
+            <th>Sub Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>View Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {myToys.map((toy) => (
+            <tr key={toy._id}>
+              <td>{toy.sellerName}</td>
+              <td className="name-td">
+                <img src={toy.url} alt="" />
+                {toy.name}
+              </td>
+              <td>{toy.category || <Skeleton />}</td>
+              <td>{toy.price}$</td>
+              <td>{toy.quantity}</td>
+              <td>
+                <Link to={`/toy-details/${toy._id}`}>
+                  <button className="toy-details-btn">View Details</button>
+                </Link>
+              </td>
+              <td title="Update" className="edit-btn">
+                <Link to={`/my-toys/${toy._id}`}>
+                  <FaEdit />
+                </Link>
+              </td>
+              <td>
+                <button
+                  title="Delete"
+                  onClick={() => handleDelete(toy._id)}
+                  className="delete-btn"
+                >
+                  <FaTrash />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

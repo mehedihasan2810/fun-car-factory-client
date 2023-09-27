@@ -1,23 +1,23 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuthContext } from "../contexts/AuthProvider";
+import { useAuthContext } from "../contexts/useAuthContext";
 
 const ProtectedRoute = ({ children }) => {
   const location = useLocation();
 
   const { currentUser, isAuthLoading } = useAuthContext();
 
-  if (isAuthLoading) {
-    return (
-      <div
-        className="loader"
-        style={{
-          margin: "200px auto",
-        }}
-      ></div>
-    );
-  }
+  // if (isAuthLoading) {
+  //   return (
+  //     <div
+  //       className="loader"
+  //       style={{
+  //         margin: "200px auto",
+  //       }}
+  //     ></div>
+  //   );
+  // }
 
-  if (currentUser) {
+  if (isAuthLoading || currentUser) {
     return children;
   } else {
     return <Navigate to="/signin" state={{ from: location }} replace />;
