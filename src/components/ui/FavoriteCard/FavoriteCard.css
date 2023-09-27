@@ -2,7 +2,7 @@
   /* border: 1px solid; */
   display: flex;
   gap: 20px;
-  max-inline-size: 500px;
+  /* max-inline-size: 500px; */
   color: var(--base-gray-300);
 }
 
@@ -12,11 +12,27 @@
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .favorite-card-container img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+  }
+}
+
 .favorite-card-info {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
   /* border: 1px solid; */
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .favorite-card-info {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 .favorite-card-info-first {
