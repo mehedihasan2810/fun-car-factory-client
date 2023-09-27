@@ -1,32 +1,38 @@
 .my-toys-container {
   margin-block: 150px;
-  margin-inline: auto;
-  max-inline-size: 1400px;
   color: var(--primary-sky-50);
 }
 
-.my-toys-top-header{
+.my-toys-top-header {
+  margin-inline: auto;
+  inline-size: min(100vw, 1400px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-inline: 8px;
   margin-block-end: 30px;
+  position: relative;
 }
 
-.my-toys-top-header div:first-child{
+.my-toys-top-header div:first-child {
   font-size: clamp(1.5rem, 1.7vw, 2rem);
 }
 
-.my-toys-top-header div:first-child > span{
+.my-toys-top-header div:first-child > span {
   font-size: 0.9rem;
   color: var(--base-gray-300);
+}
+
+.my-toys-container .table-scroller {
+  inline-size: min(100vw, 1400px);
+  margin-inline: auto;
+  overflow-x: auto;
 }
 
 .my-toys-container table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
+  inline-size: 1400px;
 }
 
 .my-toys-container th {
@@ -107,18 +113,3 @@
   align-items: center;
   gap: 3px;
 }
-
-/* .my-toys-container .sort-container {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 0.5rem;
-  margin-block-end: 15px;
-}
-.sort-container {
-  font-size: 1.2rem;
-}
-.my-toys-container .sort {
-  padding: 0.5rem 0.5rem;
-  font-size: 1rem;
-} */

@@ -75,51 +75,53 @@ const MyToys = () => {
           placeholder="Search Toys... eg. bus, ferrari, truck"
         />
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Toy Name</th>
-            <th>Sub Category</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>View Details</th>
-            <th>Update</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredToys.map((toy) => (
-            <tr key={toy._id}>
-              <td className="name-td">
-                <img src={toy.url} alt="" />
-                {toy.name}
-              </td>
-              <td>{toy.category}</td>
-              <td>{toy.price}$</td>
-              <td>{toy.quantity}</td>
-              <td>
-                <Link to={`/toy-details/${toy._id}`}>
-                  <button className="toy-details-btn">View Details</button>
-                </Link>
-              </td>
-              <td title="Update" className="edit-btn">
-                <Link to={`/my-toys/${toy._id}`}>
-                  <FaEdit />
-                </Link>
-              </td>
-              <td>
-                <button
-                  title="Delete"
-                  onClick={() => handleDelete(toy._id)}
-                  className="delete-btn"
-                >
-                  <FaTrash />
-                </button>
-              </td>
+      <div className="table-scroller">
+        <table>
+          <thead>
+            <tr>
+              <th>Toy Name</th>
+              <th>Sub Category</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>View Details</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredToys.map((toy) => (
+              <tr key={toy._id}>
+                <td className="name-td">
+                  <img src={toy.url} alt="" />
+                  {toy.name}
+                </td>
+                <td>{toy.category}</td>
+                <td>{toy.price}$</td>
+                <td>{toy.quantity}</td>
+                <td>
+                  <Link to={`/toy-details/${toy._id}`}>
+                    <button className="toy-details-btn">View Details</button>
+                  </Link>
+                </td>
+                <td title="Update" className="edit-btn">
+                  <Link to={`/my-toys/${toy._id}`}>
+                    <FaEdit />
+                  </Link>
+                </td>
+                <td>
+                  <button
+                    title="Delete"
+                    onClick={() => handleDelete(toy._id)}
+                    className="delete-btn"
+                  >
+                    <FaTrash />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
