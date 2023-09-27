@@ -4,7 +4,7 @@
   border: 1px solid var(--primary-sky-700);
   border-radius: 4px;
   background-color: var(--primary-sky-900);
-  max-inline-size: 700px;
+  max-inline-size: 800px;
 }
 
 @media (max-width: 768px) {
@@ -95,7 +95,6 @@
   font-size: 1.2rem;
   color: var(--primary-sky-50);
   cursor: pointer;
-  /* margin-block-start: 1rem; */
 }
 
 .add-toy-container button:hover {
