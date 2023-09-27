@@ -87,6 +87,16 @@ nav .bar > * {
   height: 100%;
 }
 
+.nav-favorite-list svg {
+  width: 30px;
+  height: 30px;
+  color: var(--deep-white-100);
+}
+
+.nav-favorite-list svg:hover{
+  color: var(--base-gray-400);
+}
+
 @media (max-width: 768px) {
   nav {
     padding-block: 0.5rem;

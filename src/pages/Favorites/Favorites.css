@@ -1,5 +1,5 @@
 .favorites-container{
-    margin-block: 200px;
+    margin-block: 150px;
     margin-inline: auto;
     /* border: 1px solid; */
     width: max-content;
@@ -15,6 +15,6 @@
 
 .favorites-container .favorites-count{
     margin-block-end: 10px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--primary-sky-50);
 }
