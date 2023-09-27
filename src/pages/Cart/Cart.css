@@ -7,6 +7,12 @@
   gap: 80px;
 }
 
+@media (max-width: 768px){
+    .cart-container{
+        flex-direction: column-reverse;
+    }
+}
+
 .cart-container .cart-count {
   margin-block-end: 10px;
   font-size: 1.5rem;
