@@ -1,3 +1,20 @@
 .favorites-container{
     margin-block: 200px;
+    margin-inline: auto;
+    /* border: 1px solid; */
+    width: max-content;
+    /* display: flex;
+    flex-direction: column;
+    gap: 40px; */
+}
+
+.favorites-container > div{
+    padding-block: 30px;
+    border-top: 1px solid rgb(255 255 255 / 0.2);
+}
+
+.favorites-container .favorites-count{
+    margin-block-end: 10px;
+    font-size: 1.1rem;
+    color: var(--primary-sky-50);
 }

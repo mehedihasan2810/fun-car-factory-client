@@ -1,0 +1,81 @@
+.favorite-card-container {
+  /* border: 1px solid; */
+  display: flex;
+  gap: 20px;
+  max-inline-size: 500px;
+  color: var(--base-gray-300);
+}
+
+.favorite-card-container img {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.favorite-card-info {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid; */
+  width: 100%;
+}
+
+.favorite-card-info-first {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.favorite-card-name {
+  font-size: 1.2rem;
+  color: var(--primary-sky-50);
+}
+
+.favorite-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.favorite-card-ratings-wrapper {
+  display: flex;
+}
+
+.favorite-card-ratings-wrapper > svg {
+  width: 21px;
+  height: 21px;
+  color: #f59e0b;
+  fill: #f59e0b;
+}
+
+.favorite-card-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.favorite-card-delete-btn,
+.favorite-card-cart-btn {
+  width: 35px;
+  padding: 6px;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.favorite-card-delete-btn {
+  color: #fb7185;
+}
+
+.favorite-card-cart-btn {
+  color: var(--primary-sky-50);
+}
+.favorite-card-delete-btn:hover {
+  background-color: rgb(251 113 134 / 0.15);
+}
+.favorite-card-cart-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.favorite-card-price {
+}
