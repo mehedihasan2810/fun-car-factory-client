@@ -7,6 +7,14 @@
   margin-block: 200px;
   margin-inline: auto;
   color: var(--base-gray-300);
+  padding-inline: 8px;
+}
+
+@media (max-width: 768px) {
+  .details-container {
+    grid-template-columns: 1fr;
+    margin-block: 120px;
+  }
 }
 
 .details-container .img-galary {
@@ -17,7 +25,7 @@
 
 .details-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
