@@ -10,6 +10,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import ProtectedRoute from "./ProtectedRoute";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
+import Favorites from "../pages/Favorites/Favorites";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         loader: () =>
-        fetch("https://fun-car-factory-server.vercel.app/all-toys"),
+          fetch("https://fun-car-factory-server.vercel.app/all-toys"),
       },
       {
         path: "/add-toy",
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
           fetch(
             `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
           ),
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
       },
     ],
   },
