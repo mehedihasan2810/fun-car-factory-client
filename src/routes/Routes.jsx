@@ -11,6 +11,7 @@ import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import ProtectedRoute from "./ProtectedRoute";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
 import Favorites from "../pages/Favorites/Favorites";
+import Cart from "../pages/Cart/Cart";
 
 export const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
       {
         path: "/favorites",
         element: <Favorites />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

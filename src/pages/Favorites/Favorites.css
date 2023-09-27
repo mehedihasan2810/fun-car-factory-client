@@ -1,21 +1,17 @@
-.favorites-container{
-    margin-block: 150px;
-    margin-inline: auto;
-    /* border: 1px solid; */
-    width: max-content;
-    /* display: flex;
-    flex-direction: column;
-    gap: 40px; */
-    padding-inline: 8px;
+.favorites-container {
+  margin-block: 150px;
+  margin-inline: auto;
+  width: max-content;
+  padding-inline: 8px;
 }
 
-.favorites-container > div{
-    padding-block: 30px;
-    border-top: 1px solid rgb(255 255 255 / 0.2);
+.favorites-container > div {
+  padding-block: 30px;
+  border-top: 1px solid rgb(255 255 255 / 0.2);
 }
 
-.favorites-container .favorites-count{
-    margin-block-end: 10px;
-    font-size: 1.5rem;
-    color: var(--primary-sky-50);
+.favorites-container .favorites-count {
+  margin-block-end: 10px;
+  font-size: 1.5rem;
+  color: var(--primary-sky-50);
 }
