@@ -5,7 +5,7 @@ import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 // import { toast } from "react-toastify";
 import ProductCard from "../../components/ui/ProductCard/ProductCard";
 import Search from "../../components/ui/Search/Search";
-import { useAuthContext } from "../../contexts/useAuthContext";
+// import { useAuthContext } from "../../contexts/useAuthContext";
 
 const filterValues = ["All", "Ferrari", "Bus", "Truck"];
 const sortValues = [
@@ -57,7 +57,10 @@ const AllToys = () => {
         <div className="toys-total-count">
           Toys <span>({allToys.length})</span>
         </div>
-        <Search onHandleSearch={handleSearch} />
+        <Search
+          onHandleSearch={handleSearch}
+          placeholder="Search Your Favorite Toys... eg. bus, ferrari, truck"
+        />
 
         <div className="toys-filter-sortby-wrapper">
           {/* <button className="toys-search-btn">
@@ -75,7 +78,7 @@ const AllToys = () => {
             />
           </svg>
           </button> */}
-         
+
           <div className="toys-filter-wrapper">
             <button
               onClick={() => {

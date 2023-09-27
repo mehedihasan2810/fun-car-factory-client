@@ -1,21 +1,19 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-import "./MyToys.css";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import "./MyToys.css";
 
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
-import { useAuthContext } from "../../contexts/useAuthContext";
+import Search from "../../components/ui/Search/Search";
 const MyToys = () => {
   useTitlePerPage("My Toys");
   const [myToys, setMyToys] = useState([]);
-  const [sort, setSort] = useState("default");
-  const { currentUser } = useAuthContext();
+  const [searchTerm, setSearhTerm] = useState("");
 
   const allToys = useLoaderData();
-  console.log(allToys);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -51,38 +49,15 @@ const MyToys = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const abortController = new AbortController();
-  //   const fetchData = () => {
-  //     setIsLoading(true);
-  //     fetch(
-  //       `https://fun-car-factory-server.vercel.app/my-toys?email=${currentUser?.email}&sort=${sort}`,
-  //       {
-  //         signal: abortController.signal,
-  //       }
-  //     )
-  //       .then((res) => {
-  //         return res.json();
-  //       })
-  //       .then((data) => {
-  //         setMyToys(data);
-  //         setIsLoading(false);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //         setIsLoading(false);
-  //       });
-  //   };
-  //   fetchData();
+  const handleSearch = async (searchValue) => {
+    setSearhTerm(searchValue);
+  };
 
-  //   return () => {
-  //     abortController.abort();
-  //   };
-  // }, [currentUser, sort]);
-
-  // if (isLoading) {
-  //   return <div className="loader"></div>;
-  // }
+  const filteredToys = searchTerm
+    ? allToys.filter((toy) =>
+        toy.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+      )
+    : allToys;
 
   if (!allToys.length) {
     return <p className="no-data">You have not added any toys!</p>;
@@ -90,22 +65,19 @@ const MyToys = () => {
 
   return (
     <div className="my-toys-container">
-      <div className="sort-container">
-        <p>Sort:</p>
-        <select
-          defaultValue={sort}
-          onChange={(e) => setSort(e.target.value)}
-          className="sort"
-        >
-          <option value="default"> Default </option>
-          <option value="highest"> Highest Price </option>
-          <option value="lowest"> Lowest Price </option>
-        </select>
+      <div className="my-toys-top-header">
+        <div>
+          Total <span>({filteredToys.length})</span>
+        </div>
+
+        <Search
+          onHandleSearch={handleSearch}
+          placeholder="Search Toys... eg. bus, ferrari, truck"
+        />
       </div>
       <table>
         <thead>
           <tr>
-            <th>Seller Name</th>
             <th>Toy Name</th>
             <th>Sub Category</th>
             <th>Price</th>
@@ -116,9 +88,8 @@ const MyToys = () => {
           </tr>
         </thead>
         <tbody>
-          {allToys.map((toy) => (
+          {filteredToys.map((toy) => (
             <tr key={toy._id}>
-              <td>{toy.sellerName}</td>
               <td className="name-td">
                 <img src={toy.url} alt="" />
                 {toy.name}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Search.css";
 
-const Search = ({ onHandleSearch }) => {
+const Search = ({ onHandleSearch, placeholder }) => {
   const [search, setSearch] = useState("");
 
   return (
@@ -32,7 +32,7 @@ const Search = ({ onHandleSearch }) => {
         type="text"
         id="search"
         name="search"
-        placeholder="Search Your Favorite Toys..."
+        placeholder={placeholder}
       />
       <button onClick={() => onHandleSearch(search)} type="submit">
         Search
