@@ -73,8 +73,8 @@
 
 .no-data {
   text-align: center;
-  margin: 120px 0;
-  color: red;
+  margin-block: 300px;
+  color: #f43f5e;
 }
 
 .my-toys-container img {

@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 import "./MyToys.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
-import Skeleton from "react-loading-skeleton";
 
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useAuthContext } from "../../contexts/useAuthContext";
@@ -15,7 +14,8 @@ const MyToys = () => {
   const [sort, setSort] = useState("default");
   const { currentUser } = useAuthContext();
 
-  const [isLoading, setIsLoading] = useState(true);
+  const allToys = useLoaderData();
+  console.log(allToys);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -51,42 +51,42 @@ const MyToys = () => {
     });
   };
 
-  useEffect(() => {
-    const abortController = new AbortController();
-    const fetchData = () => {
-      setIsLoading(true);
-      fetch(
-        `https://fun-car-factory-server.vercel.app/my-toys?email=${currentUser?.email}&sort=${sort}`,
-        {
-          signal: abortController.signal,
-        }
-      )
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setMyToys(data);
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.log(error);
-          setIsLoading(false);
-        });
-    };
-    fetchData();
+  // useEffect(() => {
+  //   const abortController = new AbortController();
+  //   const fetchData = () => {
+  //     setIsLoading(true);
+  //     fetch(
+  //       `https://fun-car-factory-server.vercel.app/my-toys?email=${currentUser?.email}&sort=${sort}`,
+  //       {
+  //         signal: abortController.signal,
+  //       }
+  //     )
+  //       .then((res) => {
+  //         return res.json();
+  //       })
+  //       .then((data) => {
+  //         setMyToys(data);
+  //         setIsLoading(false);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //         setIsLoading(false);
+  //       });
+  //   };
+  //   fetchData();
 
-    return () => {
-      abortController.abort();
-    };
-  }, [currentUser, sort]);
+  //   return () => {
+  //     abortController.abort();
+  //   };
+  // }, [currentUser, sort]);
 
   // if (isLoading) {
   //   return <div className="loader"></div>;
   // }
 
-  // if (myToys.length === 0) {
-  //   return <p className="no-data">You have not added any toys!</p>;
-  // }
+  if (!allToys.length) {
+    return <p className="no-data">You have not added any toys!</p>;
+  }
 
   return (
     <div className="my-toys-container">
@@ -116,14 +116,14 @@ const MyToys = () => {
           </tr>
         </thead>
         <tbody>
-          {myToys.map((toy) => (
+          {allToys.map((toy) => (
             <tr key={toy._id}>
               <td>{toy.sellerName}</td>
               <td className="name-td">
                 <img src={toy.url} alt="" />
                 {toy.name}
               </td>
-              <td>{toy.category || <Skeleton />}</td>
+              <td>{toy.category}</td>
               <td>{toy.price}$</td>
               <td>{toy.quantity}</td>
               <td>

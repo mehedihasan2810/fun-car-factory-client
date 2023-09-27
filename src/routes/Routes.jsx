@@ -42,6 +42,8 @@ export const router = createBrowserRouter([
             <MyToys />
           </ProtectedRoute>
         ),
+        loader: () =>
+        fetch("https://fun-car-factory-server.vercel.app/all-toys"),
       },
       {
         path: "/add-toy",
