@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 import saveToLocalStorage from "../../../utils/saveToLocalStorage";
 const ProductCard = ({ data }) => {
-  const addToLocalStorage = (id) => {
+  const addToLocalStorage = (key, id) => {
     try {
-      saveToLocalStorage(id);
+      saveToLocalStorage(key, id);
     } catch (error) {
       console.log(error.message);
     }
@@ -14,7 +14,11 @@ const ProductCard = ({ data }) => {
     <div className="product-card">
       <div className="product-card-img-wrapper">
         <img className="product-card-img" src={data.url} alt={data.name} />
-        <button className="product-card-favorite" title="Add To Favorite">
+        <button
+          onClick={() => addToLocalStorage("fav", data._id)}
+          className="product-card-favorite"
+          title="Add To Favorite"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -132,7 +136,7 @@ const ProductCard = ({ data }) => {
               <Link to={`/toy-details/${data._id}`}>Toy Details</Link>
             </button>
             <button
-              onClick={() => addToLocalStorage(data._id)}
+              onClick={() => addToLocalStorage("cart", data._id)}
               className="product-card-cart-btn"
               title="Add To Cart"
             >

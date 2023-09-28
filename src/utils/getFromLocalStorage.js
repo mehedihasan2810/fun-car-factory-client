@@ -1,6 +1,5 @@
+const getFromLocalStorage = (key) => {
+  return localStorage.getItem(key);
+};
 
-const getFromLocalStorage = () => {
-   return localStorage.getItem('cart');
-}
-
-export default getFromLocalStorage
+export default getFromLocalStorage;

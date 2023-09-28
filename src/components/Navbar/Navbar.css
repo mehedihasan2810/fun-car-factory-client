@@ -87,14 +87,27 @@ nav .bar > * {
   height: 100%;
 }
 
-.nav-favorite-list svg {
+.nav-favorite-list svg,
+.nav-cart-list svg {
   width: 30px;
   height: 30px;
   color: var(--deep-white-100);
 }
 
-.nav-favorite-list svg:hover {
+.nav-favorite-list svg:hover,
+.nav-cart-list svg:hover {
   color: var(--base-gray-400);
+}
+
+.nav-cart-list a {
+  position: relative;
+}
+
+.nav-cart-count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
