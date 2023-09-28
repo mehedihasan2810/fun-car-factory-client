@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
+import saveToLocalStorage from "../../../utils/saveToLocalStorage";
 const ProductCard = ({ data }) => {
   return (
     <div className="product-card">
@@ -122,7 +123,11 @@ const ProductCard = ({ data }) => {
             <button>
               <Link to={`/toy-details/${data._id}`}>Toy Details</Link>
             </button>
-            <button className="product-card-cart-btn" title="Add To Cart">
+            <button
+              onClick={() => saveToLocalStorage(data._id)}
+              className="product-card-cart-btn"
+              title="Add To Cart"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
