@@ -2,6 +2,14 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 import saveToLocalStorage from "../../../utils/saveToLocalStorage";
 const ProductCard = ({ data }) => {
+  const addToLocalStorage = (id) => {
+    try {
+      saveToLocalStorage(id);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="product-card">
       <div className="product-card-img-wrapper">
@@ -124,7 +132,7 @@ const ProductCard = ({ data }) => {
               <Link to={`/toy-details/${data._id}`}>Toy Details</Link>
             </button>
             <button
-              onClick={() => saveToLocalStorage(data._id)}
+              onClick={() => addToLocalStorage(data._id)}
               className="product-card-cart-btn"
               title="Add To Cart"
             >
