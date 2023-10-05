@@ -33,14 +33,11 @@ const AllToys = () => {
     setSearhTerm(searchValue);
   };
 
-  const {
-    data,
-    loading,
-    error,
-  } = useQuery(GET_CARS);
-  console.log(loading);
-  console.log(error);
-  console.log(data?.getCars);
+  const { data, loading, error } = useQuery(GET_CARS);
+
+  if (error) {
+    return <p>Something went wrong!</p>;
+  }
 
   if (loading) {
     return <p>loading.........</p>;
@@ -67,16 +64,6 @@ const AllToys = () => {
         }
       })
     : filteredToys;
-
-  // const GET_CARS = gql`
-  // query GetCars {
-  //   getCars {
-  //     name
-  //   }
-  // }
-  // `;
-
-  console.log(sortedToys);
 
   return (
     <div className="toys-container">
@@ -197,7 +184,7 @@ const AllToys = () => {
       </div>
       <div className="toys-grid">
         {sortedToys.length ? (
-          sortedToys.map((toy) => <ProductCard key={toy._id} data={toy} />)
+          sortedToys.map((toy) => <ProductCard key={toy.id} data={toy} />)
         ) : (
           <div className="toys-not-found-title">No toys found!</div>
         )}

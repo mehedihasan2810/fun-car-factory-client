@@ -133,7 +133,7 @@ const ProductCard = ({ data }) => {
               <Link to="#">Buy Now</Link>{" "}
             </button>
             <button>
-              <Link to={`/toy-details/${data._id}`}>Toy Details</Link>
+              <Link to={`/toy-details/${data.id}`}>Toy Details</Link>
             </button>
             <button
               onClick={() => addToLocalStorage("cart", data._id)}
