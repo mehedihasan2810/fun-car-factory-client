@@ -1,10 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import "./AllToys.css";
 import { useRef, useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 // import { toast } from "react-toastify";
 import ProductCard from "../../components/ui/ProductCard/ProductCard";
 import Search from "../../components/ui/Search/Search";
+import { useQuery } from "@apollo/client";
+import { GET_CARS } from "../../lib/graphql/queryDefs";
 // import { useAuthContext } from "../../contexts/useAuthContext";
 
 const filterValues = ["All", "Ferrari", "Bus", "Truck"];
@@ -25,11 +27,26 @@ const AllToys = () => {
 
   const [searchTerm, setSearhTerm] = useState("");
   const [sortTerm, setSortTerm] = useState("");
-  const allToys = useLoaderData();
+  // const allToys = useLoaderData();
 
   const handleSearch = async (searchValue) => {
     setSearhTerm(searchValue);
   };
+
+  const {
+    data,
+    loading,
+    error,
+  } = useQuery(GET_CARS);
+  console.log(loading);
+  console.log(error);
+  console.log(data?.getCars);
+
+  if (loading) {
+    return <p>loading.........</p>;
+  }
+
+  const allToys = data.getCars;
 
   const filteredToys = searchTerm
     ? allToys.filter((toy) =>
@@ -50,6 +67,16 @@ const AllToys = () => {
         }
       })
     : filteredToys;
+
+  // const GET_CARS = gql`
+  // query GetCars {
+  //   getCars {
+  //     name
+  //   }
+  // }
+  // `;
+
+  console.log(sortedToys);
 
   return (
     <div className="toys-container">

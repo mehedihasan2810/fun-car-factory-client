@@ -121,7 +121,7 @@ const ProductCard = ({ data }) => {
                   />
                 </svg>
               </div>
-              5/5(100)
+              {data.rating}/5(100)
             </div>
           </div>
 
