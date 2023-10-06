@@ -7,6 +7,7 @@ import ProductCard from "../../components/ui/ProductCard/ProductCard";
 import Search from "../../components/ui/Search/Search";
 import { useQuery } from "@apollo/client";
 import { GET_CARS } from "../../lib/graphql/queryDefs";
+import Skeleton from "react-loading-skeleton";
 // import { useAuthContext } from "../../contexts/useAuthContext";
 
 const filterValues = ["All", "Ferrari", "Bus", "Truck"];
@@ -39,37 +40,41 @@ const AllToys = () => {
     return <p>Something went wrong!</p>;
   }
 
-  if (loading) {
-    return <p>loading.........</p>;
+  // if (loading) {
+  //   return <p>loading.........</p>;
+  // }
+
+  let sortedToys;
+
+  if (!loading) {
+    const allToys = data.getCars;
+
+    const filteredToys = searchTerm
+      ? allToys.filter((toy) =>
+          toy.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+        )
+      : allToys;
+
+    sortedToys = sortTerm
+      ? filteredToys.slice().sort((toy1, toy2) => {
+          const price1 = +toy1.price;
+          const price2 = +toy2.price;
+
+          if (sortTerm === "ascending") {
+            return price1 > price2 ? 1 : price1 < price2 ? -1 : 0;
+          }
+          if (sortTerm === "descending") {
+            return price1 < price2 ? 1 : price1 > price2 ? -1 : 0;
+          }
+        })
+      : filteredToys;
   }
-
-  const allToys = data.getCars;
-
-  const filteredToys = searchTerm
-    ? allToys.filter((toy) =>
-        toy.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
-      )
-    : allToys;
-
-  const sortedToys = sortTerm
-    ? filteredToys.slice().sort((toy1, toy2) => {
-        const price1 = +toy1.price;
-        const price2 = +toy2.price;
-
-        if (sortTerm === "ascending") {
-          return price1 > price2 ? 1 : price1 < price2 ? -1 : 0;
-        }
-        if (sortTerm === "descending") {
-          return price1 < price2 ? 1 : price1 > price2 ? -1 : 0;
-        }
-      })
-    : filteredToys;
 
   return (
     <div className="toys-container">
       <div className="toys-top-header">
         <div className="toys-total-count">
-          Toys <span>({allToys.length})</span>
+          Toys <span>({loading ? "0" : sortedToys?.length})</span>
         </div>
         <Search
           onHandleSearch={handleSearch}
@@ -183,7 +188,17 @@ const AllToys = () => {
         </div>
       </div>
       <div className="toys-grid">
-        {sortedToys.length ? (
+        {loading ? (
+          Array.from({ length: 20 }).map((_, index) => (
+            <Skeleton
+              key={index}
+              style={{
+                height: "400px",
+                borderRadius: "15px",
+              }}
+            />
+          ))
+        ) : sortedToys.length ? (
           sortedToys.map((toy) => <ProductCard key={toy.id} data={toy} />)
         ) : (
           <div className="toys-not-found-title">No toys found!</div>
