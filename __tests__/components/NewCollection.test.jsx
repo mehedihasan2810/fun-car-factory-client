@@ -24,7 +24,7 @@ describe("<NewCollection />", () => {
 
     expect(heading).toBeInTheDocument();
     expect(button).toBeInTheDocument();
-    expect(imgs.length).toBe(2);
+    expect(imgs.length).toEqual(2);
   });
 
   test("should match snapshot", () => {

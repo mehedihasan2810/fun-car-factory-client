@@ -12,8 +12,8 @@ export default defineConfig({
     setupFiles: ["./__tests__/vitest.setup.js"],
 
     coverage: {
-      // reporter: ["text", "html", "clover", "json"],
-      // reportsDirectory: './__tests__/unit/coverage',
+      reporter: ["html"],
+      reportsDirectory: "./__tests__/unit/coverage",
       enabled: true,
     },
   },
