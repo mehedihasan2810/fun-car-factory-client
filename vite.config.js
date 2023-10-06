@@ -8,11 +8,13 @@ export default defineConfig({
     globals: true,
     environment: "happy-dom",
     testMatch: ["./__tests__/**/*.test.jsx"],
+    // reporters: ["default", "html"],
+    setupFiles: ["./__tests__/vitest.setup.js"],
+
+    coverage: {
+      // reporter: ["text", "html", "clover", "json"],
+      // reportsDirectory: './__tests__/unit/coverage',
+      enabled: true,
+    },
   },
-  // test: {
-  //   environment: "jsdom",
-  //    setupFiles: ["./__tests__/vitest.setup.js"],
-  //   testMatch: ["./__tests__/**/*.test.jsx"],
-  //   globals: true,
-  // },
 });

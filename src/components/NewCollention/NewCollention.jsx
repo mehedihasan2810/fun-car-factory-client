@@ -1,4 +1,5 @@
 // import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NewCollention.css";
 import { useRef } from "react";
 
@@ -31,9 +32,9 @@ const NewCollention = () => {
             Brand New Toys <br /> Just Arrived
           </h4>
           {/* <>Brand New Toys Just Arrived</> */}
-          {/* <Link to="#" className="btn-primary">
+          <Link to="#" className="btn-primary">
             Explore
-          </Link> */}
+          </Link>
         </div>
       </section>
     </div>
