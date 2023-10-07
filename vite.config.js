@@ -8,7 +8,7 @@ export default defineConfig({
     globals: true,
     environment: "happy-dom",
     testMatch: ["./__tests__/**/*.test.jsx"],
-    // reporters: ["default", "html"],
+    reporters: ["default", "html"],
     setupFiles: ["./__tests__/vitest.setup.js"],
 
     coverage: {

@@ -113,6 +113,7 @@ const Navbar = () => {
               <li>
                 {currentUser?.photoURL ? (
                   <img
+                    data-testid="nav-user-img"
                     title={currentUser?.displayName}
                     className="profile-img"
                     src={currentUser?.photoURL}
@@ -127,7 +128,7 @@ const Navbar = () => {
                 )}
               </li>
               <li>
-                <button onClick={handleSignOut} className="btn-primary">
+                <button data-testid="signOut" onClick={handleSignOut} className="btn-primary">
                   Sign Out
                 </button>
               </li>

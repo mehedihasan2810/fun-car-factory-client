@@ -62,6 +62,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         currentUser,
         isAuthLoading,
+        setCurrentUser
       }}
     >
       {children}

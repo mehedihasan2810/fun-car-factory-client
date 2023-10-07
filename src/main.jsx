@@ -5,14 +5,14 @@ import { router } from "./routes/Routes.jsx";
 import AuthProvider from "./contexts/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
 import SmoothScrollProvider from "./contexts/SmoothScrollProvider";
-// import React from "react";
+import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import { ApolloProvider } from "@apollo/client";
 import { apolloClient } from "./lib/graphql";
 import { SkeletonTheme } from "react-loading-skeleton";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <SmoothScrollProvider>
       <ApolloProvider client={apolloClient}>
         <AuthProvider>
@@ -22,5 +22,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </AuthProvider>
       </ApolloProvider>
     </SmoothScrollProvider>
-  // </React.StrictMode>
+  </React.StrictMode>
 );

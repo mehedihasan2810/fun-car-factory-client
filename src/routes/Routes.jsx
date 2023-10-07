@@ -34,8 +34,8 @@ export const router = createBrowserRouter([
       {
         path: "/all-toys",
         element: <AllToys />,
-        loader: () =>
-          fetch("https://fun-car-factory-server.vercel.app/all-toys"),
+        // loader: () =>
+        //   fetch("https://fun-car-factory-server.vercel.app/all-toys"),
       },
       {
         path: "/my-toys",
@@ -44,8 +44,8 @@ export const router = createBrowserRouter([
             <MyToys />
           </ProtectedRoute>
         ),
-        loader: () =>
-          fetch("https://fun-car-factory-server.vercel.app/all-toys"),
+        // loader: () =>
+        //   fetch("https://fun-car-factory-server.vercel.app/all-toys"),
       },
       {
         path: "/add-toy",
@@ -62,18 +62,18 @@ export const router = createBrowserRouter([
             <ToyDetails />
           </ProtectedRoute>
         ),
-        loader: ({ params }) =>
-          fetch(
-            `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
-          ),
+        // loader: ({ params }) =>
+        //   fetch(
+        //     `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
+        //   ),
       },
       {
         path: "/my-toys/:id",
         element: <UpdateToy />,
-        loader: ({ params }) =>
-          fetch(
-            `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
-          ),
+        // loader: ({ params }) =>
+        //   fetch(
+        //     `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
+        //   ),
       },
       {
         path: "/favorites",

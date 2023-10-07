@@ -1,0 +1,138 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Navbar /> > Should render succesfully 1`] = `
+<DocumentFragment>
+  <div
+    class="nav-container"
+  >
+    <nav>
+      <div
+        class="logo-container"
+      >
+        <img
+          alt="logo"
+          height="55"
+          src="/assets/logo.png"
+          width="55"
+        />
+      </div>
+      <ul
+        class=""
+      >
+        <li>
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/all-toys"
+          >
+            All Toys
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/my-toys"
+          >
+            My Toys
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/add-toy"
+          >
+            Add Toy
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/signin"
+          >
+            <button
+              class="btn-primary"
+            >
+              Sign In
+            </button>
+          </a>
+        </li>
+        <li
+          class="nav-favorite-list"
+        >
+          <a
+            class=""
+            href="/favorites"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="nav-cart-list"
+        >
+          <a
+            class=""
+            href="/cart"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div
+              class="nav-cart-count"
+            >
+              0
+            </div>
+          </a>
+        </li>
+      </ul>
+      <button
+        class="bar"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
