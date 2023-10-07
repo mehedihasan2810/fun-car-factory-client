@@ -1,137 +1,159 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<Hero/> > should match snapshot 1`] = `
-<section
-  className="hero-container"
->
-  <div
-    className="hero-layer-contaner"
+<DocumentFragment>
+  <section
+    class="hero-container"
   >
-    <img
-      className="mobile-hero-img"
-      src="/assets/banner-photo.png"
-    />
     <div
-      className="hero-info"
+      class="hero-layer-contaner"
     >
-      <h1
-        onClick={[Function]}
+      <img
+        class="mobile-hero-img"
+        src="/assets/banner-photo.png"
+      />
+      <div
+        class="hero-info"
       >
-        Get The
-         
-        <div
-          className="hero-highlight-title"
-        >
-          Best Toys
-          <svg
-            fill="none"
-            viewBox="0 0 543 11"
-            xmlns="http://www.w3.org/2000/svg"
+        <h1>
+          Get The 
+          <div
+            class="hero-highlight-title"
           >
-            <path
-              className="hero-path"
-              d="M0.5 1.5H250L0.5 9.5H250H542.5L299.5 1.5H542.5"
-              stroke="#eab308"
-              strokeWidth="5"
-            />
-          </svg>
-        </div>
-         
-        <br />
-         For Your Kids
-      </h1>
-      <a
-        className="btn-primary"
-        href="/"
-        onClick={[Function]}
+            Best Toys
+            <svg
+              fill="none"
+              viewBox="0 0 543 11"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="hero-path"
+                d="M0.5 1.5H250L0.5 9.5H250H542.5L299.5 1.5H542.5"
+                stroke="#eab308"
+                stroke-width="5"
+              />
+            </svg>
+          </div>
+           
+          <br />
+           For Your Kids
+        </h1>
+        <a
+          class="btn-primary"
+          href="/"
+        >
+          Get Now
+        </a>
+      </div>
+    </div>
+    <div
+      class="hero-scene"
+    >
+      <div
+        class="hero-slider"
       >
-        Get Now
-      </a>
+        <div
+          style="transform: translate(0, 0);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(868px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1594787317357-dcda50fd1d78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(1736px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1610018817073-fe06110e6693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(2604px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1565438525268-adf2e49737e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(3472px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1616850508698-8cb0c576d5ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2038&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(4340px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+          />
+        </div>
+      </div>
+      <div
+        class="hero-slider-2"
+      >
+        <div
+          style="transform: translate(0, 0);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(-868px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1594787317357-dcda50fd1d78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(-1736px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1610018817073-fe06110e6693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(-2604px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1565438525268-adf2e49737e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(-3472px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1616850508698-8cb0c576d5ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2038&q=80"
+          />
+        </div>
+        <div
+          style="transform: translate(-4340px, 0px);"
+        >
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+          />
+        </div>
+      </div>
     </div>
-  </div>
-  <div
-    className="hero-scene"
-  >
-    <div
-      className="hero-slider"
-    >
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1594787317357-dcda50fd1d78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1610018817073-fe06110e6693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1565438525268-adf2e49737e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1616850508698-8cb0c576d5ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2038&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-        />
-      </div>
-    </div>
-    <div
-      className="hero-slider-2"
-    >
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1594787317357-dcda50fd1d78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1610018817073-fe06110e6693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1565438525268-adf2e49737e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1616850508698-8cb0c576d5ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2038&q=80"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</DocumentFragment>
 `;

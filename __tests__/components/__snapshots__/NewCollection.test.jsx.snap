@@ -1,50 +1,51 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<NewCollection /> > should match snapshot 1`] = `
-<div
-  className="new-collection-wrapper"
->
+<DocumentFragment>
   <div
-    className="new-collection-left-gradient"
-  />
-  <div
-    className="new-collection-right-gradient"
-  />
-  <section
-    className="new-collection-container parallax"
-    data-speed="25"
+    class="new-collection-wrapper"
   >
     <div
-      className="new-collection-images-container"
-    >
-      <img
-        alt=""
-        src="https://images.unsplash.com/photo-1511415518647-9e5da4fd803f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-      />
-      <img
-        alt=""
-        src="https://images.unsplash.com/photo-1519283053578-3efb9d2e71bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-      />
-    </div>
+      class="new-collection-left-gradient"
+    />
     <div
-      className="new-collection-info-container"
+      class="new-collection-right-gradient"
+    />
+    <section
+      class="new-collection-container parallax"
+      data-speed="25"
     >
-      <p>
-        New Collection
-      </p>
-      <h4>
-        Brand New Toys 
-        <br />
-         Just Arrived
-      </h4>
-      <a
-        className="btn-primary"
-        href="/"
-        onClick={[Function]}
+      <div
+        class="new-collection-images-container"
       >
-        Explore
-      </a>
-    </div>
-  </section>
-</div>
+        <img
+          alt=""
+          src="https://images.unsplash.com/photo-1511415518647-9e5da4fd803f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        />
+        <img
+          alt=""
+          src="https://images.unsplash.com/photo-1519283053578-3efb9d2e71bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        />
+      </div>
+      <div
+        class="new-collection-info-container"
+      >
+        <p>
+          New Collection
+        </p>
+        <h4>
+          Brand New Toys 
+          <br />
+           Just Arrived
+        </h4>
+        <a
+          class="btn-primary"
+          href="/"
+        >
+          Explore
+        </a>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
 `;

@@ -1,10 +1,4 @@
-import {
-  customRender,
-  describe,
-  expect,
-  screen,
-  test,
-} from "../utils/utils";
+import { customRender, describe, expect, screen, test } from "../utils/utils";
 import Navbar from "../../src/components/Navbar/Navbar";
 
 describe("<Navbar />", () => {

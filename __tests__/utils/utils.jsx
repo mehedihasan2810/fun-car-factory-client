@@ -4,12 +4,12 @@ import renderer from "react-test-renderer";
 import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "../../src/contexts/AuthProvider";
 
-function toJson(component) {
-  const result = component.toJSON();
-  expect(result).toBeDefined();
-  expect(result).not.toBeInstanceOf(Array);
-  return result;
-}
+// function toJson(component) {
+//   const result = component.toJSON();
+//   expect(result).toBeDefined();
+//   expect(result).not.toBeInstanceOf(Array);
+//   return result;
+// }
 
 const allTheProviders = ({ children }) => {
   return (
@@ -23,13 +23,13 @@ function customRender(ui, options) {
   return render(ui, { wrapper: allTheProviders, ...options });
 }
 
-function renderWithRouter(component) {
-  render(component, { wrapper: BrowserRouter });
-}
+// function renderWithRouter(component) {
+//   render(component, { wrapper: BrowserRouter });
+// }
 
-function rendererWithRouter(component) {
-  return renderer.create(<BrowserRouter>{component}</BrowserRouter>);
-}
+// function rendererWithRouter(component) {
+//   return renderer.create(<BrowserRouter>{component}</BrowserRouter>);
+// }
 
 export {
   renderer,
@@ -39,9 +39,9 @@ export {
   expect,
   test,
   describe,
-  toJson,
-  renderWithRouter,
-  rendererWithRouter,
+  // toJson,
+  // renderWithRouter,
+  // rendererWithRouter,
   customRender,
   allTheProviders as customWrapper,
 };

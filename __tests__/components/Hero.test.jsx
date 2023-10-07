@@ -1,17 +1,9 @@
-import {
-  describe,
-  expect,
-  renderWithRouter,
-  rendererWithRouter,
-  screen,
-  test,
-  toJson,
-} from "../utils/utils";
+import { customRender, describe, expect, screen, test } from "../utils/utils";
 import Hero from "../../src/components/Hero/Hero";
 
 describe("<Hero/>", () => {
   test("should render successfully and have one heading and button", () => {
-    renderWithRouter(<Hero />);
+    customRender(<Hero />);
     const title = screen.getByRole("heading");
     const button = screen.getByText("Get Now");
 
@@ -19,9 +11,8 @@ describe("<Hero/>", () => {
     expect(button).toBeInTheDocument();
   });
   test("should match snapshot", () => {
-    const component = rendererWithRouter(<Hero />);
-    const tree = toJson(component);
+    const { asFragment } = customRender(<Hero />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

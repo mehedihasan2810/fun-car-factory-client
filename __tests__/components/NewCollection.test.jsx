@@ -1,17 +1,9 @@
 import NewCollection from "../../src/components/NewCollention/NewCollention";
-import {
-  describe,
-  expect,
-  renderWithRouter,
-  rendererWithRouter,
-  screen,
-  test,
-  toJson,
-} from "../utils/utils";
+import { customRender, describe, expect, screen, test } from "../utils/utils";
 
 describe("<NewCollection />", () => {
   test("Should render succesfully and there should be a heading, button and two img, ", () => {
-    renderWithRouter(<NewCollection />);
+    customRender(<NewCollection />);
 
     const heading = screen.getByText((content, element) => {
       return (
@@ -28,8 +20,7 @@ describe("<NewCollection />", () => {
   });
 
   test("should match snapshot", () => {
-    const component = rendererWithRouter(<NewCollection />);
-    let tree = toJson(component);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = customRender(<NewCollection />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
