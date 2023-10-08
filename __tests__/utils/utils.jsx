@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test, describe, vi } from "vitest";
+import { expect, test, describe, vi,beforeAll, afterAll, afterEach } from "vitest";
 import renderer from "react-test-renderer";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContext } from "../../src/contexts/AuthProvider";
@@ -11,7 +11,7 @@ import { AuthContext } from "../../src/contexts/AuthProvider";
 //   return result;
 // }
 
-const allTheProviders = ({children}, ctxValue) => {
+const allTheProviders = ({ children }, ctxValue) => {
   return (
     <BrowserRouter>
       <AuthContext.Provider value={ctxValue}>{children}</AuthContext.Provider>
@@ -19,7 +19,7 @@ const allTheProviders = ({children}, ctxValue) => {
   );
 };
 
-function customRender(ui, ctxValue, options) {
+function customRender(ui, ctxValue, options = {}) {
   return render(ui, {
     wrapper: (children) => allTheProviders(children, ctxValue),
     ...options,
@@ -47,4 +47,7 @@ export {
   // rendererWithRouter,
   customRender,
   allTheProviders as customWrapper,
+  beforeAll,
+  afterAll,
+  afterEach
 };

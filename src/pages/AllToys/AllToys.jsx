@@ -21,6 +21,8 @@ const AllToys = () => {
   // const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
 
+  console.log("all Toysssss");
+
   const toysFilterOptionsRef = useRef();
   const toysSortOptionsRef = useRef();
   const toysSortUpperChevronRef = useRef();
@@ -34,15 +36,11 @@ const AllToys = () => {
     setSearhTerm(searchValue);
   };
 
-  const { data, loading, error } = useQuery(GET_CARS);
+  let { data, loading, error } = useQuery(GET_CARS);
 
   if (error) {
     return <p>Something went wrong!</p>;
   }
-
-  // if (loading) {
-  //   return <p>loading.........</p>;
-  // }
 
   let sortedToys;
 
@@ -69,6 +67,8 @@ const AllToys = () => {
         })
       : filteredToys;
   }
+
+  // loading = false;
 
   return (
     <div className="toys-container">
@@ -189,15 +189,25 @@ const AllToys = () => {
       </div>
       <div className="toys-grid">
         {loading ? (
-          Array.from({ length: 20 }).map((_, index) => (
-            <Skeleton
-              key={index}
+          <>
+            <div
               style={{
-                height: "400px",
-                borderRadius: "15px",
+                display: "none",
               }}
-            />
-          ))
+            >
+              {loading && "all-toys-loading"}
+            </div>
+            {Array.from({ length: 20 }).map((_, index) => (
+              <Skeleton
+                key={index}
+                style={{
+                  height: "400px",
+                  borderRadius: "15px",
+                }}
+                data-foo={`all-toys-skeleton ${index}`}
+              />
+            ))}
+          </>
         ) : sortedToys.length ? (
           sortedToys.map((toy) => <ProductCard key={toy.id} data={toy} />)
         ) : (

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 import saveToLocalStorage from "../../../utils/saveToLocalStorage";
 const ProductCard = ({ data }) => {
+  console.log("producttttt")
   const addToLocalStorage = (key, id) => {
     try {
       saveToLocalStorage(key, id);
@@ -15,7 +16,7 @@ const ProductCard = ({ data }) => {
       <div className="product-card-img-wrapper">
         <img className="product-card-img" src={data.url} alt={data.name} />
         <button
-          onClick={() => addToLocalStorage("fav", data._id)}
+          onClick={() => addToLocalStorage("fav", data.id)}
           className="product-card-favorite"
           title="Add To Favorite"
         >

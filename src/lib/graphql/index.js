@@ -1,6 +1,7 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+import fetch from "cross-fetch";
 
-const cache = new InMemoryCache(
+const cache = new InMemoryCache();
 //   {
 //   typePolicies: {
 //     Query: {
@@ -15,9 +16,14 @@ const cache = new InMemoryCache(
 //     },
 //   },
 // }
-);
+
+const link = new HttpLink({
+  uri: "https://fun-car-factory-server.vercel.app/graphql",
+  fetch: (...args) => fetch(...args),
+});
 
 export const apolloClient = new ApolloClient({
-  uri: "https://fun-car-factory-server.vercel.app/graphql",
+  // uri: "https://fun-car-factory-server.vercel.app/graphql",
+  link,
   cache,
 });
