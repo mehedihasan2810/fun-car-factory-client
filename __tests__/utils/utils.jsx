@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { expect, test, describe, vi } from "vitest";
 import renderer from "react-test-renderer";
 import { BrowserRouter } from "react-router-dom";
-import AuthProvider from "../../src/contexts/AuthProvider";
+import { AuthContext } from "../../src/contexts/AuthProvider";
 
 // function toJson(component) {
 //   const result = component.toJSON();
@@ -11,16 +11,19 @@ import AuthProvider from "../../src/contexts/AuthProvider";
 //   return result;
 // }
 
-const allTheProviders = ({ children }) => {
+const allTheProviders = ({children}, ctxValue) => {
   return (
     <BrowserRouter>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthContext.Provider value={ctxValue}>{children}</AuthContext.Provider>
     </BrowserRouter>
   );
 };
 
-function customRender(ui, options) {
-  return render(ui, { wrapper: allTheProviders, ...options });
+function customRender(ui, ctxValue, options) {
+  return render(ui, {
+    wrapper: (children) => allTheProviders(children, ctxValue),
+    ...options,
+  });
 }
 
 // function renderWithRouter(component) {

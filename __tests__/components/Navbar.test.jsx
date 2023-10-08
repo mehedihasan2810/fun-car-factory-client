@@ -2,17 +2,28 @@ import { customRender, describe, expect, screen, test } from "../utils/utils";
 import Navbar from "../../src/components/Navbar/Navbar";
 
 describe("<Navbar />", () => {
-  test("Should render succesfully", async () => {
-    const { asFragment } = customRender(<Navbar />);
+  let currentUser = {
+    displayName: "Mehedi Hasan",
+    email: "test@gmail.com",
+    photoURL: "https://img.com",
+  };
 
-    // const { result } = renderHook(useAuthContext, {
-    //   wrapper: customWrapper,
-    // });
+  test("Should render successfully", () => {
+    customRender(<Navbar />, { currentUser });
+  });
 
-    const button1 = screen.getByText("Home");
-    const button2 = screen.getByText("All Toys");
-    expect(button1).toBeInTheDocument();
-    expect(button2).toBeInTheDocument();
-    expect(asFragment()).toMatchSnapshot();
+  test("Should work everything in accordance with the presence of currentUser", () => {
+    customRender(<Navbar />, { currentUser });
+
+    expect(screen.queryByText("Sign In")).not.toBeInTheDocument();
+    expect(screen.getByText("Sign Out")).toBeInTheDocument();
+  });
+
+  test("Should work everything in accordance with not in the presence of currentUser", () => {
+    currentUser = null;
+    customRender(<Navbar />, { currentUser });
+
+    expect(screen.queryByText("Sign In")).toBeInTheDocument();
+    expect(screen.queryByText("Sign Out")).not.toBeInTheDocument();
   });
 });

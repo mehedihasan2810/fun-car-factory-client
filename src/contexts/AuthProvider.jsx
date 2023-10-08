@@ -41,9 +41,14 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  const updateCurrentUser = (user) => {
+    setCurrentUser(user);
+  };
+
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
+      updateCurrentUser(user);
       setIsAuthLoading(false);
     });
 
@@ -51,6 +56,8 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+
+  // console.log(process.env.NODE_ENV)
 
   return (
     <AuthContext.Provider
@@ -62,7 +69,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         currentUser,
         isAuthLoading,
-        setCurrentUser
+        updateCurrentUser,
+        // setCurrentUser
       }}
     >
       {children}

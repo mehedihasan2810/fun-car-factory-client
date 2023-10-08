@@ -15,6 +15,7 @@ const Navbar = () => {
   const [isOpenNav, setIsOpenNav] = useState(false);
 
   const { currentUser, logOut } = useAuthContext();
+  console.log(currentUser);
   const navigate = useNavigate();
 
   const handleSignOut = () => {
@@ -68,6 +69,8 @@ const Navbar = () => {
           <img src="/assets/logo.png" alt="logo" width={55} height={55} />
         </div>
         <ul className={isOpenNav ? "open" : ""}>
+          {/* {currentUser && <li data-testid="foo">Foooo</li>} */}
+
           <li>
             <NavLink
               to="/"
@@ -128,7 +131,11 @@ const Navbar = () => {
                 )}
               </li>
               <li>
-                <button data-testid="signOut" onClick={handleSignOut} className="btn-primary">
+                <button
+                  data-testid="signOut"
+                  onClick={handleSignOut}
+                  className="btn-primary"
+                >
                   Sign Out
                 </button>
               </li>
