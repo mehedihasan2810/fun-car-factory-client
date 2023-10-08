@@ -9,7 +9,7 @@ import {
 } from "../utils/utils";
 import { apolloClient } from "../../src/lib/graphql";
 import AllToys from "../../src/pages/AllToys/AllToys";
-import { waitForElementToBeRemoved } from "@testing-library/react";
+import { waitForElementToBeRemoved, within } from "@testing-library/react";
 import { carsMockData } from "../mocks/carsMockData";
 
 describe("<AllToys />", () => {
@@ -87,5 +87,45 @@ describe("<AllToys />", () => {
     expect(screen.getByTestId("all-toys-sortby-options")).not.toHaveClass(
       "open-toys-sortby-options"
     );
+  });
+
+  test("Should filter perfectly on clicking on the filter option btn", async () => {
+    const user = userEvent.setup();
+
+    customRender(
+      <ApolloProvider client={apolloClient}>
+        <AllToys />
+      </ApolloProvider>
+    );
+
+    const filterOptions = screen.getByTestId("all-toys-filter-options");
+
+    const ferrariBtn = within(filterOptions).getByRole("button", {
+      name: "Ferrari",
+    });
+    const busBtn = within(filterOptions).getByRole("button", {
+      name: "Bus",
+    });
+    const truckBtn = within(filterOptions).getByRole("button", {
+      name: "Truck",
+    });
+
+    async function carsFilterTest(btn, filterTerm) {
+      await user.click(btn);
+
+      const filteredCars = carsMockData.filter((car) =>
+        car.name.toLowerCase().includes(filterTerm)
+      );
+
+      filteredCars.forEach((car) => {
+        expect(
+          screen.queryAllByRole("heading", { name: car.name, level: 2 })[0]
+        ).toBeInTheDocument();
+      });
+    }
+
+    await carsFilterTest(ferrariBtn, "ferrari");
+    await carsFilterTest(busBtn, "bus");
+    await carsFilterTest(truckBtn, "truck");
   });
 });
