@@ -13,16 +13,16 @@ import { waitForElementToBeRemoved, within } from "@testing-library/react";
 import { carsMockData } from "../mocks/carsMockData";
 
 describe("<AllToys />", () => {
-  test("Should render successfully and match snapshot", () => {
-    const { asFragment } = customRender(
+  test("Should render successfully", async () => {
+    customRender(
       <ApolloProvider client={apolloClient}>
         <AllToys />
       </ApolloProvider>
     );
-    expect(asFragment()).toMatchSnapshot();
   });
-  test("Should fetch all cars on render", async () => {
-    customRender(
+
+  test("Should fetch all cars on render and match snapshot", async () => {
+    const { asFragment } = customRender(
       <ApolloProvider client={apolloClient}>
         <AllToys />
       </ApolloProvider>
@@ -37,6 +37,8 @@ describe("<AllToys />", () => {
         screen.queryAllByRole("heading", { name: car.name, level: 2 })[0]
       ).toBeInTheDocument();
     });
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("Filter options should toggle perfectly", async () => {
