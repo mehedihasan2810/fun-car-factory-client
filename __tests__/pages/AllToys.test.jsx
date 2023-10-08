@@ -89,7 +89,7 @@ describe("<AllToys />", () => {
     );
   });
 
-  test("Should filter perfectly on clicking on the filter option btn", async () => {
+  test("Should filter cars in according to car ferrari, bus, truck", async () => {
     const user = userEvent.setup();
 
     customRender(
@@ -127,5 +127,63 @@ describe("<AllToys />", () => {
     await carsFilterTest(ferrariBtn, "ferrari");
     await carsFilterTest(busBtn, "bus");
     await carsFilterTest(truckBtn, "truck");
+  });
+  test("Should sort cars in according to price low to high and high to low", async () => {
+    const user = userEvent.setup();
+
+    customRender(
+      <ApolloProvider client={apolloClient}>
+        <AllToys />
+      </ApolloProvider>
+    );
+
+    const SortbyOptions = screen.getByTestId("all-toys-sortby-options");
+
+    const ascendingBtn = within(SortbyOptions).getByRole("button", {
+      name: "Price: Low To High",
+    });
+    const descendingBtn = within(SortbyOptions).getByRole("button", {
+      name: "Price: High To Low",
+    });
+
+    function arraysHaveSameOrder(arr1, arr2) {
+      const length = arr1.length < arr2.length ? arr1.length : arr2.length;
+
+      for (let i = 0; i < length; i++) {
+        if (arr1[i] !== arr2[i]) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    async function sortCars(btn, sortTerm) {
+      await user.click(btn);
+
+      const sortedCarsPrice = carsMockData
+        .slice()
+        .sort((toy1, toy2) => {
+          const price1 = +toy1.price;
+          const price2 = +toy2.price;
+
+          if (sortTerm === "ascending") {
+            return price1 > price2 ? 1 : price1 < price2 ? -1 : 0;
+          }
+          if (sortTerm === "descending") {
+            return price1 < price2 ? 1 : price1 > price2 ? -1 : 0;
+          }
+        })
+        .map((car) => car.price);
+
+      const carsPrice = screen
+        .getAllByTestId("all-toys-price")
+        .map((el) => +el.textContent.replace("$", ""));
+
+      expect(arraysHaveSameOrder(sortedCarsPrice, carsPrice)).toBeTruthy();
+    }
+
+    await sortCars(ascendingBtn, "ascending");
+    await sortCars(descendingBtn, "descending");
   });
 });

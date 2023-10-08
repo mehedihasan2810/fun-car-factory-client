@@ -41,7 +41,7 @@ const ProductCard = ({ data }) => {
           <div className="product-card-info">
             <div className="product-card-info-top">
               <h2 className="product-card-title">{data.name}</h2>
-              <div className="product-card-price">${data.price}</div>
+              <div data-testid="all-toys-price" className="product-card-price">${data.price}</div>
             </div>
 
             <div className="product-card-info-bottom">
