@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 import saveToLocalStorage from "../../../utils/saveToLocalStorage";
 const ProductCard = ({ data }) => {
-  console.log("producttttt")
   const addToLocalStorage = (key, id) => {
     try {
       saveToLocalStorage(key, id);

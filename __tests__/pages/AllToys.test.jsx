@@ -1,5 +1,12 @@
 import { ApolloProvider } from "@apollo/client";
-import { customRender, describe, expect, screen, test } from "../utils/utils";
+import {
+  customRender,
+  describe,
+  expect,
+  screen,
+  test,
+  userEvent,
+} from "../utils/utils";
 import { apolloClient } from "../../src/lib/graphql";
 import AllToys from "../../src/pages/AllToys/AllToys";
 import { waitForElementToBeRemoved } from "@testing-library/react";
@@ -30,5 +37,55 @@ describe("<AllToys />", () => {
         screen.getByRole("heading", { name: car.name, level: 2 })
       ).toBeInTheDocument();
     });
+  });
+
+  test("Filter options should toggle perfectly", async () => {
+    const user = userEvent.setup();
+    customRender(
+      <ApolloProvider client={apolloClient}>
+        <AllToys />
+      </ApolloProvider>
+    );
+
+    expect(screen.getByTestId("all-toys-filter-options")).not.toHaveClass(
+      "open-toys-filter-options"
+    );
+
+    await user.click(screen.getByTestId("all-toys-filter-btn"));
+
+    expect(screen.getByTestId("all-toys-filter-options")).toHaveClass(
+      "open-toys-filter-options"
+    );
+
+    await user.click(screen.getByTestId("all-toys-filter-btn"));
+
+    expect(screen.getByTestId("all-toys-filter-options")).not.toHaveClass(
+      "open-toys-filter-options"
+    );
+  });
+
+  test("Sortby options should toggle perfectly", async () => {
+    const user = userEvent.setup();
+    customRender(
+      <ApolloProvider client={apolloClient}>
+        <AllToys />
+      </ApolloProvider>
+    );
+
+    expect(screen.getByTestId("all-toys-sortby-options")).not.toHaveClass(
+      "open-toys-sortby-options"
+    );
+
+    await user.click(screen.getByTestId("all-toys-sortby-btn"));
+
+    expect(screen.getByTestId("all-toys-sortby-options")).toHaveClass(
+      "open-toys-sortby-options"
+    );
+
+    await user.click(screen.getByTestId("all-toys-sortby-btn"));
+
+    expect(screen.getByTestId("all-toys-sortby-options")).not.toHaveClass(
+      "open-toys-sortby-options"
+    );
   });
 });

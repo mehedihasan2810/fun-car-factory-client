@@ -107,6 +107,18 @@
   background-color: var(--base-gray-50);
 }
 
+.toys-filter-options.open-toys-filter-options {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.toys-sortby-options.open-toys-sortby-options {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
 .toys-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 380px));

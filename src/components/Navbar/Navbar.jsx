@@ -15,7 +15,6 @@ const Navbar = () => {
   const [isOpenNav, setIsOpenNav] = useState(false);
 
   const { currentUser, logOut } = useAuthContext();
-  console.log(currentUser);
   const navigate = useNavigate();
 
   const handleSignOut = () => {

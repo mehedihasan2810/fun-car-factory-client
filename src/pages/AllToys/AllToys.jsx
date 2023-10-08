@@ -21,8 +21,6 @@ const AllToys = () => {
   // const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
 
-  console.log("all Toysssss");
-
   const toysFilterOptionsRef = useRef();
   const toysSortOptionsRef = useRef();
   const toysSortUpperChevronRef = useRef();
@@ -84,12 +82,11 @@ const AllToys = () => {
         <div className="toys-filter-sortby-wrapper">
           <div className="toys-filter-wrapper">
             <button
+              data-testid="all-toys-filter-btn"
               onClick={() => {
-                if (toysFilterOptionsRef.current.style.cssText) {
-                  toysFilterOptionsRef.current.style.cssText = "";
-                } else {
-                  toysFilterOptionsRef.current.style.cssText = `transform: translateY(0); opacity: 1;  visibility: visible;`;
-                }
+                toysFilterOptionsRef.current.classList.toggle(
+                  "open-toys-filter-options"
+                );
               }}
             >
               <span>Filter</span>
@@ -110,7 +107,11 @@ const AllToys = () => {
                 </svg>
               </span>
             </button>
-            <div ref={toysFilterOptionsRef} className="toys-filter-options">
+            <div
+              data-testid="all-toys-filter-options"
+              ref={toysFilterOptionsRef}
+              className="toys-filter-options"
+            >
               {filterValues.map((value, index) => (
                 <button
                   onClick={() =>
@@ -127,14 +128,24 @@ const AllToys = () => {
           </div>
           <div className="toys-sortby-wrapper">
             <button
+              data-testid="all-toys-sortby-btn"
               onClick={() => {
-                if (toysSortOptionsRef.current.style.cssText) {
-                  toysSortOptionsRef.current.style.cssText = "";
+                if (
+                  toysSortOptionsRef.current.classList.contains(
+                    "open-toys-sortby-options"
+                  )
+                ) {
+                  toysSortOptionsRef.current.classList.remove(
+                    "open-toys-sortby-options"
+                  );
                   toysSortUpperChevronRef.current.style.display = "none";
                   toysSortLowerChevronRef.current.style.display =
                     "inline-block";
                 } else {
-                  toysSortOptionsRef.current.style.cssText = `transform: translateY(0); opacity: 1;  visibility: visible;`;
+                  toysSortOptionsRef.current.classList.add(
+                    "open-toys-sortby-options"
+                  );
+
                   toysSortUpperChevronRef.current.style.display =
                     "inline-block";
                   toysSortLowerChevronRef.current.style.display = "none";
@@ -177,7 +188,11 @@ const AllToys = () => {
                 </svg>
               </span>
             </button>
-            <div ref={toysSortOptionsRef} className="toys-sortby-options">
+            <div
+              data-testid="all-toys-sortby-options"
+              ref={toysSortOptionsRef}
+              className="toys-sortby-options"
+            >
               {sortValues.map((value, index) => (
                 <button onClick={() => setSortTerm(value[1])} key={index}>
                   {value[0]}

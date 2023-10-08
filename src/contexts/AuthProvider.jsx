@@ -57,7 +57,6 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  // console.log(process.env.NODE_ENV)
 
   return (
     <AuthContext.Provider

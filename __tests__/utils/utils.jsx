@@ -1,8 +1,17 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test, describe, vi,beforeAll, afterAll, afterEach } from "vitest";
+import {
+  expect,
+  test,
+  describe,
+  vi,
+  beforeAll,
+  afterAll,
+  afterEach,
+} from "vitest";
 import renderer from "react-test-renderer";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContext } from "../../src/contexts/AuthProvider";
+import userEvent from "@testing-library/user-event";
 
 // function toJson(component) {
 //   const result = component.toJSON();
@@ -49,5 +58,6 @@ export {
   allTheProviders as customWrapper,
   beforeAll,
   afterAll,
-  afterEach
+  afterEach,
+  userEvent,
 };
