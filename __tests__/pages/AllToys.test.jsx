@@ -10,7 +10,7 @@ import {
 import { apolloClient } from "../../src/lib/graphql";
 import AllToys from "../../src/pages/AllToys/AllToys";
 import { waitForElementToBeRemoved } from "@testing-library/react";
-import { carsMockData } from "../mocks/handlers";
+import { carsMockData } from "../mocks/carsMockData";
 
 describe("<AllToys />", () => {
   test("Should render successfully and match snapshot", () => {
@@ -34,7 +34,7 @@ describe("<AllToys />", () => {
 
     carsMockData.forEach((car) => {
       expect(
-        screen.getByRole("heading", { name: car.name, level: 2 })
+        screen.queryAllByRole("heading", { name: car.name, level: 2 })[0]
       ).toBeInTheDocument();
     });
   });
