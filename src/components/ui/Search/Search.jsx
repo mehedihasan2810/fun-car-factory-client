@@ -35,7 +35,7 @@ const Search = ({ onHandleSearch, placeholder }) => {
         name="search"
         placeholder={placeholder}
       />
-      <button onClick={() => onHandleSearch(search)} type="submit">
+      <button data-testid="search-btn" onClick={() => onHandleSearch(search)} type="submit">
         Search
       </button>
     </div>

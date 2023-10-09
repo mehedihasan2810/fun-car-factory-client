@@ -42,6 +42,7 @@ exports[`<AllToys /> > Should fetch all cars on render and match snapshot 1`] = 
           value=""
         />
         <button
+          data-testid="search-btn"
           type="submit"
         >
           Search

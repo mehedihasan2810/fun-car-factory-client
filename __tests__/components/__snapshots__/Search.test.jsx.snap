@@ -27,6 +27,7 @@ exports[`<Search /> > Should render successfully and match snapshot 1`] = `
       value=""
     />
     <button
+      data-testid="search-btn"
       type="submit"
     >
       Search

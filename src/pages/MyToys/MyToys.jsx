@@ -18,6 +18,8 @@ const MyToys = () => {
 
   const { data, loading, error } = useQuery(GET_CARS);
 
+  console.log(error);
+
   if (error) {
     return (
       <div
@@ -88,6 +90,14 @@ const MyToys = () => {
 
   return (
     <div className="my-toys-container">
+      <div
+        data-testid="my-toys-loading-skeleton"
+        style={{
+          display: "none",
+        }}
+      >
+        {loading && "my-toys-loading-skeleton"}
+      </div>
       <div className="my-toys-top-header">
         <div>
           Total <span>({filteredToys?.length})</span>
@@ -114,10 +124,11 @@ const MyToys = () => {
           <tbody>
             {loading
               ? Array.from({ length: 15 }).map((_, index) => (
-                  <tr key={index} 
-                  style={{
-                    height: "65px",
-                  }}
+                  <tr
+                    key={index}
+                    style={{
+                      height: "65px",
+                    }}
                   >
                     <td>
                       <Skeleton
@@ -172,12 +183,12 @@ const MyToys = () => {
                 ))
               : filteredToys.map((toy) => (
                   <tr key={toy.id}>
-                    <td className="name-td">
+                    <td data-testid="my-toys-toy-name" className="name-td">
                       <img src={toy.url} alt={toy.name} />
                       {toy.name}
                     </td>
                     <td>{toy.category}</td>
-                    <td>${toy.price}</td>
+                    <td data-testid="my-toys-price">${toy.price}</td>
                     <td>{toy.quantity}</td>
                     <td>
                       <Link to={`/toy-details/${toy.id}`}>
