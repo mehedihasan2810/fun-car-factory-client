@@ -22,6 +22,7 @@ const Search = ({ onHandleSearch, placeholder }) => {
       </svg>
 
       <input
+        data-testid="search-input"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         onKeyDown={(e) => {

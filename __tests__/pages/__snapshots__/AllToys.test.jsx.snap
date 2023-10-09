@@ -34,6 +34,7 @@ exports[`<AllToys /> > Should fetch all cars on render and match snapshot 1`] = 
           />
         </svg>
         <input
+          data-testid="search-input"
           id="search"
           name="search"
           placeholder="Search Your Favorite Toys... eg. bus, ferrari, truck"

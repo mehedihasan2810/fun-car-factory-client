@@ -9,6 +9,7 @@ export default defineConfig({
     environment: "happy-dom",
     testMatch: ["./__tests__/**/*.test.jsx"],
     reporters: ["default", "html"],
+    // reportsDirectory: "./__tests__/unit/vitest-ui",
     setupFiles: ["./__tests__/vitest.setup.js"],
 
     coverage: {
