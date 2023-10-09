@@ -2,41 +2,60 @@ import { toast } from "react-toastify";
 import "./AddToy.css";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useAuthContext } from "../../contexts/useAuthContext";
+import { useMutation } from "@apollo/client";
+import { CREATE_CAR } from "../../lib/graphql/queryDefs";
 const AddToy = () => {
   useTitlePerPage("Add Toy");
   const { currentUser } = useAuthContext();
+
+  const [addCar, { data, loading, error }] = useMutation(CREATE_CAR);
+
+  // console.log("data", data);
+  // console.log("loading", loading);
+  // console.log("error", error);
 
   const handleAddToy = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const toyInfo = Object.fromEntries(formData);
 
-    fetch("https://fun-car-factory-server.vercel.app/add-toy", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    addCar({
+      variables: {
+        carInput: {
+          ...toyInfo,
+          price: +toyInfo.price,
+          quantity: +toyInfo.quantity,
+          rating: +toyInfo.rating,
+        },
       },
-      body: JSON.stringify(toyInfo),
-    })
-      .then((res) => res.json())
-      .then(() => {
-        // *show toast
-        toast.success("Succesfully Added", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
+    });
 
-        // e.target.reset();
-      })
-      .catch((error) => {
-        console.log(error);
+    // fetch("https://fun-car-factory-server.vercel.app/add-toy", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(toyInfo),
+    // })
+    //   .then((res) => res.json())
+    //   .then(() => {
+    //     // *show toast
+    //     toast.success("Succesfully Added", {
+    //       position: toast.POSITION.TOP_CENTER,
+    //       autoClose: 2000,
+    //     });
 
-        // *show toast
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-      });
+    //     // e.target.reset();
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+
+    //     // *show toast
+    //     toast.error(error.message, {
+    //       position: toast.POSITION.TOP_CENTER,
+    //       autoClose: 2000,
+    //     });
+    //   });
   };
 
   return (
@@ -150,9 +169,7 @@ const AddToy = () => {
               </label>
             </div>
           </div>
-          <button type="submit">
-            Add The Toy
-          </button>
+          <button type="submit">Add The Toy</button>
         </form>
       </div>
     </div>
