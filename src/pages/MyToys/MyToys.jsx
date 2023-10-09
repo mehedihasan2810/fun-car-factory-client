@@ -10,6 +10,7 @@ import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import Search from "../../components/ui/Search/Search";
 import { useQuery } from "@apollo/client";
 import { GET_CARS } from "../../lib/graphql/queryDefs";
+import Skeleton from "react-loading-skeleton";
 const MyToys = () => {
   useTitlePerPage("My Toys");
   const [myToys, setMyToys] = useState([]);
@@ -111,36 +112,96 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredToys?.map((toy) => (
-              <tr key={toy.id}>
-                <td className="name-td">
-                  <img src={toy.url} alt="" />
-                  {toy.name}
-                </td>
-                <td>{toy.category}</td>
-                <td>{toy.price}$</td>
-                <td>{toy.quantity}</td>
-                <td>
-                  <Link to={`/toy-details/${toy._id}`}>
-                    <button className="toy-details-btn">View Details</button>
-                  </Link>
-                </td>
-                <td title="Update" className="edit-btn">
-                  <Link to={`/my-toys/${toy._id}`}>
-                    <FaEdit />
-                  </Link>
-                </td>
-                <td>
-                  <button
-                    title="Delete"
-                    // onClick={() => handleDelete(toy._id)}
-                    className="delete-btn"
+            {loading
+              ? Array.from({ length: 15 }).map((_, index) => (
+                  <tr key={index} 
+                  style={{
+                    height: "65px",
+                  }}
                   >
-                    <FaTrash />
-                  </button>
-                </td>
-              </tr>
-            ))}
+                    <td>
+                      <Skeleton
+                        style={{
+                          height: "20px",
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <Skeleton
+                        style={{
+                          height: "20px",
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <Skeleton
+                        style={{
+                          height: "20px",
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <Skeleton
+                        style={{
+                          height: "20px",
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <Skeleton
+                        style={{
+                          height: "20px",
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <Skeleton
+                        style={{
+                          height: "20px",
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <Skeleton
+                        style={{
+                          height: "20px",
+                        }}
+                      />
+                    </td>
+                  </tr>
+                ))
+              : filteredToys.map((toy) => (
+                  <tr key={toy.id}>
+                    <td className="name-td">
+                      <img src={toy.url} alt={toy.name} />
+                      {toy.name}
+                    </td>
+                    <td>{toy.category}</td>
+                    <td>${toy.price}</td>
+                    <td>{toy.quantity}</td>
+                    <td>
+                      <Link to={`/toy-details/${toy.id}`}>
+                        <button className="toy-details-btn">
+                          View Details
+                        </button>
+                      </Link>
+                    </td>
+                    <td title="Update" className="edit-btn">
+                      <Link to={`/my-toys/${toy.id}`}>
+                        <FaEdit />
+                      </Link>
+                    </td>
+                    <td>
+                      <button
+                        title="Delete"
+                        // onClick={() => handleDelete(toy._id)}
+                        className="delete-btn"
+                      >
+                        <FaTrash />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>
