@@ -13,7 +13,6 @@ import { GET_CARS } from "../../lib/graphql/queryDefs";
 import Skeleton from "react-loading-skeleton";
 const MyToys = () => {
   useTitlePerPage("My Toys");
-  const [myToys, setMyToys] = useState([]);
   const [searchTerm, setSearhTerm] = useState("");
 
   const { data, loading, error } = useQuery(GET_CARS);
