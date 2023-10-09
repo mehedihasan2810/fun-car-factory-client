@@ -78,4 +78,14 @@ export const handlers = [
       })
     );
   }),
+
+  carsLink.query("GetCar", (req, res, ctx) => {
+    const { id } = req.variables;
+    const car = carsMockData.find((car) => car.id === id);
+    return res(
+      ctx.data({
+        getCar: car,
+      })
+    );
+  }),
 ];

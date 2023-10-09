@@ -58,9 +58,9 @@ export const router = createBrowserRouter([
       {
         path: "/toy-details/:id",
         element: (
-          <ProtectedRoute>
+          // <ProtectedRoute>
             <ToyDetails />
-          </ProtectedRoute>
+          // </ProtectedRoute>
         ),
         // loader: ({ params }) =>
         //   fetch(

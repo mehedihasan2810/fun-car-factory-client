@@ -27,6 +27,12 @@ const ToyDetails = () => {
       <div className="img-galary">
         {loading ? (
           <>
+            <div
+              data-testid="toy-details-loading-skeleton"
+              style={{ display: "none" }}
+            >
+              {loading && "toy-details-loading-skeleton"}
+            </div>
             <Skeleton
               style={{
                 width: "100%",
