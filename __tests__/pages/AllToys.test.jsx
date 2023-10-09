@@ -188,4 +188,38 @@ describe("<AllToys />", () => {
     await sortCars(ascendingBtn, "ascending");
     await sortCars(descendingBtn, "descending");
   });
+
+  test("Should search specific toy based on search input", async () => {
+    const user = userEvent.setup();
+
+    customRender(
+      <ApolloProvider client={apolloClient}>
+        <AllToys />
+      </ApolloProvider>
+    );
+
+    const searchInput = screen.getByTestId("search-input");
+    const searchBtn = screen.getByRole("button", { name: "Search" });
+
+    expect(searchInput).toBeInTheDocument();
+    expect(searchBtn).toBeInTheDocument();
+
+    await user.type(searchInput, "ferrari");
+
+    await user.click(searchBtn);
+
+    screen.getAllByRole("heading", { level: 2 }).map((el) => {
+      expect(el.textContent.toLowerCase().includes("ferrari")).toBeTruthy();
+    });
+
+    await user.clear(searchInput);
+
+    await user.type(searchInput, "bus");
+
+    await user.click(searchBtn);
+
+    screen.getAllByRole("heading", { level: 2 }).map((el) => {
+      expect(el.textContent.toLowerCase().includes("bus")).toBeTruthy();
+    });
+  });
 });

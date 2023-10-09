@@ -1,4 +1,3 @@
-import { ApolloProvider } from "@apollo/client";
 import {
   customRender,
   describe,
@@ -8,15 +7,10 @@ import {
   userEvent,
 } from "../utils/utils";
 import Search from "../../src/components/ui/Search/Search";
-import { apolloClient } from "../../src/lib/graphql";
 
 describe("<Search />", () => {
   test("Should render successfully and match snapshot", () => {
-    const { asFragment } = customRender(
-      <ApolloProvider client={apolloClient}>
-        <Search />
-      </ApolloProvider>
-    );
+    const { asFragment } = customRender(<Search />);
 
     expect(asFragment()).toMatchSnapshot();
   });
