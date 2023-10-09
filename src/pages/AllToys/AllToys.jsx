@@ -37,7 +37,17 @@ const AllToys = () => {
   let { data, loading, error } = useQuery(GET_CARS);
 
   if (error) {
-    return <p>Something went wrong!</p>;
+    return (
+      <div
+        style={{
+          marginBlock: "300px",
+          textAlign: "center",
+          color: "pink",
+        }}
+      >
+        Something went wrong! try again by reloading the page
+      </div>
+    );
   }
 
   let sortedToys;

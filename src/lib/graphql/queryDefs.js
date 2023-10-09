@@ -8,6 +8,8 @@ export const GET_CARS = gql`
       price
       url
       rating
+      category
+      quantity
     }
   }
 `;
