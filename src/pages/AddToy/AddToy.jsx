@@ -8,11 +8,24 @@ const AddToy = () => {
   useTitlePerPage("Add Toy");
   const { currentUser } = useAuthContext();
 
-  const [addCar, { data, loading, error }] = useMutation(CREATE_CAR);
+  let [addCar, { data, loading, error }] = useMutation(CREATE_CAR);
 
-  // console.log("data", data);
-  // console.log("loading", loading);
-  // console.log("error", error);
+  if (error?.message) {
+    toast.error(error.message, {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
+    });
+    error.message = undefined;
+  }
+
+  if (data?.createCar) {
+    toast.success("Succesfully Added", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
+    });
+
+    data.createCar = undefined;
+  }
 
   const handleAddToy = (e) => {
     e.preventDefault();
@@ -29,33 +42,6 @@ const AddToy = () => {
         },
       },
     });
-
-    // fetch("https://fun-car-factory-server.vercel.app/add-toy", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(toyInfo),
-    // })
-    //   .then((res) => res.json())
-    //   .then(() => {
-    //     // *show toast
-    //     toast.success("Succesfully Added", {
-    //       position: toast.POSITION.TOP_CENTER,
-    //       autoClose: 2000,
-    //     });
-
-    //     // e.target.reset();
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-
-    //     // *show toast
-    //     toast.error(error.message, {
-    //       position: toast.POSITION.TOP_CENTER,
-    //       autoClose: 2000,
-    //     });
-    //   });
   };
 
   return (
@@ -99,7 +85,7 @@ const AddToy = () => {
             <div className="control">
               <label htmlFor="email">Seller Email: </label>
               <input
-                defaultValue={currentUser.email}
+                defaultValue={currentUser?.email}
                 type="email"
                 name="email"
                 id="email"
@@ -169,7 +155,15 @@ const AddToy = () => {
               </label>
             </div>
           </div>
-          <button type="submit">Add The Toy</button>
+          <button
+            style={{
+              opacity: `${loading ? "0.5" : "1"}`,
+            }}
+            disabled={loading}
+            type="submit"
+          >
+            {loading ? "Adding..." : "Add The Toy"}
+          </button>
         </form>
       </div>
     </div>
