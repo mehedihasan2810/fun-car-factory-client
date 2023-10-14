@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 import { useState } from "react";
@@ -8,16 +8,15 @@ import "./MyToys.css";
 
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import Search from "../../components/ui/Search/Search";
-import { useQuery } from "@apollo/client";
-import { GET_CARS } from "../../lib/graphql/queryDefs";
+import { useMutation, useQuery } from "@apollo/client";
+import { DELETE_CAR, GET_CARS } from "../../lib/graphql/queryDefs";
 import Skeleton from "react-loading-skeleton";
 const MyToys = () => {
   useTitlePerPage("My Toys");
   const [searchTerm, setSearhTerm] = useState("");
 
   const { data, loading, error } = useQuery(GET_CARS);
-
-  console.log(error);
+  const [deleteToy] = useMutation(DELETE_CAR);
 
   if (error) {
     return (
@@ -33,41 +32,49 @@ const MyToys = () => {
     );
   }
 
-  // const allToys = useLoaderData();
-
-  // const handleDelete = (id) => {
-  //   Swal.fire({
-  //     title: "Are you sure?",
-  //     text: "You won't be able to revert this!",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Yes, delete it!",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       fetch(`https://fun-car-factory-server.vercel.app/my-toys/${id}`, {
-  //         method: "DELETE",
-  //       })
-  //         .then((res) => res.json())
-  //         .then(() => {
-  //           const filteredToys = myToys.filter((toy) => toy._id !== id);
-  //           setMyToys(filteredToys);
-
-  //           Swal.fire("Deleted!", "Your file has been deleted.", "success");
-  //         })
-  //         .catch((error) => {
-  //           console.log(error);
-
-  //           // *show toast
-  //           toast.error(error.message, {
-  //             position: toast.POSITION.TOP_CENTER,
-  //             autoClose: 2000,
-  //           });
-  //         });
-  //     }
-  //   });
-  // };
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteToy({
+          variables: { deleteCarId: id },
+          onCompleted: () => {
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          },
+          onError: (error) => {
+            toast.error(error.message, {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 2000,
+            });
+          },
+        });
+        // fetch(`https://fun-car-factory-server.vercel.app/my-toys/${id}`, {
+        //   method: "DELETE",
+        // })
+        //   .then((res) => res.json())
+        //   .then(() => {
+        //     const filteredToys = myToys.filter((toy) => toy._id !== id);
+        //     setMyToys(filteredToys);
+        //     Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //     // *show toast
+        //     toast.error(error.message, {
+        //       position: toast.POSITION.TOP_CENTER,
+        //       autoClose: 2000,
+        //     });
+        //   });
+      }
+    });
+  };
 
   const handleSearch = async (searchValue) => {
     setSearhTerm(searchValue);
@@ -204,7 +211,7 @@ const MyToys = () => {
                     <td>
                       <button
                         title="Delete"
-                        // onClick={() => handleDelete(toy._id)}
+                        onClick={() => handleDelete(toy.id)}
                         className="delete-btn"
                       >
                         <FaTrash />

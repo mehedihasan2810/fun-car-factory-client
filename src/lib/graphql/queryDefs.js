@@ -52,6 +52,34 @@ export const CREATE_CAR = gql`
   }
 `;
 
+export const DELETE_CAR = gql`
+  mutation DeleteCar($deleteCarId: String!) {
+    deleteCar(id: $deleteCarId) {
+
+
+      id
+      name
+      price
+      url
+      rating
+      category
+      quantity
+
+
+      # id
+      # category
+      # description
+      # email
+      # name
+      # price
+      # quantity
+      # rating
+      # sellerName
+      # url
+    }
+  }
+`;
+
 export const GET_USERS = gql`
   query GetUsers {
     getUsers {

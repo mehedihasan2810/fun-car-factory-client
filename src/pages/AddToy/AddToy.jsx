@@ -2,30 +2,43 @@ import { toast } from "react-toastify";
 import "./AddToy.css";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useAuthContext } from "../../contexts/useAuthContext";
-import { useMutation } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
 import { CREATE_CAR } from "../../lib/graphql/queryDefs";
 const AddToy = () => {
   useTitlePerPage("Add Toy");
   const { currentUser } = useAuthContext();
 
-  let [addCar, { data, loading, error }] = useMutation(CREATE_CAR);
+  let [addCar, { loading, error }] = useMutation(CREATE_CAR, {
+    update(cache, { data: { createCar } }) {
+      console.log(createCar);
+      cache.modify({
+        fields: {
+          getCars(existingCars = []) {
+            console.log(existingCars);
 
-  if (error?.message) {
-    toast.error(error.message, {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 2000,
-    });
-    error.message = undefined;
-  }
+            const newCarRef = cache.writeFragment({
+              data: createCar.car,
+              fragment: gql`
+                fragment NewCar on Car {
+                  id
+                  name
+                  price
+                  url
+                  rating
+                  category
+                  quantity
+                }
+              `,
+            });
 
-  if (data?.createCar) {
-    toast.success("Succesfully Added", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 2000,
-    });
+            return [...existingCars, newCarRef];
+          },
+        },
+      });
+    },
+  });
 
-    data.createCar = undefined;
-  }
+  // console.log(data);
 
   const handleAddToy = (e) => {
     e.preventDefault();
@@ -40,6 +53,18 @@ const AddToy = () => {
           quantity: +toyInfo.quantity,
           rating: +toyInfo.rating,
         },
+      },
+      onCompleted: () => {
+        toast.success("Succesfully Added", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+      },
+      onError: () => {
+        toast.error(error.message, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
       },
     });
   };
