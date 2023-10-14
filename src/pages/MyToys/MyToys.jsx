@@ -16,7 +16,20 @@ const MyToys = () => {
   const [searchTerm, setSearhTerm] = useState("");
 
   const { data, loading, error } = useQuery(GET_CARS);
-  const [deleteToy] = useMutation(DELETE_CAR);
+  const [deleteToy] = useMutation(DELETE_CAR, {
+    update(cache, { data: { deleteCar } }) {
+      cache.modify({
+        // id: cache.identify(deleteCar),
+        fields: {
+          getCars(existingCars = [], { readField }) {
+            return existingCars.filter(
+              (car) => deleteCar.id !== readField("id", car)
+            );
+          },
+        },
+      });
+    },
+  });
 
   if (error) {
     return (
@@ -55,23 +68,6 @@ const MyToys = () => {
             });
           },
         });
-        // fetch(`https://fun-car-factory-server.vercel.app/my-toys/${id}`, {
-        //   method: "DELETE",
-        // })
-        //   .then((res) => res.json())
-        //   .then(() => {
-        //     const filteredToys = myToys.filter((toy) => toy._id !== id);
-        //     setMyToys(filteredToys);
-        //     Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        //   })
-        //   .catch((error) => {
-        //     console.log(error);
-        //     // *show toast
-        //     toast.error(error.message, {
-        //       position: toast.POSITION.TOP_CENTER,
-        //       autoClose: 2000,
-        //     });
-        //   });
       }
     });
   };
@@ -90,10 +86,6 @@ const MyToys = () => {
       : data.getCars;
   }
 
-  // if (!allToys.length) {
-  //   return <p className="no-data">You have not added any toys!</p>;
-  // }
-
   return (
     <div className="my-toys-container">
       <div
@@ -106,7 +98,7 @@ const MyToys = () => {
       </div>
       <div className="my-toys-top-header">
         <div>
-          Total <span>({filteredToys?.length})</span>
+          Total <span>({loading ? "0" : filteredToys.length})</span>
         </div>
 
         <Search
