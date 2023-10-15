@@ -4,9 +4,12 @@ import "./ToyDetails.css";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useQuery } from "@apollo/client";
 import { GET_CAR } from "../../lib/graphql/queryDefs";
+import useContextProvider from "../../contexts/useContextProvider";
 import Skeleton from "react-loading-skeleton";
 const ToyDetails = () => {
   useTitlePerPage("Toy Details");
+
+  const { addToLocalStorage } = useContextProvider();
 
   const params = useParams();
 
@@ -109,7 +112,9 @@ const ToyDetails = () => {
 
         <div className="toy-details-btns">
           <button>Buy Now</button>
-          <button>Add To Cart</button>
+          <button onClick={() => addToLocalStorage("cart", toyData.getCar.id)}>
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>
