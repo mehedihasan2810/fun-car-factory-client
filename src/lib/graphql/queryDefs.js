@@ -31,6 +31,23 @@ export const GET_CAR = gql`
   }
 `;
 
+export const GET_CART_CAR = gql`
+  query GetCartCar($cartIds: [String!]!) {
+    getCartCar(cartIds: $cartIds) {
+      id
+      category
+      description
+      email
+      name
+      price
+      quantity
+      rating
+      sellerName
+      url
+    }
+  }
+`;
+
 export const CREATE_CAR = gql`
   mutation CreateCar($carInput: CarInput!) {
     createCar(carInput: $carInput) {

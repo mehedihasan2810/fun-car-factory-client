@@ -1,11 +1,14 @@
 import { createContext, useEffect, useState } from "react";
 import saveToLocalStorage from "../../src/utils/saveToLocalStorage";
 import { toast } from "react-toastify";
+import getFromLocalStorage from "../utils/getFromLocalStorage";
 
 export const AppContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [totalCartToys, setTotalCartToys] = useState(0);
+  const [cartIds, setCartIds] = useState([]);
+  const [favIds, setFavIds] = useState([]);
 
   const checkTotalCartToys = () => {
     const cartToyList = JSON.parse(localStorage.getItem("cart"));
@@ -19,7 +22,10 @@ const ContextProvider = ({ children }) => {
       //   update total cart item in ui
       checkTotalCartToys();
 
-      toast.success("Successfully Added To Cart!", {
+      setCartIds(getFromLocalStorage("cart"));
+      setFavIds(getFromLocalStorage("fav"));
+
+      toast.success("Successfully Added!", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
       });
@@ -34,10 +40,15 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     // check total cart item on initial render
     checkTotalCartToys();
+
+    setCartIds(getFromLocalStorage("cart"));
+    setFavIds(getFromLocalStorage("fav"));
   }, []);
 
   return (
-    <AppContext.Provider value={{ addToLocalStorage, totalCartToys }}>
+    <AppContext.Provider
+      value={{ addToLocalStorage, totalCartToys, cartIds, favIds }}
+    >
       {children}
     </AppContext.Provider>
   );
