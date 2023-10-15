@@ -1,9 +1,9 @@
 import { toast } from "react-toastify";
 import "./UpdateToy.css";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
-import { useQuery } from "@apollo/client";
-import { GET_CAR } from "../../lib/graphql/queryDefs";
+import { useMutation, useQuery } from "@apollo/client";
+import { GET_CAR, UPDATE_CAR } from "../../lib/graphql/queryDefs";
 const UpdateToy = () => {
   useTitlePerPage("Update Toy");
   const navigate = useNavigate();
@@ -18,44 +18,42 @@ const UpdateToy = () => {
     variables: { id: params.id },
   });
 
-  // const handleUpdate = (e) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.target);
-  //   const toyInfo = Object.fromEntries(formData);
+  const [updateToy] = useMutation(UPDATE_CAR);
 
-  //   fetch(`https://fun-car-factory-server.vercel.app/update/${params.id}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(toyInfo),
-  //   })
-  //     .then((res) => res.json())
-  //     .then(() => {
-  //       // *show toast
-  //       toast.success("Succesfully Updated!", {
-  //         position: toast.POSITION.TOP_CENTER,
-  //         autoClose: 2000,
-  //       });
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const toyInfo = Object.fromEntries(formData);
 
-  //       navigate("/my-toys");
+    const { price, rating, quantity, ...updateData } = toyInfo;
 
-  //       // e.target.reset();
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
+    updateToy({
+      variables: {
+        updateInput: {
+          id: params.id,
+          price: +price,
+          rating: +rating,
+          quantity: +quantity,
+          ...updateData,
+        },
+      },
 
-  //       // *show toast
-  //       toast.error(error.message, {
-  //         position: toast.POSITION.TOP_CENTER,
-  //         autoClose: 2000,
-  //       });
-  //     });
-  // };
+      onCompleted: () => {
+        toast.success("Succesfully Updated!", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+        navigate("/my-toys");
+      },
 
-  // if (loading) {
-  //   return <div>loading.....</div>;
-  // }
+      onError: () => {
+        toast.error("Something went wrong!", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+        });
+      },
+    });
+  };
 
   if (error) {
     return (
@@ -75,9 +73,7 @@ const UpdateToy = () => {
     <div className="center-container">
       <div className="update-toy-container ">
         <h2 className="update-title">Update Toy</h2>
-        <form
-        // onSubmit={handleUpdate}
-        >
+        <form onSubmit={handleUpdate}>
           <div className="row">
             <div className="control">
               <label htmlFor="name">Toy Name: </label>

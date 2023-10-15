@@ -26,6 +26,7 @@ export const GET_CAR = gql`
       email
       category
       description
+      quantity
     }
   }
 `;
@@ -52,11 +53,26 @@ export const CREATE_CAR = gql`
   }
 `;
 
+export const UPDATE_CAR = gql`
+  mutation UpdateCar($updateInput: UpdateCarInput!) {
+    updateCar(updateInput: $updateInput) {
+      id
+      category
+      description
+      email
+      name
+      price
+      quantity
+      rating
+      sellerName
+      url
+    }
+  }
+`;
+
 export const DELETE_CAR = gql`
   mutation DeleteCar($deleteCarId: String!) {
     deleteCar(id: $deleteCarId) {
-
-
       id
       name
       price
@@ -64,7 +80,6 @@ export const DELETE_CAR = gql`
       rating
       category
       quantity
-
 
       # id
       # category

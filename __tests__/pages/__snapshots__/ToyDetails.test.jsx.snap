@@ -40,7 +40,7 @@ exports[`<ToyDetails /> > should render, fetch single data and match snapshot su
         Category: Bus
       </p>
       <p>
-         pieces available
+        8 pieces available
       </p>
       <div
         class="seller"
