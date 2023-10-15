@@ -7,7 +7,7 @@ import useContextProvider from "../../contexts/useContextProvider";
 const Cart = () => {
   const { cartIds } = useContextProvider();
   const { data, loading } = useQuery(GET_CART_CAR, {
-    variables: { cartIds: cartIds },
+    variables: { cartIds },
   });
 
   return (
@@ -57,7 +57,8 @@ const Cart = () => {
             ${" "}
             {loading
               ? "00"
-              : data.getCartCar.reduce((acc, item) => acc.price + item.price) - 10}
+              : data.getCartCar.reduce((acc, item) => acc.price + item.price) -
+                10}
             .00
           </div>
         </div>
