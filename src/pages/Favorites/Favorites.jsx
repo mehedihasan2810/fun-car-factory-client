@@ -5,12 +5,44 @@ import { GET_CART_CAR } from "../../lib/graphql/queryDefs";
 import useContextProvider from "../../contexts/useContextProvider";
 import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
 import { cache } from "../../lib/graphql";
+import Swal from "sweetalert2";
 
 const Favorites = () => {
   const { favIds } = useContextProvider();
   const { data, loading } = useQuery(GET_CART_CAR, {
     variables: { cartIds: favIds },
   });
+
+  const deleteFavItem = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteFromLocalStorage("fav", id);
+        cache.updateQuery(
+          {
+            query: GET_CART_CAR,
+            variables: { cartIds: favIds },
+          },
+          (data) => {
+            const updatedFav = data.getCartCar.filter(
+              (cartItem) => cartItem.id !== id
+            );
+
+            return {
+              getCartCar: updatedFav,
+            };
+          }
+        );
+      }
+    });
+  };
 
   return (
     <section className="favorites-container">
@@ -29,24 +61,7 @@ const Favorites = () => {
           <FavoriteCard
             key={loading ? index : item.id}
             {...item}
-            deleteItem={() => {
-              deleteFromLocalStorage("fav", item.id);
-              cache.updateQuery(
-                {
-                  query: GET_CART_CAR,
-                  variables: { cartIds: favIds },
-                },
-                (data) => {
-                  const updatedFav = data.getCartCar.filter(
-                    (cartItem) => cartItem.id !== item.id
-                  );
-
-                  return {
-                    getCartCar: updatedFav,
-                  };
-                }
-              );
-            }}
+            deleteItem={() => deleteFavItem(item.id)}
           />
         )
       )}

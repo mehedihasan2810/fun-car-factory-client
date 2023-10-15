@@ -5,12 +5,45 @@ import { GET_CART_CAR } from "../../lib/graphql/queryDefs";
 import useContextProvider from "../../contexts/useContextProvider";
 import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
 import { cache } from "../../lib/graphql";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const { cartIds } = useContextProvider();
   const { data, loading } = useQuery(GET_CART_CAR, {
     variables: { cartIds },
   });
+
+  const deleteCartItem = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteFromLocalStorage("cart", id);
+
+        cache.updateQuery(
+          {
+            query: GET_CART_CAR,
+            variables: { cartIds },
+          },
+          (data) => {
+            const updatedCart = data.getCartCar.filter(
+              (cartItem) => cartItem.id !== id
+            );
+
+            return {
+              getCartCar: updatedCart,
+            };
+          }
+        );
+      }
+    });
+  };
 
   return (
     <section className="cart-container">
@@ -30,25 +63,7 @@ const Cart = () => {
             <FavoriteCard
               key={loading ? index : item.id}
               {...item}
-              deleteItem={() => {
-                deleteFromLocalStorage("cart", item.id);
-
-                cache.updateQuery(
-                  {
-                    query: GET_CART_CAR,
-                    variables: { cartIds },
-                  },
-                  (data) => {
-                    const updatedCart = data.getCartCar.filter(
-                      (cartItem) => cartItem.id !== item.id
-                    );
-
-                    return {
-                      getCartCar: updatedCart,
-                    };
-                  }
-                );
-              }}
+              deleteItem={() => deleteCartItem(item.id)}
             />
           )
         )}
