@@ -1,8 +1,7 @@
 import Skeleton from "react-loading-skeleton";
 import "./FavoriteCard.css";
 
-const FavoriteCard = ({ name, category, rating, price, url }) => {
-  console.log(name);
+const FavoriteCard = ({ name, category, rating, price, url, deleteItem }) => {
   return (
     <div className="favorite-card-container">
       {url ? (
@@ -97,6 +96,7 @@ const FavoriteCard = ({ name, category, rating, price, url }) => {
           </div>
           <div className="favorite-card-btns">
             <button
+              onClick={deleteItem}
               className="favorite-card-delete-btn"
               title="Delete favorite"
             >

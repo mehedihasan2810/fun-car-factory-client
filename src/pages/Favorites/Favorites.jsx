@@ -3,15 +3,13 @@ import FavoriteCard from "../../components/ui/FavoriteCard/FavoriteCard";
 import "./Favorites.css";
 import { GET_CART_CAR } from "../../lib/graphql/queryDefs";
 import useContextProvider from "../../contexts/useContextProvider";
+import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
 
 const Favorites = () => {
   const { favIds } = useContextProvider();
   const { data, loading } = useQuery(GET_CART_CAR, {
     variables: { cartIds: favIds },
   });
-
-  console.log(favIds);
-  console.log(data);
 
   return (
     <section className="favorites-container">
@@ -27,7 +25,11 @@ const Favorites = () => {
       </p>
       {(loading ? Array.from({ length: 1 }) : data.getCartCar).map(
         (item, index) => (
-          <FavoriteCard key={loading ? index : item.id} {...item} />
+          <FavoriteCard
+            key={loading ? index : item.id}
+            {...item}
+            deleteItem={() => deleteFromLocalStorage("fav", item.id)}
+          />
         )
       )}
     </section>
