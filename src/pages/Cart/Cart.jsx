@@ -23,7 +23,7 @@ const Cart = () => {
         >
           You have added {loading ? "0" : data?.getCartCar?.length} toys
         </p>
-        {(loading ? Array.from({ length: 10 }) : data.getCartCar).map(
+        {(loading ? Array.from({ length: 1 }) : data.getCartCar).map(
           (item, index) => (
             <FavoriteCard key={loading ? index : item.id} {...item} />
           )
@@ -36,7 +36,13 @@ const Cart = () => {
         <div className="cart-summary-subtotal-wrapper">
           <div className="cart-summary-subtotal">
             <div>Subtotal</div>
-            <div>$ 7829.00</div>
+            <div>
+              ${" "}
+              {loading
+                ? "00"
+                : data.getCartCar.reduce((acc, item) => acc.price + item.price)}
+              .00
+            </div>
           </div>
 
           <div className="cart-summary-delivery">
@@ -47,7 +53,13 @@ const Cart = () => {
 
         <div className="cart-summary-total">
           <div>Total</div>
-          <div>$ 8010.00</div>
+          <div>
+            ${" "}
+            {loading
+              ? "00"
+              : data.getCartCar.reduce((acc, item) => acc.price + item.price) - 10}
+            .00
+          </div>
         </div>
 
         <button className="cart-summary-checkout-btn">Checkout</button>
