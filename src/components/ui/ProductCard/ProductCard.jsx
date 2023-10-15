@@ -1,14 +1,8 @@
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
-import saveToLocalStorage from "../../../utils/saveToLocalStorage";
+import useContextProvider from "../../../contexts/useContextProvider";
 const ProductCard = ({ data }) => {
-  const addToLocalStorage = (key, id) => {
-    try {
-      saveToLocalStorage(key, id);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  const { addToLocalStorage } = useContextProvider();
 
   return (
     <div className="product-card">
@@ -41,7 +35,9 @@ const ProductCard = ({ data }) => {
           <div className="product-card-info">
             <div className="product-card-info-top">
               <h2 className="product-card-title">{data.name}</h2>
-              <div data-testid="all-toys-price" className="product-card-price">${data.price}</div>
+              <div data-testid="all-toys-price" className="product-card-price">
+                ${data.price}
+              </div>
             </div>
 
             <div className="product-card-info-bottom">
@@ -136,7 +132,7 @@ const ProductCard = ({ data }) => {
               <Link to={`/toy-details/${data.id}`}>Toy Details</Link>
             </button>
             <button
-              onClick={() => addToLocalStorage("cart", data._id)}
+              onClick={() => addToLocalStorage("cart", data.id)}
               className="product-card-cart-btn"
               title="Add To Cart"
             >

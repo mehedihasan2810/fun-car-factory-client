@@ -30,6 +30,8 @@ const AllToys = () => {
   const [sortTerm, setSortTerm] = useState("");
   // const allToys = useLoaderData();
 
+ 
+
   const handleSearch = async (searchValue) => {
     setSearhTerm(searchValue);
   };
@@ -234,7 +236,7 @@ const AllToys = () => {
             ))}
           </>
         ) : sortedToys.length ? (
-          sortedToys.map((toy) => <ProductCard key={toy.id} data={toy} />)
+          sortedToys.map((toy) => <ProductCard key={toy.id} data={toy}  />)
         ) : (
           <div className="toys-not-found-title">No toys found!</div>
         )}

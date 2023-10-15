@@ -10,17 +10,20 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { ApolloProvider } from "@apollo/client";
 import { apolloClient } from "./lib/graphql";
 import { SkeletonTheme } from "react-loading-skeleton";
+import ContextProvider from "./contexts/ContextProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <SmoothScrollProvider>
-      <ApolloProvider client={apolloClient}>
-        <AuthProvider>
-          <SkeletonTheme baseColor="#f9fafb" highlightColor="#d1d5db">
-            <RouterProvider router={router} />
-          </SkeletonTheme>
-        </AuthProvider>
-      </ApolloProvider>
+      <ContextProvider>
+        <ApolloProvider client={apolloClient}>
+          <AuthProvider>
+            <SkeletonTheme baseColor="#f9fafb" highlightColor="#d1d5db">
+              <RouterProvider router={router} />
+            </SkeletonTheme>
+          </AuthProvider>
+        </ApolloProvider>
+      </ContextProvider>
     </SmoothScrollProvider>
   </React.StrictMode>
 );

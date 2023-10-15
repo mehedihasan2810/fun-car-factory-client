@@ -13,6 +13,7 @@ import renderer from "react-test-renderer";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContext } from "../../src/contexts/AuthProvider";
 import userEvent from "@testing-library/user-event";
+import ContextProvider from "../../src/contexts/ContextProvider";
 
 // function toJson(component) {
 //   const result = component.toJSON();
@@ -24,7 +25,9 @@ import userEvent from "@testing-library/user-event";
 const allTheProviders = ({ children }, ctxValue) => {
   return (
     <BrowserRouter>
-      <AuthContext.Provider value={ctxValue}>{children}</AuthContext.Provider>
+      <ContextProvider>
+        <AuthContext.Provider value={ctxValue}>{children}</AuthContext.Provider>
+      </ContextProvider>
     </BrowserRouter>
   );
 };
