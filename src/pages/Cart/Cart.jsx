@@ -12,8 +12,6 @@ const Cart = () => {
     variables: { cartIds },
   });
 
-  console.log(data);
-
   return (
     <section className="cart-container">
       <div className="cart-toys-wrapper">

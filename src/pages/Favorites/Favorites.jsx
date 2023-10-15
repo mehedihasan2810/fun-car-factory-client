@@ -4,6 +4,7 @@ import "./Favorites.css";
 import { GET_CART_CAR } from "../../lib/graphql/queryDefs";
 import useContextProvider from "../../contexts/useContextProvider";
 import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
+import { cache } from "../../lib/graphql";
 
 const Favorites = () => {
   const { favIds } = useContextProvider();
@@ -28,7 +29,24 @@ const Favorites = () => {
           <FavoriteCard
             key={loading ? index : item.id}
             {...item}
-            deleteItem={() => deleteFromLocalStorage("fav", item.id)}
+            deleteItem={() => {
+              deleteFromLocalStorage("fav", item.id);
+              cache.updateQuery(
+                {
+                  query: GET_CART_CAR,
+                  variables: { cartIds: favIds },
+                },
+                (data) => {
+                  const updatedFav = data.getCartCar.filter(
+                    (cartItem) => cartItem.id !== item.id
+                  );
+
+                  return {
+                    getCartCar: updatedFav,
+                  };
+                }
+              );
+            }}
           />
         )
       )}
