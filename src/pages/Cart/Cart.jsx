@@ -1,14 +1,15 @@
 import { useQuery } from "@apollo/client";
 import FavoriteCard from "../../components/ui/FavoriteCard/FavoriteCard";
 import "./Cart.css";
-import { GET_CART_CAR } from "../../lib/graphql/queryDefs";
+import { GET_CART_CAR, GET_FAV_CAR } from "../../lib/graphql/queryDefs";
 import useContextProvider from "../../contexts/useContextProvider";
-import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
 import { cache } from "../../lib/graphql";
 import Swal from "sweetalert2";
+import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
 
 const Cart = () => {
-  const { cartIds } = useContextProvider();
+  const { cartIds, favIds, addToLocalStorage, checkTotalCartToys } =
+    useContextProvider();
   const { data, loading } = useQuery(GET_CART_CAR, {
     variables: { cartIds },
   });
@@ -25,7 +26,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         deleteFromLocalStorage("cart", id);
-
+        checkTotalCartToys();
         cache.updateQuery(
           {
             query: GET_CART_CAR,
@@ -58,12 +59,36 @@ const Cart = () => {
         >
           You have added {loading ? "0" : data?.getCartCar?.length} toys
         </p>
-        {(loading ? Array.from({ length: 1 }) : data.getCartCar).map(
+        {(loading ? Array.from({ length: 2 }) : data.getCartCar).map(
           (item, index) => (
             <FavoriteCard
               key={loading ? index : item.id}
               {...item}
               deleteItem={() => deleteCartItem(item.id)}
+              addToStorage={() => {
+                addToLocalStorage("fav", item.id);
+
+                cache.updateQuery(
+                  {
+                    query: GET_FAV_CAR,
+                    variables: { cartIds: favIds },
+                  },
+                  (data) => {
+                    if (data) {
+                      const isExist = data.getFavCar.find(
+                        (cartItem) => cartItem.id === item.id
+                      );
+
+                      return {
+                        getFavCar: isExist
+                          ? data.getFavCar
+                          : [...data.getFavCar, item],
+                      };
+                    }
+                  }
+                );
+              }}
+              type="cart"
             />
           )
         )}

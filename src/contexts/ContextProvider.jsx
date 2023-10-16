@@ -47,7 +47,13 @@ const ContextProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ addToLocalStorage, totalCartToys, cartIds, favIds }}
+      value={{
+        addToLocalStorage,
+        checkTotalCartToys,
+        totalCartToys,
+        cartIds,
+        favIds,
+      }}
     >
       {children}
     </AppContext.Provider>

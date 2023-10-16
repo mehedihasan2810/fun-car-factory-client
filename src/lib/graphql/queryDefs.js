@@ -47,6 +47,22 @@ export const GET_CART_CAR = gql`
     }
   }
 `;
+export const GET_FAV_CAR = gql`
+  query GetFavCar($cartIds: [String!]!) {
+   getFavCar: getCartCar(cartIds: $cartIds) {
+      id
+      category
+      description
+      email
+      name
+      price
+      quantity
+      rating
+      sellerName
+      url
+    }
+  }
+`;
 
 export const CREATE_CAR = gql`
   mutation CreateCar($carInput: CarInput!) {
