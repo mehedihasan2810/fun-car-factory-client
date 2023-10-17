@@ -49,7 +49,7 @@ export const GET_CART_CAR = gql`
 `;
 export const GET_FAV_CAR = gql`
   query GetFavCar($cartIds: [String!]!) {
-   getFavCar: getCartCar(cartIds: $cartIds) {
+    getFavCar: getCartCar(cartIds: $cartIds) {
       id
       category
       description
@@ -153,10 +153,15 @@ export const GET_USER = gql`
 export const CREATE_USER = gql`
   mutation CreateUser($input: UserInput!) {
     createUser(input: $input) {
-      email
-      id
-      name
-      role
+      code
+      message
+      success
+      user {
+        id
+        email
+        name
+        role
+      }
     }
   }
 `;

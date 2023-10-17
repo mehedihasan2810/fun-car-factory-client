@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useAuthContext } from "../../contexts/useAuthContext";
+import { useMutation } from "@apollo/client";
+import { CREATE_USER } from "../../lib/graphql/queryDefs";
 
 const SignUp = () => {
   useTitlePerPage("Sign Up");
@@ -19,6 +21,8 @@ const SignUp = () => {
   const location = useLocation();
   const { googleSignIn, signUp, updateUserProfile } = useAuthContext();
 
+  const [createUser] = useMutation(CREATE_USER);
+
   const handleSignUp = async (e) => {
     e.preventDefault();
     setIsSignUpLoading(true);
@@ -27,6 +31,22 @@ const SignUp = () => {
       const userCredential = await signUp(email, password);
 
       await updateUserProfile(userCredential.user, name, photoUrl);
+
+      createUser({
+        variables: {
+          input: {
+            name,
+            email,
+            role: "user",
+          },
+        },
+        onCompleted: () => {
+          console.log("user created");
+        },
+        onError: (error) => {
+          console.error(error);
+        },
+      });
 
       // * reset state
       setEmail("");
@@ -102,7 +122,6 @@ const SignUp = () => {
               name="url"
               id="url"
               placeholder="Photo Url"
-              required
             />
           </div>
           <div className="control">
