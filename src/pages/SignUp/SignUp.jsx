@@ -19,74 +19,58 @@ const SignUp = () => {
   const location = useLocation();
   const { googleSignIn, signUp, updateUserProfile } = useAuthContext();
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     setIsSignUpLoading(true);
-    signUp(email, password)
-      .then((userCredential) => {
-        const createdUser = userCredential.user;
 
-        // * update user profile
-        updateUserProfile(createdUser, name, photoUrl)
-          .then(() => {})
-          .catch((error) => {
-            // *show toast
-            toast.error(error.message, {
-              position: toast.POSITION.TOP_CENTER,
-              autoClose: 2000,
-            });
+    try {
+      const userCredential = await signUp(email, password);
 
-            setIsSignUpLoading(false);
-          });
+      await updateUserProfile(userCredential.user, name, photoUrl);
 
-        // *show toast
-        toast.success("Succesfully Signed Up", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
+      // * reset state
+      setEmail("");
+      setPassword("");
+      setIsSignUpLoading(false);
 
-        // * reset state
-        setEmail("");
-        setPassword("");
-        setIsSignUpLoading(false);
-
-        // *redirect user
-        const from = location.state?.from?.pathname || "/";
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        // *show toast
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-
-        setIsSignUpLoading(false);
+      // *show toast
+      toast.success("Succesfully Signed Up", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
       });
+
+      // *redirect user
+      const from = location.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
+    } catch (error) {
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
+      setIsSignUpLoading(false);
+    }
   };
 
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then(() => {
-        // const loggedUser = userCredential.user;
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
 
-        // *show toast
-        toast.success("Succesfully Signed In", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-
-        // *redirect user
-        const from = location.state?.from?.pathname || "/";
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        // *show toast
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
+      // *show toast
+      toast.success("Succesfully Signed In", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
       });
+
+      // *redirect user
+      const from = location.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
+    } catch (error) {
+      // *show toast
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
+    }
   };
 
   return (

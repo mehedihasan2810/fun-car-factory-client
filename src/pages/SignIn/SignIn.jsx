@@ -16,59 +16,57 @@ const SignIn = () => {
   const location = useLocation();
   const { googleSignIn, signIn } = useAuthContext();
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
     setIsSignInLoading(true);
-    signIn(email, password)
-      .then(() => {
-        // const loggedUser = userCredential.user;
 
-        // *show toast
-        toast.success("Succesfully Signed In", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-
-        // * reset state
-        setEmail("");
-        setPassword("");
-        setIsSignInLoading(false);
-
-        const from = location.state?.from?.pathname || "/";
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        // *show toast
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-        setIsSignInLoading(false);
+    try {
+      const userCredential = await signIn(email, password);
+      console.log(userCredential);
+      // *show toast
+      toast.success("Succesfully Signed In", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
       });
+
+      // * reset state
+      setEmail("");
+      setPassword("");
+      setIsSignInLoading(false);
+
+      const from = location.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
+    } catch (error) {
+      // *show toast
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
+      setIsSignInLoading(false);
+    }
   };
 
   const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then(() => {
-        // const loggedUser = userCredential.user;
+    try {
+      const userCredential = googleSignIn();
+      console.log(userCredential);
 
-        // *show toast
-        toast.success("Succesfully Signed In", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
-
-        // *redirect user
-        const from = location.state?.from?.pathname || "/";
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        // *show toast
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
+      // *show toast
+      toast.success("Succesfully Signed In", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
       });
+
+      // *redirect user
+      const from = location.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
+    } catch (error) {
+      // *show toast
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
+    }
   };
   return (
     <section>
