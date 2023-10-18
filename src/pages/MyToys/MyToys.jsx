@@ -9,19 +9,20 @@ import "./MyToys.css";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import Search from "../../components/ui/Search/Search";
 import { useMutation, useQuery } from "@apollo/client";
-import { DELETE_CAR, GET_CARS } from "../../lib/graphql/queryDefs";
+import { DELETE_CAR, MY_CARS } from "../../lib/graphql/queryDefs";
 import Skeleton from "react-loading-skeleton";
 const MyToys = () => {
   useTitlePerPage("My Toys");
   const [searchTerm, setSearhTerm] = useState("");
 
-  const { data, loading, error } = useQuery(GET_CARS);
+  const { data, loading, error } = useQuery(MY_CARS);
+
   const [deleteToy] = useMutation(DELETE_CAR, {
     update(cache, { data: { deleteCar } }) {
       cache.modify({
         // id: cache.identify(deleteCar),
         fields: {
-          getCars(existingCars = [], { readField }) {
+          myCars(existingCars = [], { readField }) {
             return existingCars.filter(
               (car) => deleteCar.id !== readField("id", car)
             );
@@ -80,10 +81,10 @@ const MyToys = () => {
 
   if (!loading) {
     filteredToys = searchTerm
-      ? data.getCars.filter((toy) =>
+      ? data.myCars.filter((toy) =>
           toy.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
         )
-      : data.getCars;
+      : data.myCars;
   }
 
   return (

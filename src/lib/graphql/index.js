@@ -1,24 +1,24 @@
 import {
   ApolloClient,
   InMemoryCache,
-  // HttpLink,
   createHttpLink,
   from,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
-// import fetch from "cross-fetch";
+import { signOut } from "firebase/auth";
+import Cookies from "js-cookie";
+import { auth } from "../../configs/firebase";
 
 export const cache = new InMemoryCache();
 
 const httpLink = createHttpLink({
   // uri: "https://fun-car-factory-server.vercel.app/graphql",
   uri: "http://localhost:4000/graphql",
-  // fetch: (...args) => fetch(...args),
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("token");
+  const token = Cookies.get("token");
 
   return {
     headers: {
@@ -28,9 +28,15 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const errorLink = onError(({ graphQLErrors, networkError }) => {
+const errorLink = onError(async ({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    console.log(graphQLErrors);
+    console.log(graphQLErrors[0].message);
+    if (graphQLErrors[0]?.message === "User is not authenticated") {
+      await signOut(auth);
+
+      Cookies.remove("token");
+    }
+
     graphQLErrors.forEach(({ message }) =>
       console.error(`[GraphQL error]: Message: ${message}`)
     );

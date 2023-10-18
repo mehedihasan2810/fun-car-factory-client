@@ -28,7 +28,6 @@ const AllToys = () => {
 
   const [searchTerm, setSearhTerm] = useState("");
   const [sortTerm, setSortTerm] = useState("");
-  // const allToys = useLoaderData();
 
   const handleSearch = async (searchValue) => {
     setSearhTerm(searchValue);

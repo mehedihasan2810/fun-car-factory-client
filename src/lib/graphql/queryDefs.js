@@ -14,6 +14,20 @@ export const GET_CARS = gql`
   }
 `;
 
+export const MY_CARS = gql`
+  query MyCars {
+    myCars: getCars {
+      id
+      name
+      price
+      url
+      rating
+      category
+      quantity
+    }
+  }
+`;
+
 export const GET_CAR = gql`
   query GetCar($id: String!) {
     getCar(id: $id) {

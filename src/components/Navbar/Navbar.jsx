@@ -8,6 +8,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAuthContext } from "../../contexts/useAuthContext";
 import useContextProvider from "../../contexts/useContextProvider";
+import Cookies from "js-cookie";
+import { apolloClient } from "../../lib/graphql";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,26 +22,47 @@ const Navbar = () => {
   const { currentUser, logOut } = useAuthContext();
   const navigate = useNavigate();
 
-  const handleSignOut = () => {
-    logOut()
-      .then(() => {
-        // *show toast
-        if (currentUser) {
-          toast.success("Succesfully Signed Out", {
-            position: toast.POSITION.TOP_CENTER,
-            autoClose: 2000,
-          });
+  const handleSignOut = async () => {
+    try {
+      await logOut();
 
-          navigate("/");
-        }
-      })
-      .catch((error) => {
-        // *show toast
-        toast.error(error.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-        });
+      Cookies.remove("token");
+
+      apolloClient.resetStore();
+
+      toast.success("Succesfully Signed Out", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
       });
+
+      navigate("/");
+    } catch (error) {
+      // *show toast
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
+    }
+
+    // logOut()
+    //   .then(() => {
+    //     // *show toast
+    //     if (currentUser) {
+    //       toast.success("Succesfully Signed Out", {
+    //         position: toast.POSITION.TOP_CENTER,
+    //         autoClose: 2000,
+    //       });
+
+    //       navigate("/");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     // *show toast
+    //     toast.error(error.message, {
+    //       position: toast.POSITION.TOP_CENTER,
+    //       autoClose: 2000,
+    //     });
+    //   });
   };
 
   useLayoutEffect(() => {
