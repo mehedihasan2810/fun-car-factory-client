@@ -63,7 +63,8 @@ import { carsMockData } from "./carsMockData";
 // ];
 
 const carsLink = graphql.link(
-  "https://fun-car-factory-server.vercel.app/graphql"
+  // "https://fun-car-factory-server.vercel.app/graphql",
+  "http://localhost:4000/graphql"
 );
 // Define handlers that catch the corresponding requests and returns the mock data.
 export const handlers = [
