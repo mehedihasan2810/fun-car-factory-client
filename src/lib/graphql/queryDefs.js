@@ -156,6 +156,7 @@ export const CREATE_USER = gql`
       code
       message
       success
+      token
       user {
         id
         email

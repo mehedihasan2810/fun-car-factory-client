@@ -7,6 +7,7 @@ import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useAuthContext } from "../../contexts/useAuthContext";
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../../lib/graphql/queryDefs";
+import Cookies from "js-cookie";
 
 const SignUp = () => {
   useTitlePerPage("Sign Up");
@@ -40,8 +41,10 @@ const SignUp = () => {
             role: "user",
           },
         },
-        onCompleted: () => {
+        onCompleted: ({ createUser }) => {
           console.log("user created");
+
+          Cookies.set("token", createUser.token, { expires: 30 });
         },
         onError: (error) => {
           console.error(error);
