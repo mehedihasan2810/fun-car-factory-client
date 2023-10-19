@@ -5,12 +5,16 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useAuthContext } from "../../contexts/useAuthContext";
+import { apolloClient } from "../../lib/graphql";
+import { CREATE_USER, GET_TOKEN } from "../../lib/graphql/queryDefs";
+import Cookies from "js-cookie";
 const SignIn = () => {
   useTitlePerPage("Sign In");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isSignInLoading, setIsSignInLoading] = useState(false);
+  const [isGoogleSignInLoading, setIsGoogleSignInLoading] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,7 +26,14 @@ const SignIn = () => {
 
     try {
       const userCredential = await signIn(email, password);
-      console.log(userCredential);
+
+      const { data } = await apolloClient.mutate({
+        mutation: GET_TOKEN,
+        variables: { email: userCredential.user.email },
+      });
+
+      Cookies.set("token", data.getToken.token);
+
       // *show toast
       toast.success("Succesfully Signed In", {
         position: toast.POSITION.TOP_CENTER,
@@ -46,10 +57,26 @@ const SignIn = () => {
     }
   };
 
-  const handleGoogleSignIn = () => {
+  const handleGoogleSignIn = async () => {
     try {
-      const userCredential = googleSignIn();
-      console.log(userCredential);
+      setIsGoogleSignInLoading(true);
+      const userCredential = await googleSignIn();
+
+      // save user to db
+      const { data } = await apolloClient.mutate({
+        mutation: CREATE_USER,
+        variables: {
+          input: {
+            email: userCredential.user.email,
+            name: userCredential.user.displayName,
+            role: "user",
+          },
+        },
+      });
+
+      Cookies.set("token", data.createUser.token);
+
+      setIsGoogleSignInLoading(false);
 
       // *show toast
       toast.success("Succesfully Signed In", {
@@ -68,6 +95,7 @@ const SignIn = () => {
       });
     }
   };
+
   return (
     <section>
       <div className="signin-container">
@@ -123,6 +151,10 @@ const SignIn = () => {
         </div>
         <div className="google-github">
           <GoogleButton
+            label={
+              isGoogleSignInLoading ? "Signing In..." : "Sign in with Google"
+            }
+            disabled={isGoogleSignInLoading}
             onClick={handleGoogleSignIn}
             // type="light"
             className="google-btn"

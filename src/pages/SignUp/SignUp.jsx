@@ -8,6 +8,7 @@ import { useAuthContext } from "../../contexts/useAuthContext";
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../../lib/graphql/queryDefs";
 import Cookies from "js-cookie";
+import { apolloClient } from "../../lib/graphql";
 
 const SignUp = () => {
   useTitlePerPage("Sign Up");
@@ -17,6 +18,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isSignUpLoading, setIsSignUpLoading] = useState(false);
+  const [isGoogleSignInLoading, setIsGoogleSignInLoading] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -76,8 +78,24 @@ const SignUp = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      await googleSignIn();
+      setIsGoogleSignInLoading(true);
+      const userCredential = await googleSignIn();
 
+      // save user to db
+      const { data } = await apolloClient.mutate({
+        mutation: CREATE_USER,
+        variables: {
+          input: {
+            email: userCredential.user.email,
+            name: userCredential.user.displayName,
+            role: "user",
+          },
+        },
+      });
+
+      Cookies.set("token", data.createUser.token);
+
+      setIsGoogleSignInLoading(false);
       // *show toast
       toast.success("Succesfully Signed In", {
         position: toast.POSITION.TOP_CENTER,
@@ -180,6 +198,10 @@ const SignUp = () => {
         </div>
         <div className="google-github">
           <GoogleButton
+            label={
+              isGoogleSignInLoading ? "Signing In..." : "Sign in with Google"
+            }
+            disabled={isGoogleSignInLoading}
             onClick={handleGoogleSignIn}
             // type="light"
             className="google-btn"

@@ -5,8 +5,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   GoogleAuthProvider,
-  signInWithRedirect,
   updateProfile,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../configs/firebase";
 
@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const googleSignIn = () => {
-    return signInWithRedirect(auth, gooleProvider);
+    return signInWithPopup(auth, gooleProvider);
   };
 
   const logOut = () => {

@@ -30,11 +30,12 @@ const authLink = setContext((_, { headers }) => {
 
 const errorLink = onError(async ({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    console.log(graphQLErrors[0].message);
     if (graphQLErrors[0]?.message === "User is not authenticated") {
       await signOut(auth);
 
       Cookies.remove("token");
+
+      apolloClient.resetStore();
     }
 
     graphQLErrors.forEach(({ message }) =>

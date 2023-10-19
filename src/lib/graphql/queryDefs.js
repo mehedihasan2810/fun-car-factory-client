@@ -127,17 +127,6 @@ export const DELETE_CAR = gql`
       rating
       category
       quantity
-
-      # id
-      # category
-      # description
-      # email
-      # name
-      # price
-      # quantity
-      # rating
-      # sellerName
-      # url
     }
   }
 `;
@@ -177,6 +166,14 @@ export const CREATE_USER = gql`
         name
         role
       }
+    }
+  }
+`;
+
+export const GET_TOKEN = gql`
+  mutation GetToken($email: String!) {
+    getToken(email: $email) {
+      token
     }
   }
 `;
