@@ -171,7 +171,7 @@ export const CREATE_USER = gql`
 `;
 
 export const GET_TOKEN = gql`
-  mutation GetToken($email: String!) {
+  query GetToken($email: String!) {
     getToken(email: $email) {
       token
     }

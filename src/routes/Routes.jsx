@@ -8,10 +8,11 @@ import MyToys from "../pages/MyToys/MyToys";
 import AddToy from "../pages/AddToy/AddToy";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
-import ProtectedRoute from "./ProtectedRoute";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
 import Favorites from "../pages/Favorites/Favorites";
 import Cart from "../pages/Cart/Cart";
+import AdminRoute from "./AdminRoute";
+import { getUserLoader } from "./loaders/getUserLoader";
 
 export const router = createBrowserRouter([
   {
@@ -34,46 +35,37 @@ export const router = createBrowserRouter([
       {
         path: "/all-toys",
         element: <AllToys />,
-        // loader: () =>
-        //   fetch("https://fun-car-factory-server.vercel.app/all-toys"),
       },
       {
         path: "/my-toys",
         element: (
-          <ProtectedRoute>
+          <AdminRoute>
             <MyToys />
-          </ProtectedRoute>
+          </AdminRoute>
         ),
-        // loader: () =>
-        //   fetch("https://fun-car-factory-server.vercel.app/all-toys"),
+        loader: getUserLoader,
       },
       {
         path: "/add-toy",
         element: (
-          <ProtectedRoute>
+          <AdminRoute>
             <AddToy />
-          </ProtectedRoute>
+          </AdminRoute>
         ),
+        loader: getUserLoader,
       },
       {
         path: "/toy-details/:id",
-        element: (
-          // <ProtectedRoute>
-            <ToyDetails />
-          // </ProtectedRoute>
-        ),
-        // loader: ({ params }) =>
-        //   fetch(
-        //     `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
-        //   ),
+        element: <ToyDetails />,
       },
       {
         path: "/my-toys/:id",
-        element: <UpdateToy />,
-        // loader: ({ params }) =>
-        //   fetch(
-        //     `https://fun-car-factory-server.vercel.app/toy-details/${params.id}`
-        //   ),
+        element: (
+          <AdminRoute>
+            <UpdateToy />
+          </AdminRoute>
+        ),
+        loader: getUserLoader,
       },
       {
         path: "/favorites",

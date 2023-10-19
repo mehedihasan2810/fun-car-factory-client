@@ -1,14 +1,11 @@
-// import { useLoaderData } from "react-router-dom";
 import "./AllToys.css";
 import { useRef, useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
-// import { toast } from "react-toastify";
 import ProductCard from "../../components/ui/ProductCard/ProductCard";
 import Search from "../../components/ui/Search/Search";
 import { useQuery } from "@apollo/client";
 import { GET_CARS } from "../../lib/graphql/queryDefs";
 import Skeleton from "react-loading-skeleton";
-// import { useAuthContext } from "../../contexts/useAuthContext";
 
 const filterValues = ["All", "Ferrari", "Bus", "Truck"];
 const sortValues = [
@@ -18,7 +15,6 @@ const sortValues = [
 ];
 
 const AllToys = () => {
-  // const { currentUser } = useAuthContext();
   useTitlePerPage("All Toys");
 
   const toysFilterOptionsRef = useRef();
@@ -73,8 +69,6 @@ const AllToys = () => {
         })
       : filteredToys;
   }
-
-  // loading = false;
 
   return (
     <div className="toys-container">

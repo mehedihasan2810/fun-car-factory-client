@@ -27,8 +27,8 @@ const SignIn = () => {
     try {
       const userCredential = await signIn(email, password);
 
-      const { data } = await apolloClient.mutate({
-        mutation: GET_TOKEN,
+      const { data } = await apolloClient.query({
+        query: GET_TOKEN,
         variables: { email: userCredential.user.email },
       });
 

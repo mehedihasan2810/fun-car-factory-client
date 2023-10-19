@@ -6,17 +6,6 @@ const ProtectedRoute = ({ children }) => {
 
   const { currentUser, isAuthLoading } = useAuthContext();
 
-  // if (isAuthLoading) {
-  //   return (
-  //     <div
-  //       className="loader"
-  //       style={{
-  //         margin: "200px auto",
-  //       }}
-  //     ></div>
-  //   );
-  // }
-
   if (isAuthLoading || currentUser) {
     return children;
   } else {
