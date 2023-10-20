@@ -28,7 +28,7 @@ const Hero = () => {
             </div>{" "}
             <br /> For Your Kids
           </h1>
-          <Link to="#" className="btn-primary">
+          <Link to="/all-toys" className="btn-primary">
             Get Now
           </Link>
         </div>

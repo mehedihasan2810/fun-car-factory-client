@@ -32,7 +32,7 @@ const NewCollention = () => {
             Brand New Toys <br /> Just Arrived
           </h4>
           {/* <>Brand New Toys Just Arrived</> */}
-          <Link to="#" className="btn-primary">
+          <Link to="/all-toys" className="btn-primary">
             Explore
           </Link>
         </div>
