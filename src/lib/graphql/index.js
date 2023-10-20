@@ -13,8 +13,8 @@ import { auth } from "../../configs/firebase";
 export const cache = new InMemoryCache();
 
 const httpLink = createHttpLink({
-  // uri: "https://fun-car-factory-server.vercel.app/graphql",
-  uri: "http://localhost:4000/graphql",
+  uri: "https://fun-car-factory-server.vercel.app/graphql",
+  // uri: "http://localhost:4000/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
