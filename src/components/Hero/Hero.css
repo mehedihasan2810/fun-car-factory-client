@@ -68,6 +68,7 @@
 .hero-path {
   stroke-dasharray: 1528;
   stroke-dashoffset: 1528;
+  stroke: var(--primary-sky-500);
 }
 
 .hero-info a {

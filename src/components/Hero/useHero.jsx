@@ -8,55 +8,31 @@ const useHero = () => {
   const heroConRef = useRef();
 
   useLayoutEffect(() => {
-
     const boxWidth = window.innerHeight + 100,
-    totalWidth = boxWidth * 6, // * n of boxes + diff textBox
-    time = 70;
+      totalWidth = boxWidth * 6,
+      time = 70;
 
     const sliederItems = document.querySelectorAll(".hero-slider > div"),
-    dirFromLeft = "+=" + totalWidth;
-  const mod = gsap.utils.wrap(0, totalWidth);
-  gsap.set(sliederItems, {
-    x: (i) => i * boxWidth,
-  });
+      dirFromLeft = "+=" + totalWidth;
+    const mod = gsap.utils.wrap(0, totalWidth);
+    gsap.set(sliederItems, {
+      x: (i) => i * boxWidth,
+    });
 
-
-  const sliederItems2 = document.querySelectorAll(".hero-slider-2 > div");
-        const dirFromRight = "-=" + totalWidth;
-        const mod2 = gsap.utils.wrap(0, -totalWidth);
-        gsap.set(sliederItems2, {
-          x: (i) => -1 * i * boxWidth,
-        });
-
-     
-
-
+    const sliederItems2 = document.querySelectorAll(".hero-slider-2 > div");
+    const dirFromRight = "-=" + totalWidth;
+    const mod2 = gsap.utils.wrap(0, -totalWidth);
+    gsap.set(sliederItems2, {
+      x: (i) => -1 * i * boxWidth,
+    });
 
     const matchMedia = gsap.matchMedia();
 
     matchMedia.add(
       {
         isDesktop: "(min-width: 800px)",
-        // isMobile: "(max-width: 799px)",
-        // reduceMotion: "(prefers-reduced-motion: reduce)",
       },
       () => {
-
-
-        // const {isDesktop, isMobile} = context.conditions;
-
-        // const boxWidth = window.innerHeight + 100,
-        //   totalWidth = boxWidth * 6, // * n of boxes + diff textBox
-        //   time = 70;
-
-        // slider right to left starts
-        // const sliederItems = document.querySelectorAll(".hero-slider > div"),
-        //   dirFromLeft = "+=" + totalWidth;
-        // const mod = gsap.utils.wrap(0, totalWidth);
-        // gsap.set(sliederItems, {
-        //   x: (i) => i * boxWidth,
-        // });
-
         const tl1 = gsap.timeline().to(sliederItems, {
           x: dirFromLeft,
           modifiers: {
@@ -68,13 +44,6 @@ const useHero = () => {
         });
         // slider right to left ends
 
-        // slider left to right starts
-        // const sliederItems2 = document.querySelectorAll(".hero-slider-2 > div");
-        // const dirFromRight = "-=" + totalWidth;
-        // const mod2 = gsap.utils.wrap(0, -totalWidth);
-        // gsap.set(sliederItems2, {
-        //   x: (i) => -1 * i * boxWidth,
-        // });
         const tl2 = gsap.timeline().to(sliederItems2, {
           x: dirFromRight,
           modifiers: {
@@ -101,30 +70,6 @@ const useHero = () => {
             }
           },
         });
-
-
-        // if(isMobile){
-        //   tl1.pause();
-        //   tl2.pause();
-        // }
-        //  paused hero infinite slider when not in viewport end
-
-
-        // gsap.fromTo(
-        //   ['.hero-slider', '.hero-slider-2'], 
-        //   {yPercent: -50}, 
-        //   {
-        //   yPercent: -40,
-        //   scrollTrigger: {
-        //    trigger: heroConRef.current,
-        //    start: 'top -1px',
-        //    end: 'center top',
-        //    scrub: true,
-        //    markers: true
-        //   }
-        // })
-
-
       },
       heroConRef.current
     );
@@ -134,10 +79,14 @@ const useHero = () => {
     };
   }, []);
 
-
   useLayoutEffect(() => {
-  
-  }, [])
+    const path = document.querySelector(".hero-path");
+    gsap.to(path, {
+      strokeDashoffset: 0,
+      duration: 1.5,
+      ease: "power1",
+    });
+  }, []);
 
   return {
     heroConRef,

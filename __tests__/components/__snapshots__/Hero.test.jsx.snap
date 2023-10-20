@@ -29,7 +29,7 @@ exports[`<Hero/> > should match snapshot 1`] = `
               <path
                 class="hero-path"
                 d="M0.5 1.5H250L0.5 9.5H250H542.5L299.5 1.5H542.5"
-                stroke="#eab308"
+                stroke="#082f49"
                 stroke-width="5"
               />
             </svg>

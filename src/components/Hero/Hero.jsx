@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Hero.css";
 import useHero from "./useHero";
-import gsap from "gsap";
 const Hero = () => {
   const { heroConRef } = useHero();
 
@@ -10,23 +9,11 @@ const Hero = () => {
       <div className="hero-layer-contaner">
         <img className="mobile-hero-img" src="/assets/banner-photo.png"></img>
         <div className="hero-info">
-          <h1
-            onClick={() => {
-              const path = document.querySelector(".hero-path");
-
-              gsap.to(path, {
-                strokeDashoffset: 0,
-                duration: 1.5,
-                ease: "power1",
-              });
-            }}
-          >
+          <h1>
             Get The{" "}
             <div className="hero-highlight-title">
               Best Toys
               <svg
-                // width="543"
-                // height="11"
                 viewBox="0 0 543 11"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +21,7 @@ const Hero = () => {
                 <path
                   className="hero-path"
                   d="M0.5 1.5H250L0.5 9.5H250H542.5L299.5 1.5H542.5"
-                  stroke="#eab308"
+                  stroke="#082f49"
                   strokeWidth="5"
                 />
               </svg>
