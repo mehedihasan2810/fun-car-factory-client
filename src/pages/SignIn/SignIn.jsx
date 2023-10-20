@@ -77,6 +77,29 @@ const SignIn = () => {
     <section>
       <div className="signin-container">
         <form onSubmit={handleSignIn} className="signin">
+          {/* todo start */}
+          <div className="tempo-credentials">
+            <div className="tempo-admin">
+              <div>Admin:- </div>
+              <div>
+                <span>Email:</span> test2810@gmail.com
+              </div>
+              <div>
+                <span>Pass:</span> 123456
+              </div>
+            </div>
+            <hr />
+            <div className="tempo-user">
+              <div>User:- </div>
+              <div>
+                <span>Email:</span> test@gmail.com
+              </div>
+              <div>
+                <span>Pass:</span> 123456
+              </div>
+            </div>
+          </div>
+          {/* todo end */}
           <div className="control">
             <label htmlFor="email">Email: </label>
             <input
@@ -113,6 +136,7 @@ const SignIn = () => {
               Show Password
             </label>
           </div>
+
           <button className="auth-btn" type="submit">
             {isSignInLoading ? <div className="loader"></div> : "Sign In"}
           </button>

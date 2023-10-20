@@ -105,3 +105,23 @@
   border-width: 3px;
   margin: 0 auto;
 }
+
+/* todo */
+.tempo-credentials {
+  border: 1px solid var(--primary-sky-600);
+  padding: 1rem;
+  background-color: var(--primary-sky-800);
+}
+
+.tempo-credentials > div > * + * {
+  margin-block-start: 0.5rem;
+}
+
+.tempo-credentials span {
+  display: inline-block;
+  margin-inline-end: 2px;
+}
+
+.tempo-credentials > * + * {
+  margin-block-start: 0.5rem;
+}
