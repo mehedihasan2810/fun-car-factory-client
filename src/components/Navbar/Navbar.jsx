@@ -1,19 +1,15 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaUserTie, FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
 import { toast } from "react-toastify";
 import "./Navbar.css";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAuthContext } from "../../contexts/useAuthContext";
 import useContextProvider from "../../contexts/useContextProvider";
 import Cookies from "js-cookie";
 import { apolloClient } from "../../lib/graphql";
 import { GET_USER } from "../../lib/graphql/queryDefs";
 import jwtDecode from "jwt-decode";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const navContainerRef = useRef();
@@ -72,18 +68,6 @@ const Navbar = () => {
       link.addEventListener("click", () => {
         setIsOpenNav(false);
       });
-    });
-
-    ScrollTrigger.observe({
-      target: window,
-      type: "wheel,touch,scroll,pointer",
-      onUp: () => {
-        navContainerRef.current.style.transform = "translateY(0%)";
-      },
-      onDown: () => {
-        navContainerRef.current.style.transform = "translateY(-100%)";
-        setIsOpenNav(false);
-      },
     });
   }, []);
 
@@ -153,9 +137,22 @@ const Navbar = () => {
                     height={40}
                   />
                 ) : (
-                  <div title="No Name">
-                    <FaUserTie style={{ width: 40, height: 40 }} />
-                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                    width={32}
+                    height={32}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
                 )}
               </li>
               <li>
