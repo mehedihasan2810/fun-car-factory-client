@@ -2,7 +2,7 @@
 
 exports[`<NewCollection /> > should match snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="new-collection-wrapper"
   >
     <div
@@ -46,6 +46,6 @@ exports[`<NewCollection /> > should match snapshot 1`] = `
         </a>
       </div>
     </section>
-  </div>
+  </section>
 </DocumentFragment>
 `;

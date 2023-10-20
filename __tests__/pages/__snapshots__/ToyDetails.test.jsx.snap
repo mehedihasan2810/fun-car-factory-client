@@ -2,7 +2,7 @@
 
 exports[`<ToyDetails /> > should render, fetch single data and match snapshot succesfully 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="details-container"
   >
     <div
@@ -87,6 +87,6 @@ exports[`<ToyDetails /> > should render, fetch single data and match snapshot su
         </button>
       </div>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;

@@ -2,7 +2,7 @@
 
 exports[`<AllToys /> > Should fetch all cars on render and match snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="toys-container"
   >
     <div
@@ -5694,6 +5694,6 @@ exports[`<AllToys /> > Should fetch all cars on render and match snapshot 1`] = 
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;

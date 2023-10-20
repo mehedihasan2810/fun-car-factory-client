@@ -2,7 +2,7 @@
 
 exports[`<MyToys /> > Should render successfully and match snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="my-toys-container"
   >
     <div
@@ -2364,6 +2364,6 @@ exports[`<MyToys /> > Should render successfully and match snapshot 1`] = `
         </tbody>
       </table>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;
