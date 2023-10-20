@@ -4,7 +4,7 @@ import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 const ErrorPage = () => {
   useTitlePerPage("Error Page");
   return (
-    <div className="error-page-container">
+    <section className="error-page-container">
       <div>
         <h2>404!</h2>
         <img
@@ -16,7 +16,7 @@ const ErrorPage = () => {
           back to home
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -71,7 +71,7 @@ const AllToys = () => {
   }
 
   return (
-    <div className="toys-container">
+    <section className="toys-container">
       <div className="toys-top-header">
         <div className="toys-total-count">
           Toys <span>({loading ? "0" : sortedToys?.length})</span>
@@ -231,7 +231,7 @@ const AllToys = () => {
           <div className="toys-not-found-title">No toys found!</div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

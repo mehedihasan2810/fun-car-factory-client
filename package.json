@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.5",
+    "@barba/core": "^2.9.7",
     "@studio-freight/lenis": "^1.0.26",
     "firebase": "^10.4.0",
     "graphql": "^16.8.1",

@@ -7,7 +7,7 @@ const NewCollention = () => {
   const newCollentionRef = useRef();
 
   return (
-    <div className="new-collection-wrapper">
+    <section className="new-collection-wrapper">
       <div className="new-collection-left-gradient"></div>
       <div className="new-collection-right-gradient"></div>
       <section
@@ -37,7 +37,7 @@ const NewCollention = () => {
           </Link>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

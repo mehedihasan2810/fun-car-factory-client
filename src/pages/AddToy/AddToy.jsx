@@ -70,7 +70,7 @@ const AddToy = () => {
   };
 
   return (
-    <div className="center-container">
+    <section className="center-container">
       <div className="add-toy-container ">
         <h2 className="add-title">Add Toy</h2>
         <form onSubmit={handleAddToy}>
@@ -191,7 +191,7 @@ const AddToy = () => {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

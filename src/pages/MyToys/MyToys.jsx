@@ -88,7 +88,7 @@ const MyToys = () => {
   }
 
   return (
-    <div className="my-toys-container">
+    <section className="my-toys-container">
       <div
         data-testid="my-toys-loading-skeleton"
         style={{
@@ -215,7 +215,7 @@ const MyToys = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   );
 };
 

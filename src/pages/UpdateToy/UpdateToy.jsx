@@ -70,7 +70,7 @@ const UpdateToy = () => {
   }
 
   return (
-    <div className="center-container">
+    <section className="center-container">
       <div className="update-toy-container ">
         <h2 className="update-title">Update Toy</h2>
         <form onSubmit={handleUpdate}>
@@ -193,7 +193,7 @@ const UpdateToy = () => {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

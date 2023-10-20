@@ -36,7 +36,7 @@ const ToyDetails = () => {
   }
 
   return (
-    <div className="details-container">
+    <section className="details-container">
       <div className="img-galary">
         {loading ? (
           <>
@@ -117,7 +117,7 @@ const ToyDetails = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
