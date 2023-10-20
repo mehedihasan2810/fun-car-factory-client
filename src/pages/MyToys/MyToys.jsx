@@ -22,7 +22,7 @@ const MyToys = () => {
       cache.modify({
         // id: cache.identify(deleteCar),
         fields: {
-          myCars(existingCars = [], { readField }) {
+          getCars(existingCars = [], { readField }) {
             return existingCars.filter(
               (car) => deleteCar.id !== readField("id", car)
             );

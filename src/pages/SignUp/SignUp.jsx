@@ -8,7 +8,6 @@ import { useAuthContext } from "../../contexts/useAuthContext";
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../../lib/graphql/queryDefs";
 import Cookies from "js-cookie";
-import { apolloClient } from "../../lib/graphql";
 
 const SignUp = () => {
   useTitlePerPage("Sign Up");
@@ -79,21 +78,7 @@ const SignUp = () => {
   const handleGoogleSignIn = async () => {
     try {
       setIsGoogleSignInLoading(true);
-      const userCredential = await googleSignIn();
-
-      // save user to db
-      const { data } = await apolloClient.mutate({
-        mutation: CREATE_USER,
-        variables: {
-          input: {
-            email: userCredential.user.email,
-            name: userCredential.user.displayName,
-            role: "user",
-          },
-        },
-      });
-
-      Cookies.set("token", data.createUser.token);
+      await googleSignIn();
 
       setIsGoogleSignInLoading(false);
       // *show toast

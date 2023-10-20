@@ -5,9 +5,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { useTitlePerPage } from "../../hooks/useTitlePerPage";
 import { useAuthContext } from "../../contexts/useAuthContext";
-import { apolloClient } from "../../lib/graphql";
-import { CREATE_USER, GET_TOKEN } from "../../lib/graphql/queryDefs";
-import Cookies from "js-cookie";
+
 const SignIn = () => {
   useTitlePerPage("Sign In");
   const [email, setEmail] = useState("");
@@ -25,14 +23,7 @@ const SignIn = () => {
     setIsSignInLoading(true);
 
     try {
-      const userCredential = await signIn(email, password);
-
-      const { data } = await apolloClient.query({
-        query: GET_TOKEN,
-        variables: { email: userCredential.user.email },
-      });
-
-      Cookies.set("token", data.getToken.token);
+      await signIn(email, password);
 
       // *show toast
       toast.success("Succesfully Signed In", {
@@ -60,21 +51,7 @@ const SignIn = () => {
   const handleGoogleSignIn = async () => {
     try {
       setIsGoogleSignInLoading(true);
-      const userCredential = await googleSignIn();
-
-      // save user to db
-      const { data } = await apolloClient.mutate({
-        mutation: CREATE_USER,
-        variables: {
-          input: {
-            email: userCredential.user.email,
-            name: userCredential.user.displayName,
-            role: "user",
-          },
-        },
-      });
-
-      Cookies.set("token", data.createUser.token);
+      await googleSignIn();
 
       setIsGoogleSignInLoading(false);
 

@@ -35,7 +35,7 @@ const errorLink = onError(async ({ graphQLErrors, networkError }) => {
 
       Cookies.remove("token");
 
-      apolloClient.resetStore();
+      apolloClient.clearStore();
     }
 
     graphQLErrors.forEach(({ message }) =>

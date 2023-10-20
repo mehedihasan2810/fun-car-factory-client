@@ -3,32 +3,31 @@ import { FaUserTie, FaBars } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
 import { toast } from "react-toastify";
 import "./Navbar.css";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAuthContext } from "../../contexts/useAuthContext";
 import useContextProvider from "../../contexts/useContextProvider";
 import Cookies from "js-cookie";
 import { apolloClient } from "../../lib/graphql";
+import { GET_USER } from "../../lib/graphql/queryDefs";
+import jwtDecode from "jwt-decode";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const navContainerRef = useRef();
   const [isOpenNav, setIsOpenNav] = useState(false);
+  const [user, setUser] = useState(null);
 
   const { totalCartToys } = useContextProvider();
-  // checkTotalCartToys();
-  const { currentUser, logOut } = useAuthContext();
+
+  const { currentUser, logOut, accessToken } = useAuthContext();
   const navigate = useNavigate();
 
   const handleSignOut = async () => {
     try {
       await logOut();
-
-      Cookies.remove("token");
-
-      apolloClient.resetStore();
 
       toast.success("Succesfully Signed Out", {
         position: toast.POSITION.TOP_CENTER,
@@ -43,27 +42,28 @@ const Navbar = () => {
         autoClose: 2000,
       });
     }
-
-    // logOut()
-    //   .then(() => {
-    //     // *show toast
-    //     if (currentUser) {
-    //       toast.success("Succesfully Signed Out", {
-    //         position: toast.POSITION.TOP_CENTER,
-    //         autoClose: 2000,
-    //       });
-
-    //       navigate("/");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     // *show toast
-    //     toast.error(error.message, {
-    //       position: toast.POSITION.TOP_CENTER,
-    //       autoClose: 2000,
-    //     });
-    //   });
   };
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const token = Cookies.get("token");
+
+      if (!token) {
+        setUser(null);
+        return;
+      }
+      const decoded = jwtDecode(token);
+
+      const { data } = await apolloClient.query({
+        query: GET_USER,
+        variables: { email: decoded.email },
+      });
+
+      setUser(data?.getUser);
+    };
+
+    fetchUser();
+  }, [accessToken]);
 
   useLayoutEffect(() => {
     const links = document.querySelectorAll("nav li");
@@ -94,8 +94,6 @@ const Navbar = () => {
           <img src="/assets/logo.png" alt="logo" width={55} height={55} />
         </div>
         <ul className={isOpenNav ? "open" : ""}>
-          {/* {currentUser && <li data-testid="foo">Foooo</li>} */}
-
           <li>
             <NavLink
               to="/"
@@ -116,26 +114,31 @@ const Navbar = () => {
               All Toys
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/my-toys"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }
-            >
-              My Toys
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/add-toy"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }
-            >
-              Add Toy
-            </NavLink>
-          </li>
+          {user?.role === "admin" && (
+            <>
+              <li>
+                <NavLink
+                  to="/my-toys"
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  My Toys
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/add-toy"
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  Add Toy
+                </NavLink>
+              </li>
+            </>
+          )}
+
           {currentUser ? (
             <>
               <li>
