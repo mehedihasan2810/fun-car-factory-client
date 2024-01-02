@@ -12,13 +12,6 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_APP_ID,
-
-  //   apiKey: "AIzaSyAGWxkWekGd8RTPRzbQbhB45dbDkiPxf7c",
-  //   authDomain: "fun-car-factory.firebaseapp.com",
-  //   projectId: "fun-car-factory",
-  //   storageBucket: "fun-car-factory.appspot.com",
-  //   messagingSenderId: "466540186149",
-  //   appId: "1:466540186149:web:865a593747e728cdc74dcc"
 };
 
 // Initialize Firebase
