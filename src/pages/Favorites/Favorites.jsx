@@ -8,12 +8,14 @@ import Swal from "sweetalert2";
 import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
 
 const Favorites = () => {
+   // Context and queries
   const { favIds, cartIds, addToLocalStorage, checkTotalCartToys } =
     useContextProvider();
   const { data, loading } = useQuery(GET_FAV_CAR, {
     variables: { cartIds: favIds },
   });
 
+   // Function to delete a favorite item
   const deleteFavItem = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -48,6 +50,7 @@ const Favorites = () => {
 
   return (
     <section className="favorites-container">
+      {/* Display total count or loading skeletons */}
       <p
         className="favorites-count"
         style={{
@@ -58,6 +61,8 @@ const Favorites = () => {
       >
         {loading ? "0" : data?.getFavCar?.length} favorites
       </p>
+
+       {/* Display favorite items or loading skeletons */}
       {(loading ? Array.from({ length: 2 }) : data.getFavCar).map(
         (item, index) => (
           <FavoriteCard

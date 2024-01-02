@@ -12,13 +12,19 @@ import { useMutation, useQuery } from "@apollo/client";
 import { DELETE_CAR, MY_CARS } from "../../lib/graphql/queryDefs";
 import Skeleton from "react-loading-skeleton";
 const MyToys = () => {
+  // Set page title
   useTitlePerPage("My Toys");
+
+  // State for search term
   const [searchTerm, setSearhTerm] = useState("");
 
+  // Query to get the user's cars
   const { data, loading, error } = useQuery(MY_CARS);
 
+  // Mutation to delete a toy
   const [deleteToy] = useMutation(DELETE_CAR, {
     update(cache, { data: { deleteCar } }) {
+      // Update the cache after deleting a car
       cache.modify({
         // id: cache.identify(deleteCar),
         fields: {
@@ -32,6 +38,7 @@ const MyToys = () => {
     },
   });
 
+  // Error handling
   if (error) {
     return (
       <div
@@ -46,7 +53,9 @@ const MyToys = () => {
     );
   }
 
+  // Function to handle the delete action
   const handleDelete = (id) => {
+    // Display a confirmation dialog using Swal
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -56,13 +65,17 @@ const MyToys = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
+      // If the user confirms the deletion
       if (result.isConfirmed) {
+        // Call the deleteToy mutation
         deleteToy({
           variables: { deleteCarId: id },
           onCompleted: () => {
+            // Display a success message using Swal
             Swal.fire("Deleted!", "Your file has been deleted.", "success");
           },
           onError: (error) => {
+            // Display an error message using toast
             toast.error(error.message, {
               position: toast.POSITION.TOP_CENTER,
               autoClose: 2000,
@@ -73,12 +86,13 @@ const MyToys = () => {
     });
   };
 
+  // Function to handle search
   const handleSearch = async (searchValue) => {
     setSearhTerm(searchValue);
   };
 
+  // Filtered toys based on search term
   let filteredToys;
-
   if (!loading) {
     filteredToys = searchTerm
       ? data.myCars.filter((toy) =>
@@ -89,6 +103,7 @@ const MyToys = () => {
 
   return (
     <section className="my-toys-container">
+      {/* Skeleton loading element (hidden when not loading) */}
       <div
         data-testid="my-toys-loading-skeleton"
         style={{
@@ -97,6 +112,8 @@ const MyToys = () => {
       >
         {loading && "my-toys-loading-skeleton"}
       </div>
+
+      {/* Top header with total count and search input */}
       <div className="my-toys-top-header">
         <div>
           Total <span>({loading ? "0" : filteredToys.length})</span>
@@ -107,6 +124,8 @@ const MyToys = () => {
           placeholder="Search Toys... eg. bus, ferrari, truck"
         />
       </div>
+
+      {/* Table container with a scroll bar */}
       <div className="table-scroller">
         <table>
           <thead>

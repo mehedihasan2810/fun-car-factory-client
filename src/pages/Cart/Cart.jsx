@@ -8,12 +8,14 @@ import Swal from "sweetalert2";
 import deleteFromLocalStorage from "../../utils/deleteFromLocalStorage";
 
 const Cart = () => {
+  // Context and queries
   const { cartIds, favIds, addToLocalStorage, checkTotalCartToys } =
     useContextProvider();
   const { data, loading } = useQuery(GET_CART_CAR, {
     variables: { cartIds },
   });
 
+  // Function to delete a cart item
   const deleteCartItem = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -49,6 +51,7 @@ const Cart = () => {
   return (
     <section className="cart-container">
       <div className="cart-toys-wrapper">
+        {/* Display cart items or loading skeletons */}
         <p
           className="cart-count"
           style={{

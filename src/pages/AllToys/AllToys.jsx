@@ -7,6 +7,7 @@ import { useQuery } from "@apollo/client";
 import { GET_CARS } from "../../lib/graphql/queryDefs";
 import Skeleton from "react-loading-skeleton";
 
+// Filter and sort options
 const filterValues = ["All", "Ferrari", "Bus", "Truck"];
 const sortValues = [
   ["Default", "default"],
@@ -15,13 +16,16 @@ const sortValues = [
 ];
 
 const AllToys = () => {
+  // Custom hook to set the page title
   useTitlePerPage("All Toys");
 
+  // Refs for filter and sort options
   const toysFilterOptionsRef = useRef();
   const toysSortOptionsRef = useRef();
   const toysSortUpperChevronRef = useRef();
   const toysSortLowerChevronRef = useRef();
 
+  // State for search and sort terms
   const [searchTerm, setSearhTerm] = useState("");
   const [sortTerm, setSortTerm] = useState("");
 
@@ -29,7 +33,10 @@ const AllToys = () => {
     setSearhTerm(searchValue);
   };
 
+  // GraphQL query to get all toys
   let { data, loading, error } = useQuery(GET_CARS);
+
+  // Handling GraphQL query error
   if (error) {
     return (
       <div
@@ -44,17 +51,19 @@ const AllToys = () => {
     );
   }
 
+  // Sorting and filtering the toys
   let sortedToys;
-
   if (!loading) {
     const allToys = data.getCars;
 
+    // Filtering based on search term
     const filteredToys = searchTerm
       ? allToys.filter((toy) =>
           toy.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
         )
       : allToys;
 
+    // Sorting based on sort term
     sortedToys = sortTerm
       ? filteredToys.slice().sort((toy1, toy2) => {
           const price1 = +toy1.price;
@@ -72,15 +81,19 @@ const AllToys = () => {
 
   return (
     <section className="toys-container">
+      {/* Top header with search, filter, and sort options */}
       <div className="toys-top-header">
         <div className="toys-total-count">
           Toys <span>({loading ? "0" : sortedToys?.length})</span>
         </div>
+
+        {/* Search component */}
         <Search
           onHandleSearch={handleSearch}
           placeholder="Search Your Favorite Toys... eg. bus, ferrari, truck"
         />
 
+        {/* Filter and sort options */}
         <div className="toys-filter-sortby-wrapper">
           <div className="toys-filter-wrapper">
             <button

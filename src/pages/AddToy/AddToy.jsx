@@ -5,12 +5,16 @@ import { useAuthContext } from "../../contexts/useAuthContext";
 import { gql, useMutation } from "@apollo/client";
 import { CREATE_CAR } from "../../lib/graphql/queryDefs";
 const AddToy = () => {
+  // Custom hook to set the page title
   useTitlePerPage("Add Toy");
+
+  // Authentication context to get the current user
   const { currentUser } = useAuthContext();
 
+  // Mutation hook to add a new car
   let [addCar, { loading, error }] = useMutation(CREATE_CAR, {
+    // Update the cache to display the new car without fetching again
     update(cache, { data: { createCar } }) {
-      console.log(createCar);
       cache.modify({
         fields: {
           getCars(existingCars = []) {
@@ -38,13 +42,15 @@ const AddToy = () => {
     },
   });
 
-  // console.log(data);
-
+  // Handle the form submission to add a new toy
   const handleAddToy = (e) => {
     e.preventDefault();
+
+    // Extract form data
     const formData = new FormData(e.target);
     const toyInfo = Object.fromEntries(formData);
 
+    // Invoke the addCar mutation
     addCar({
       variables: {
         carInput: {
@@ -55,12 +61,14 @@ const AddToy = () => {
         },
       },
       onCompleted: () => {
+        // Display success toast upon successful addition
         toast.success("Succesfully Added", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 2000,
         });
       },
       onError: () => {
+        // Display error toast upon failure
         toast.error(error.message, {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 2000,
@@ -74,6 +82,7 @@ const AddToy = () => {
       <div className="add-toy-container ">
         <h2 className="add-title">Add Toy</h2>
         <form onSubmit={handleAddToy}>
+          {/* Form fields for toy information */}
           <div className="row">
             <div className="control">
               <label htmlFor="name">Toy Name: </label>
@@ -180,6 +189,8 @@ const AddToy = () => {
               </label>
             </div>
           </div>
+
+          {/* Submit button with loading state */}
           <button
             style={{
               opacity: `${loading ? "0.5" : "1"}`,
