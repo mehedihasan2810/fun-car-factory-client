@@ -40,9 +40,9 @@ const NewCollention = () => {
           <p>New Collection</p>
 
           {/* Title */}
-          <h4>
+          <h2>
             Brand New Toys <br /> Just Arrived
-          </h4>
+          </h2>
           {/* Link to explore all toys */}
           <Link to="/all-toys" className="btn-primary">
             Explore

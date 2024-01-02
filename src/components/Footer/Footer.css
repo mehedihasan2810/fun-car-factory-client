@@ -50,7 +50,7 @@
   font-size: 14px;
 }
 
-.footer h6 {
+.footer .item-heading {
   font-size: 18px;
   font-weight: 500;
   /* color: var(--base-gray-50); */

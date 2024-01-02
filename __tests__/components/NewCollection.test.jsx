@@ -7,17 +7,11 @@ describe("<NewCollection />", () => {
     customRender(<NewCollection />);
 
     // ACT
-    const heading = screen.getByText((content, element) => {
-      return (
-        element.tagName.toLowerCase() === "h4" &&
-        content.startsWith("Brand New Toys")
-      );
-    });
     const button = screen.getByText("Explore");
     const imgs = screen.getAllByRole("img");
-   
+
     // ASSERT
-    expect(heading).toBeInTheDocument();
+    expect(screen.getByText("Brand New Toys Just Arrived")).toBeInTheDocument();
     expect(button).toBeInTheDocument();
     expect(imgs.length).toEqual(2);
   });

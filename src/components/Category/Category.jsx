@@ -148,7 +148,7 @@ const Category = () => {
                 {/* Carousel cell content with Link */}
                 <img src={item.img} alt="" />
                 <div className="carousel-cell-layer">
-                  <Link to="/all-toys">
+                  <Link to="/all-toys" aria-label="Visit all toys page">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

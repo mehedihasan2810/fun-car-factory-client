@@ -107,7 +107,7 @@ opacity: 0.8;
 .new-collection-info-container > p {
   font-size: clamp(1.2rem, 1.3vw, 1.5rem);
 }
-.new-collection-info-container > h4 {
+.new-collection-info-container > h2 {
   font-size: clamp(2rem, 3vw, 3.5rem);
   line-height: 1.2;
   font-family: "Brice Bold";

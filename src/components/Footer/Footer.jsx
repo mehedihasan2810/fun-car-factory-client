@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="top">
           {/* Categories */}
           <div className="item">
-            <h6>Categories</h6>
+            <div className="item-heading">Categories</div>
             <span>Truck Toys</span>
             <span>Ferrari Toys</span>
             <span>Volvo Toys</span>
@@ -21,7 +21,7 @@ const Footer = () => {
             <span>Best Rated</span>
           </div>
           <div className="item">
-            <h6>Links</h6>
+            <div className="item-heading">Links</div>
             <span>FAQ</span>
             <span>Pages</span>
             <span>Stories</span>
@@ -31,7 +31,7 @@ const Footer = () => {
 
           {/* About section with a brief description */}
           <div className="item">
-            <h6>About</h6>
+            <div className="item-heading">About</div>
             <span className="footer-about-info">
               Welcome to Fun Car Factory, your hub for premium toy cars that
               spark creativity and joy. Our diverse selection ensures endless
@@ -42,7 +42,7 @@ const Footer = () => {
 
           {/* Contact information and social media links */}
           <div className="item">
-            <h6>Contact</h6>
+            <div className="item-heading">Contact</div>
             <span>Phone: O172*******</span>
             <span>12 Avenue, Dhaka, Bangladesh</span>
             <div className="social">

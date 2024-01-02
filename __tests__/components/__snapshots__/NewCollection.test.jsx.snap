@@ -33,11 +33,11 @@ exports[`<NewCollection /> > should match snapshot 1`] = `
         <p>
           New Collection
         </p>
-        <h4>
+        <h2>
           Brand New Toys 
           <br />
            Just Arrived
-        </h4>
+        </h2>
         <a
           class="btn-primary"
           href="/all-toys"

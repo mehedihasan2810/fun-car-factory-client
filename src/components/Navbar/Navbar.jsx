@@ -185,7 +185,7 @@ const Navbar = () => {
 
           {/* Favorites and Cart icons with counts */}
           <li className="nav-favorite-list">
-            <NavLink to="/favorites">
+            <NavLink to="/favorites" aria-label="Visit favorite toys page">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -202,7 +202,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-cart-list">
-            <NavLink to="/cart">
+            <NavLink to="/cart" aria-label="Visit cart page">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -219,7 +219,7 @@ const Navbar = () => {
               </svg>
 
               {/* Display total number of items in the cart */}
-              <div className="nav-cart-count">{totalCartToys}</div>
+              <div className="nav-cart-count" aria-hidden={true}>{totalCartToys}</div>
             </NavLink>
           </li>
         </ul>
