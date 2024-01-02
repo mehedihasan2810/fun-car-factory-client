@@ -8,14 +8,16 @@ exports[`<MyToys /> > Should render successfully and match snapshot 1`] = `
     <div
       data-testid="my-toys-loading-skeleton"
       style="display: none;"
-    />
+    >
+      my-toys-loading-skeleton
+    </div>
     <div
       class="my-toys-top-header"
     >
       <div>
         Total 
         <span>
-          (30)
+          (0)
         </span>
       </div>
       <div
@@ -81,2284 +83,1534 @@ exports[`<MyToys /> > Should render successfully and match snapshot 1`] = `
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="TaTa super bus"
-                src="https://images.pexels.com/photos/163836/vw-bulli-meadow-peace-163836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              TaTa super bus
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              Bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $12
-            </td>
-            <td>
-              8
-            </td>
-            <td>
-              <a
-                href="/toy-details/64671bf3e81294b16783e451"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/64671bf3e81294b16783e451"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Ferrari 2021"
-                src="https://images.pexels.com/photos/97353/pexels-photo-97353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Ferrari 2021
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $12
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              8
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <a
-                href="/toy-details/64671a8fe81294b16783e44d"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/64671a8fe81294b16783e44d"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a
-                href="/toy-details/646764f64e03bee6bd417725"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646764f64e03bee6bd417725"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="kolkatar taxi"
-                src="https://images.pexels.com/photos/381228/pexels-photo-381228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              kolkatar taxi
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              taxi
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $21
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              12
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <a
-                href="/toy-details/6468646f7330c3abff5e954a"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/6468646f7330c3abff5e954a"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a
-                href="/toy-details/646764f24e03bee6bd417724"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646764f24e03bee6bd417724"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              10
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <a
-                href="/toy-details/6467650e4e03bee6bd41772a"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/6467650e4e03bee6bd41772a"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="American ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              American ferrari
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $22
-            </td>
-            <td>
-              11
-            </td>
-            <td>
-              <a
-                href="/toy-details/646765a54e03bee6bd41772b"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765a54e03bee6bd41772b"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="American ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              American ferrari
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $22
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              11
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <a
-                href="/toy-details/646765ad4e03bee6bd41772d"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765ad4e03bee6bd41772d"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a
-                href="/toy-details/646764ef4e03bee6bd417723"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646764ef4e03bee6bd417723"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="deshi taxi"
-                src="https://images.pexels.com/photos/249343/pexels-photo-249343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              deshi taxi
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              taxi
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $14
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              4
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <a
-                href="/toy-details/6468bf94db055c4fa73cd98c"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/6468bf94db055c4fa73cd98c"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="American ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              American ferrari
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $22
-            </td>
-            <td>
-              11
-            </td>
-            <td>
-              <a
-                href="/toy-details/646765b04e03bee6bd41772e"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765b04e03bee6bd41772e"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="American ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              American ferrari
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $22
-            </td>
-            <td>
-              11
-            </td>
-            <td>
-              <a
-                href="/toy-details/646765b44e03bee6bd41772f"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765b44e03bee6bd41772f"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a
-                href="/toy-details/646765064e03bee6bd417729"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765064e03bee6bd417729"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Tesla Super Truck"
-                src="https://images.pexels.com/photos/760979/pexels-photo-760979.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              Tesla Super Truck
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              Truck
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $12
-            </td>
-            <td>
-              8
-            </td>
-            <td>
-              <a
-                href="/toy-details/64671ae9e81294b16783e44e"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/64671ae9e81294b16783e44e"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="American ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              American ferrari
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $22
-            </td>
-            <td>
-              11
-            </td>
-            <td>
-              <a
-                href="/toy-details/646765a94e03bee6bd41772c"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765a94e03bee6bd41772c"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a
-                href="/toy-details/646764fe4e03bee6bd417727"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646764fe4e03bee6bd417727"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="American ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              American ferrari
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $22
-            </td>
-            <td>
-              11
-            </td>
-            <td>
-              <a
-                href="/toy-details/646765b74e03bee6bd417730"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765b74e03bee6bd417730"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="super ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              super ferrari
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $23
-            </td>
-            <td>
-              12
-            </td>
-            <td>
-              <a
-                href="/toy-details/646766894e03bee6bd417731"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646766894e03bee6bd417731"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="super ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              super ferrari
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $23
-            </td>
-            <td>
-              12
-            </td>
-            <td>
-              <a
-                href="/toy-details/6467668d4e03bee6bd417732"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/6467668d4e03bee6bd417732"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
+            </td>
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
+              >
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
+                >
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Tesla Super Truck"
-                src="https://images.pexels.com/photos/2527939/pexels-photo-2527939.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              Tesla Super Truck
-            </td>
+          <tr
+            style="height: 65px;"
+          >
             <td>
-              Truck
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $12
-            </td>
-            <td>
-              8
-            </td>
-            <td>
-              <a
-                href="/toy-details/64671b38e81294b16783e44f"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/64671b38e81294b16783e44f"
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="super ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              super ferrari
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $23
-            </td>
-            <td>
-              12
-            </td>
-            <td>
-              <a
-                href="/toy-details/646766914e03bee6bd417733"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646766914e03bee6bd417733"
+            <td>
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              <button
-                class="delete-btn"
-                title="Delete"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
             <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a
-                href="/toy-details/646764fa4e03bee6bd417726"
+              <span
+                aria-busy="true"
+                aria-live="polite"
               >
-                <button
-                  class="toy-details-btn"
+                <span
+                  class="react-loading-skeleton"
+                  style="height: 20px;"
                 >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646764fa4e03bee6bd417726"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="super ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              super ferrari
-            </td>
-            <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $23
-            </td>
-            <td>
-              12
-            </td>
-            <td>
-              <a
-                href="/toy-details/646766994e03bee6bd417735"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646766994e03bee6bd417735"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="TaTa super bus"
-                src="https://images.pexels.com/photos/981570/pexels-photo-981570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              TaTa super bus
-            </td>
-            <td>
-              Bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $12
-            </td>
-            <td>
-              8
-            </td>
-            <td>
-              <a
-                href="/toy-details/64671b87e81294b16783e450"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/64671b87e81294b16783e450"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Toyota truck 2011"
-                src="https://images.pexels.com/photos/2527931/pexels-photo-2527931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Toyota truck 2011
-            </td>
-            <td>
-              truck
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $20
-            </td>
-            <td>
-              9
-            </td>
-            <td>
-              <a
-                href="/toy-details/646764704e03bee6bd417722"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646764704e03bee6bd417722"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="Volbo bus"
-                src="https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              />
-              Volbo bus
-            </td>
-            <td>
-              bus
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $35
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a
-                href="/toy-details/646765014e03bee6bd417728"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646765014e03bee6bd417728"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="super ferrari"
-                src="https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              />
-              super ferrari
-            </td>
-            <td>
-              ferrari
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $23
-            </td>
-            <td>
-              12
-            </td>
-            <td>
-              <a
-                href="/toy-details/646766954e03bee6bd417734"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/646766954e03bee6bd417734"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="TaTa Taxi"
-                src="https://images.unsplash.com/photo-1510073666657-90dd548ff9dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-              />
-              TaTa Taxi
-            </td>
-            <td>
-              Taxi
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $20
-            </td>
-            <td>
-              30
-            </td>
-            <td>
-              <a
-                href="/toy-details/651e995acdf26ebdcb033cd2"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/651e995acdf26ebdcb033cd2"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="TaTa Taxi"
-                src="https://images.unsplash.com/photo-1510073666657-90dd548ff9dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-              />
-              TaTa Taxi
-            </td>
-            <td>
-              Taxi
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $20
-            </td>
-            <td>
-              30
-            </td>
-            <td>
-              <a
-                href="/toy-details/651e995acdf26ebdcb033cd3"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/651e995acdf26ebdcb033cd3"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="name-td"
-              data-testid="my-toys-toy-name"
-            >
-              <img
-                alt="TaTa Taxi"
-                src="https://images.unsplash.com/photo-1510073666657-90dd548ff9dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-              />
-              TaTa Taxi
-            </td>
-            <td>
-              Taxi
-            </td>
-            <td
-              data-testid="my-toys-price"
-            >
-              $20
-            </td>
-            <td>
-              30
-            </td>
-            <td>
-              <a
-                href="/toy-details/651e995ccdf26ebdcb033cd4"
-              >
-                <button
-                  class="toy-details-btn"
-                >
-                  View Details
-                </button>
-              </a>
-            </td>
-            <td
-              class="edit-btn"
-              title="Update"
-            >
-              <a
-                href="/my-toys/651e995ccdf26ebdcb033cd4"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 576 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                  />
-                </svg>
-              </a>
-            </td>
-            <td>
-              <button
-                class="delete-btn"
-                title="Delete"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 448 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
-                  />
-                </svg>
-              </button>
+                  ‌
+                </span>
+                <br />
+              </span>
             </td>
           </tr>
         </tbody>

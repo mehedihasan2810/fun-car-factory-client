@@ -13,19 +13,29 @@ import { apolloClient } from "../lib/graphql";
 import { CREATE_USER, GET_TOKEN } from "../lib/graphql/queryDefs";
 import Cookies from "js-cookie";
 
+// Create authentication context
 export const AuthContext = createContext();
 
+// Create GoogleAuthProvider instance
 const gooleProvider = new GoogleAuthProvider();
 
+// AuthProvider component for managing authentication state
 const AuthProvider = ({ children }) => {
+  // State for current user
   const [currentUser, setCurrentUser] = useState(null);
+
+  // State for authentication loading status
   const [isAuthLoading, setIsAuthLoading] = useState(true);
+
+  // State for access token
   const [accessToken, setAccessToken] = useState(null);
 
+  // Function to sign up a user
   const signUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  // Function to update user profile
   const updateUserProfile = (user, name, url) => {
     return updateProfile(user, {
       displayName: name,
@@ -33,6 +43,7 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  // Function to sign in a user
   const signIn = async (email, password) => {
     const userCredentials = await signInWithEmailAndPassword(
       auth,
@@ -40,22 +51,25 @@ const AuthProvider = ({ children }) => {
       password
     );
 
+    // Query to get token from the server
     const { data } = await apolloClient.query({
       query: GET_TOKEN,
       variables: { email: email },
     });
 
+    // Set the token in cookies and state
     Cookies.set("token", data.getToken.token);
-
     setAccessToken(data.getToken.token);
 
     return userCredentials;
   };
 
+  // Function to sign in with Google
   const googleSignIn = async () => {
+    // Sign in with Google popup
     const userCredential = await signInWithPopup(auth, gooleProvider);
 
-    // save user to db
+    // Save user to the database
     const { data } = await apolloClient.mutate({
       mutation: CREATE_USER,
       variables: {
@@ -66,23 +80,30 @@ const AuthProvider = ({ children }) => {
         },
       },
     });
-    Cookies.set("token", data.createUser.token);
 
+    // Set the token in cookies and state
+    Cookies.set("token", data.createUser.token);
     setAccessToken(data.createUser.token);
 
     return userCredential;
   };
 
+  // Function to log out the user
   const logOut = async () => {
+    // Sign out from Firebase authentication
     await signOut(auth);
 
+    // Remove token from cookies
     Cookies.remove("token");
 
+    // Clear Apollo Client store
     apolloClient.clearStore();
 
+    // Set access token to null
     setAccessToken(null);
   };
 
+  // Effect to listen for changes in authentication state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
@@ -90,10 +111,11 @@ const AuthProvider = ({ children }) => {
     });
 
     return () => {
-      unsubscribe();
+      unsubscribe(); // Unsubscribe when component unmounts
     };
   }, []);
 
+  // Provide authentication context to the components
   return (
     <AuthContext.Provider
       value={{

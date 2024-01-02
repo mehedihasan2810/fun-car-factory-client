@@ -4,81 +4,25 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 import { Link } from "react-router-dom";
+import { carouselData, tabBtns } from "./data";
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
-const carouselData = [
-  {
-    id: 1,
-    img: "https://images.unsplash.com/photo-1572635196184-84e35138cf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
-  },
-  {
-    id: 2,
-    img: "https://images.unsplash.com/photo-1594787317357-dcda50fd1d78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  },
-  {
-    id: 3,
-    img: "https://images.pexels.com/photos/6139416/pexels-photo-6139416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  },
-  {
-    id: 4,
-    img: "https://images.pexels.com/photos/69359/pexels-photo-69359.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
-  {
-    id: 5,
-    img: "https://images.pexels.com/photos/2320208/pexels-photo-2320208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  },
-  {
-    id: 6,
-    img: "https://images.pexels.com/photos/163836/vw-bulli-meadow-peace-163836.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
-  {
-    id: 7,
-    img: "https://images.pexels.com/photos/102984/pexels-photo-102984.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
-  {
-    id: 8,
-    img: "https://images.pexels.com/photos/35964/ferrari-red-auto-sports-car.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  },
-  {
-    id: 9,
-    img: "https://images.pexels.com/photos/2527939/pexels-photo-2527939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  },
-];
-
-const tabBtns = [
-  {
-    id: 1,
-    content: "Truck",
-    rotateY: 280,
-  },
-  {
-    id: 2,
-    content: "Ferrari",
-    rotateY: 80,
-  },
-  {
-    id: 3,
-    content: "Taxi",
-    rotateY: 240,
-  },
-  {
-    id: 4,
-    content: "Bus",
-    rotateY: 160,
-  },
-];
-
 const Category = () => {
+  // Refs for accessing DOM elements
   const carouselScene = useRef();
   const carouselCell = useRef();
 
+  // Initialize the scene and carousel layout effect
   useLayoutEffect(() => {
+    // Calculate the perspective effect based on the width of the carousel
     const tz = Math.round(
       carouselScene.current.offsetWidth / 2 / Math.tan(Math.PI / 9)
     );
 
+    // Get all carousel cells
     const carouselCells = gsap.utils.toArray(".carousel__cell");
 
+    // Set CSS variables for each carousel cell
     carouselCells.forEach((carouselCell) => {
       carouselCell.style.setProperty("--top", "10px");
       carouselCell.style.setProperty("--left", "10px");
@@ -93,11 +37,13 @@ const Category = () => {
       carouselCell.style.setProperty("--tz", `${tz}px`);
     });
 
+    // Set initial rotation and perspective for the entire carousel
     gsap.set(".carousel", {
       translateZ: -tz,
       rotateY: 0,
     });
 
+    // Animate rotation of the carousel on scroll
     gsap.to(".carousel", {
       rotateY: 160,
       scrollTrigger: {
@@ -108,7 +54,9 @@ const Category = () => {
       },
     });
   }, []);
+  // --------------------------------------------
 
+  // Initialize drag functionality for the carousel layout effect
   useLayoutEffect(() => {
     let isDown = false;
     let startX;
@@ -152,6 +100,7 @@ const Category = () => {
     carousel.addEventListener("touchend", end);
 
     return () => {
+      // Remove event listeners on component cleanup
       carousel.removeEventListener("mousedown", start);
       carousel.removeEventListener("touchstart", start);
 
@@ -175,6 +124,7 @@ const Category = () => {
   return (
     <section className="category-container">
       <div className="category-top">
+        {/* Category title and tab buttons */}
         <h2 className="category-title">Categories</h2>
 
         <div className="category-tab-btns">
@@ -190,10 +140,12 @@ const Category = () => {
         </div>
       </div>
       <div className="category-carousel-container">
+        {/* Carousel scene with carousel cells */}
         <div ref={carouselScene} className="scene">
           <div className="carousel">
             {carouselData.map((item) => (
               <div ref={carouselCell} key={item.id} className="carousel__cell">
+                {/* Carousel cell content with Link */}
                 <img src={item.img} alt="" />
                 <div className="carousel-cell-layer">
                   <Link to="/all-toys">
@@ -204,6 +156,7 @@ const Category = () => {
                       strokeWidth={1}
                       stroke="currentColor"
                       className="w-6 h-6"
+                      aria-hidden
                     >
                       <path
                         strokeLinecap="round"

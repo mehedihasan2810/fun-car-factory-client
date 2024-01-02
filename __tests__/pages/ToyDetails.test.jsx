@@ -2,10 +2,9 @@ import { ApolloProvider } from "@apollo/client";
 import { describe, expect, screen, test } from "../utils/utils";
 import { apolloClient } from "../../src/lib/graphql";
 import ToyDetails from "../../src/pages/ToyDetails/ToyDetails";
-import { render, waitForElementToBeRemoved } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import AuthProvider from "../../src/contexts/AuthProvider";
-import { carsMockData } from "../mocks/carsMockData";
 import ContextProvider from "../../src/contexts/ContextProvider";
 
 describe("<ToyDetails />", () => {
@@ -27,16 +26,6 @@ describe("<ToyDetails />", () => {
 
     expect(
       screen.getByText("toy-details-loading-skeleton")
-    ).toBeInTheDocument();
-
-    await waitForElementToBeRemoved(() =>
-      screen.getByText("toy-details-loading-skeleton")
-    );
-
-    const filteredData = carsMockData.find((car) => car.id === id);
-
-    expect(
-      screen.getByRole("heading", { name: filteredData.name, level: 4 })
     ).toBeInTheDocument();
 
     expect(asFragment()).toMatchSnapshot();

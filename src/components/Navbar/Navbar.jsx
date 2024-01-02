@@ -12,6 +12,7 @@ import { GET_USER } from "../../lib/graphql/queryDefs";
 import jwtDecode from "jwt-decode";
 
 const Navbar = () => {
+  // Ref to the navigation container
   const navContainerRef = useRef();
   const [isOpenNav, setIsOpenNav] = useState(false);
   const [user, setUser] = useState(null);
@@ -21,10 +22,12 @@ const Navbar = () => {
   const { currentUser, logOut, accessToken } = useAuthContext();
   const navigate = useNavigate();
 
+  // Function to handle user sign-out
   const handleSignOut = async () => {
     try {
       await logOut();
 
+      // Show success toast on sign-out
       toast.success("Succesfully Signed Out", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
@@ -32,7 +35,7 @@ const Navbar = () => {
 
       navigate("/");
     } catch (error) {
-      // *show toast
+      // Show error toast on failure
       toast.error(error.message, {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
@@ -40,6 +43,7 @@ const Navbar = () => {
     }
   };
 
+  // Fetch user information on component mount or when the access token changes
   useEffect(() => {
     const fetchUser = async () => {
       const token = Cookies.get("token");
@@ -61,6 +65,7 @@ const Navbar = () => {
     fetchUser();
   }, [accessToken]);
 
+  // Add event listener to close the navigation menu on link click
   useLayoutEffect(() => {
     const links = document.querySelectorAll("nav li");
 
@@ -78,6 +83,7 @@ const Navbar = () => {
           <img src="/assets/logo.png" alt="logo" width={55} height={55} />
         </div>
         <ul className={isOpenNav ? "open" : ""}>
+          {/* Navigation links */}
           <li>
             <NavLink
               to="/"
@@ -123,9 +129,11 @@ const Navbar = () => {
             </>
           )}
 
+          {/* Conditional rendering based on user authentication */}
           {currentUser ? (
             <>
               <li>
+                {/* Display user photo or default avatar */}
                 {currentUser?.photoURL ? (
                   <img
                     data-testid="nav-user-img"
@@ -156,6 +164,7 @@ const Navbar = () => {
                 )}
               </li>
               <li>
+                {/* Button for signing out */}
                 <button
                   data-testid="signOut"
                   onClick={handleSignOut}
@@ -167,12 +176,14 @@ const Navbar = () => {
             </>
           ) : (
             <li>
+              {/* Link to sign-in page */}
               <NavLink to="/signin">
                 <button className="btn-primary">Sign In</button>
               </NavLink>
             </li>
           )}
 
+          {/* Favorites and Cart icons with counts */}
           <li className="nav-favorite-list">
             <NavLink to="/favorites">
               <svg
@@ -206,10 +217,14 @@ const Navbar = () => {
                   d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                 />
               </svg>
+
+              {/* Display total number of items in the cart */}
               <div className="nav-cart-count">{totalCartToys}</div>
             </NavLink>
           </li>
         </ul>
+
+        {/* Button to toggle the navigation menu */}
         <button
           onClick={() => {
             setIsOpenNav(!isOpenNav);

@@ -3,10 +3,15 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer-container">
+      {/* Gradient overlays for left and right sides of the footer */}
       <div className="footer-left-gradient"></div>
       <div className="footer-right-gradient"></div>
+
+      {/* Main footer section */}
       <footer className="footer">
+        {/* Top section containing various information categories */}
         <div className="top">
+          {/* Categories */}
           <div className="item">
             <h6>Categories</h6>
             <span>Truck Toys</span>
@@ -23,6 +28,8 @@ const Footer = () => {
             <span>Compare</span>
             <span>Cookies</span>
           </div>
+
+          {/* About section with a brief description */}
           <div className="item">
             <h6>About</h6>
             <span className="footer-about-info">
@@ -32,6 +39,8 @@ const Footer = () => {
               moments for your family. Explore and play with us today!
             </span>
           </div>
+
+          {/* Contact information and social media links */}
           <div className="item">
             <h6>Contact</h6>
             <span>Phone: O172*******</span>
@@ -44,6 +53,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* Bottom section with logo and copyright */}
         <div className="bottom">
           <div className="left">
             <img src="/assets/logo.png" alt="" />

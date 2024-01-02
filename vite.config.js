@@ -10,7 +10,7 @@ export default defineConfig({
     testMatch: ["./__tests__/**/*.test.jsx"],
     reporters: ["default", "html"],
     // reportsDirectory: "./vitest-ui",
-    setupFiles: ["./__tests__/vitest.setup.js"],
+    setupFiles: ["./vitest.setup.js"],
 
     coverage: {
       reporter: ["html"],

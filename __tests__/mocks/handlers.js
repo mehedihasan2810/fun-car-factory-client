@@ -2,8 +2,8 @@ import { graphql } from "msw";
 import { carsMockData } from "./carsMockData";
 
 const carsLink = graphql.link(
-  // "https://fun-car-factory-server.vercel.app/graphql",
-  "http://localhost:4000/graphql"
+  "https://fun-car-factory-server.vercel.app/graphql",
+  // "http://localhost:4000/graphql"
 );
 
 export const handlers = [
