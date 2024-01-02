@@ -13,6 +13,6 @@
 ## Technologies used
 
 - Front-End - `ReactJS` `Apollo GraphQL` `CSS`
-- Back-End - [Back-End Repository](https://github.com/mehedihasan2810/fun-car-factory-server)
+- Back-End - `GraphQL` `ExpressJS` `Prisma` `MongoDB` `Typescript` `Vitest` `MSW` - [Back-End Repository](https://github.com/mehedihasan2810/fun-car-factory-server)
 - Auth - `Firebase Auth`
 - Unit Test - `Vitest` `React Testing Library` `msw`
